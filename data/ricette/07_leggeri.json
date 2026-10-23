@@ -1,0 +1,263 @@
+{
+ "gamberetti_couscous": {
+  "steps": [
+   "Porta a bollore tanta acqua quanto è il peso del cous cous ({cous_cous}) con {dado}.",
+   "Versala sul cous cous in una ciotola, copri e lascia gonfiare 5 min. Sgrana con la forchetta.",
+   "Taglia {zucchine} a cubetti piccoli.",
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato e salta le zucchine 5 min.",
+   "Aggiungi {gamberetti} e cuoci 3 min. Sala e togli l'aglio.",
+   "Mescola tutto con il cous cous, {prezzemolo} tritato e la scorza grattugiata di {limone}."
+  ],
+  "note": "Buono sia caldo che freddo."
+ },
+ "calamari_patate": {
+  "steps": [
+   "Scongela {calamari}, asciugali e tagliali ad anelli.",
+   "Trita {cipolla} e falla appassire in una casseruola con {olio} per 4 min.",
+   "Alza la fiamma, aggiungi i calamari e rosolali 2 min. Versa {vino} e lascialo evaporare.",
+   "Unisci {passata}, {peperoncino} e un bicchiere d'acqua, copri e cuoci 15 min a fuoco basso.",
+   "Pela {patate}, tagliale a cubetti e aggiungile. Sala e cuoci altri 20 min, finché sono tenere.",
+   "Finisci con {prezzemolo} tritato."
+  ]
+ },
+ "panino_cotoletta": {
+  "steps": [
+   "Se {fettine} sono spesse, battile un po' tra due fogli di carta forno.",
+   "In un piatto fondo sbatti {uova} con un pizzico di sale; in un altro metti {pangrattato}.",
+   "Passa le fettine nell'uovo e poi nel pangrattato, premendo bene.",
+   "In una padella scalda {olio} a fuoco medio e cuoci le cotolette 3 min per lato, finché sono dorate. Asciugale su carta da cucina e salale.",
+   "Taglia {pane} a metà e farciscilo con la cotoletta, {insalata} e {pomodori} a fette."
+  ],
+  "note": "Per la schiscetta lascia raffreddare la cotoletta prima di chiudere il panino, così non si inzuppa."
+ },
+ "pasta_ortolana": {
+  "steps": [
+   "Lava le verdure e taglia a cubetti piccoli {zucchine}, {melanzane} e {peperoni}; taglia {pomodorini} a metà.",
+   "In una padella larga scalda {olio} a fuoco medio-alto e cuoci peperoni e melanzane per 8 min.",
+   "Aggiungi zucchine e pomodorini e cuoci altri 6 min. Sala.",
+   "Cuoci {pasta_corta} in acqua salata per il tempo della confezione.",
+   "Scolala nella padella e saltala con {basilico} e {grana}."
+  ],
+  "note": "Buona anche fredda, come insalata di pasta."
+ },
+ "pasta_pesto_gamberetti": {
+  "steps": [
+   "Porta a bollore l'acqua, salala e cuoci {pasta_corta}.",
+   "Taglia {pomodorini} a metà.",
+   "In una padella scalda {olio}, salta i pomodorini 3 min, poi aggiungi {gamberetti} e cuoci 3 min.",
+   "In una ciotola allunga {pesto} con un cucchiaio d'acqua di cottura.",
+   "Scola la pasta, condiscila con il pesto e aggiungi gamberetti e pomodorini."
+  ]
+ },
+ "pollo_umido_patate": {
+  "steps": [
+   "In una casseruola scalda {olio} e rosola {cosce_pollo} 4 min per lato.",
+   "Affetta {cipolla}, aggiungila e cuoci 2 min. Versa {vino} e lascialo evaporare.",
+   "Unisci {passata}, {rosmarino} e un bicchiere d'acqua, sala, copri e cuoci 20 min.",
+   "Pela {patate}, tagliale a pezzi e aggiungile. Cuoci altri 25 min, finché sono tenere e il sugo è denso."
+  ]
+ },
+ "polenta_pasticciata": {
+  "steps": [
+   "Prepara {polenta} come indicato sulla confezione e stendila alta un dito su un piano bagnato. Lasciala rassodare 10 min.",
+   "Accendi il forno a 200 °C.",
+   "Taglia la polenta a fette e {mozzarella} a cubetti.",
+   "In una pirofila imburrata con {burro} alterna fette di polenta, {ragu}, mozzarella e {grana}.",
+   "Cuoci 20 min, finché la superficie è dorata."
+  ],
+  "note": "Ottimo modo per usare la polenta avanzata."
+ },
+ "riso_bianco_zucchine": {
+  "steps": [
+   "Lava {zucchine} e tagliale a cubetti piccoli.",
+   "Porta a bollore una pentola d'acqua leggermente salata.",
+   "Butta insieme {riso_carnaroli} e le zucchine e cuoci per il tempo della confezione del riso (circa 16 min).",
+   "Scola e condisci con {olio} crudo e {grana}."
+  ],
+  "note": "Piatto da stomaco delicato: olio solo a crudo, niente soffritto."
+ },
+ "pastina_brodo": {
+  "steps": [
+   "Pela e taglia a pezzi grossi {carote}, {patate}, {zucchine} e {sedano}.",
+   "Mettile in una pentola con mezzo litro abbondante d'acqua fredda a persona e un pizzico di sale.",
+   "Porta a bollore e cuoci 25 min a fuoco basso: il brodo deve sobbollire appena.",
+   "Togli le verdure con una schiumarola (puoi schiacciarne un po' e rimetterle nel brodo).",
+   "Cuoci {pastina} nel brodo per il tempo della confezione.",
+   "Servi con {grana} e {olio} crudo."
+  ],
+  "note": "Le verdure del brodo, schiacciate con olio e sale, fanno da contorno."
+ },
+ "pollo_lesso": {
+  "steps": [
+   "Pela {patate} e {carote} e tagliale a pezzi; taglia {sedano} a tocchetti.",
+   "Mettili in una pentola, copri d'acqua, sala poco e porta a bollore.",
+   "Dopo 15 min aggiungi {pollo} e cuoci altri 12-15 min a fuoco basso, senza far bollire forte: così la carne resta morbida.",
+   "Scola, taglia il pollo a fette e condisci tutto con {olio} crudo, un goccio di {limone} e sale."
+  ],
+  "note": "Il brodo che resta è perfetto per una pastina il giorno dopo."
+ },
+ "merluzzo_vapore": {
+  "steps": [
+   "Pela {patate}, tagliale a cubetti e mettile in una pentola d'acqua salata. Porta a bollore e cuoci 10 min.",
+   "Lava {zucchine} e tagliale a rondelle.",
+   "Appoggia sopra la pentola un colapasta con le zucchine e {merluzzo}, copri e cuoci a vapore 10-12 min.",
+   "Condisci tutto con {olio} crudo, il succo di {limone}, {prezzemolo} tritato e un pizzico di sale."
+  ],
+  "note": "Senza vaporiera: cuoci il pesce in padella con il coperchio e due dita d'acqua."
+ },
+ "pure_pollo": {
+  "steps": [
+   "Pela {patate}, tagliale a pezzi uguali e mettile in acqua fredda salata. Porta a bollore e cuocile 20 min, finché la forchetta entra senza sforzo.",
+   "Scaldale {latte} in un pentolino senza farlo bollire.",
+   "Scola le patate e schiacciale subito, ancora calde, con lo schiacciapatate.",
+   "Rimettile sul fuoco basso con {burro}, il latte caldo poco alla volta e {grana}, mescolando finché il purè è liscio. Aggiusta di sale.",
+   "Intanto scalda bene una piastra e cuoci {pollo} senza grassi 3 min per lato, finché è bianco anche dentro.",
+   "Servi il pollo con il purè e {olio} crudo sopra."
+  ],
+  "note": "Purè fatto con le patate vere: con poco burro resta leggero."
+ },
+ "passato_verdure": {
+  "steps": [
+   "Pela {patate} e {carote}, lava {zucchine} e taglia tutto a pezzi.",
+   "Mettile in una pentola, copri d'acqua, sala poco e cuoci 25 min.",
+   "Frulla tutto con il frullatore a immersione fino a una crema.",
+   "Aggiungi {riso_carnaroli} e cuocilo nel passato 15 min, mescolando e aggiungendo acqua se serve.",
+   "Servi con {grana}, {olio} crudo e {pane} tostato."
+  ]
+ },
+ "tacchino_carote": {
+  "steps": [
+   "Pela {carote} e tagliale a rondelle.",
+   "Cuocile a vapore (o in poca acqua con il coperchio) per 12 min.",
+   "Scalda bene una piastra e cuoci {tacchino} 2 min per lato.",
+   "Condisci tutto con {olio} crudo, {prezzemolo} tritato e sale.",
+   "Servi con {pane}."
+  ]
+ },
+ "risotto_zucchine_leggero": {
+  "steps": [
+   "Prepara il brodo: porta a bollore mezzo litro d'acqua a persona con {dado} (vegetale) e tienilo caldo.",
+   "Lava {zucchine} e tagliale a cubetti piccoli.",
+   "In una casseruola asciutta tosta {riso_carnaroli} per 1 min, poi aggiungi le zucchine.",
+   "Cuoci 16-18 min aggiungendo il brodo un mestolo alla volta e mescolando.",
+   "A fuoco spento manteca con {olio} crudo e {grana}, invece del burro."
+  ],
+  "note": "Senza soffritto, burro né vino: più digeribile."
+ },
+ "pasta_olio_grana": {
+  "steps": [
+   "Porta a bollore l'acqua, salala e cuoci {pasta_corta}, anche un minuto oltre il tempo della confezione: più morbida è più digeribile.",
+   "Prima di scolarla tieni da parte un cucchiaio d'acqua di cottura.",
+   "Condiscila con {olio} crudo, {grana} e l'acqua di cottura, mescolando."
+  ],
+  "note": "Il classico dei giorni di stomaco in disordine: se va meglio, aggiungi un uovo sodo per le proteine."
+ },
+ "uova_patate_lesse": {
+  "steps": [
+   "Pela {patate} e {carote} e tagliale a pezzi.",
+   "Lessale in acqua salata per 15-18 min, finché sono tenere.",
+   "In un pentolino d'acqua bollente cuoci {uova} per 9 min, poi raffreddale in acqua fredda e sgusciale.",
+   "Servi tutto condito con {olio} crudo e un pizzico di sale."
+  ]
+ },
+ "salmone_vapore_riso": {
+  "steps": [
+   "Cuoci {riso_basmati} in acqua salata per il tempo della confezione.",
+   "Lava {zucchine} e tagliale a rondelle.",
+   "Cuoci a vapore zucchine e {salmone} per 10-12 min (o in padella con il coperchio e un dito d'acqua).",
+   "Servi con {olio} crudo e qualche goccia di {limone}."
+  ]
+ },
+ "brie_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Metti {brie} in una pirofila piccola e incidi la crosta a croce.",
+   "Cuoci 12 min, finché è morbido al centro.",
+   "Intanto lava {insalata} e condiscila con {olio} e sale. Spezzetta {noci}.",
+   "Servi il brie caldo con {miele} e le noci sopra, da spalmare su {pane}, con l'insalata a parte."
+  ]
+ },
+ "primo_sale_pomodori": {
+  "steps": [
+   "Taglia {primo_sale} a cubetti e {pomodori} a spicchi.",
+   "In una ciotola unisci formaggio, pomodori e {olive}.",
+   "Condisci con {olio}, {origano} e un pizzico di sale.",
+   "Servi con {pane}."
+  ]
+ },
+ "caciotta_piastra": {
+  "steps": [
+   "Scalda {verdure_grigliate} in padella per 6 min con {olio} e un pizzico di sale.",
+   "Taglia {caciotta} a fette spesse un dito.",
+   "Scalda bene una padella antiaderente senza grassi e cuoci le fette 1-2 min per lato, finché fanno la crosticina. Non toccarle prima: si staccano da sole quando sono pronte.",
+   "Servi subito con le verdure e {pane}."
+  ]
+ },
+ "taleggio_patate": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Lava {patate} e tagliale a spicchi con la buccia.",
+   "Condiscile in teglia con {olio}, sale, pepe e {rosmarino} e cuocile 30 min, girandole a metà.",
+   "Togli la crosta a {taleggio} e taglialo a pezzetti.",
+   "Mettilo sulle patate e rimetti in forno 5 min, finché si scioglie."
+  ]
+ },
+ "burrata_pomodorini": {
+  "steps": [
+   "Taglia {pomodorini} a metà e condiscili con {olio}, sale e {basilico} spezzettato.",
+   "Metti {burrata} al centro del piatto e i pomodorini intorno.",
+   "Servi subito con {pane}."
+  ],
+  "note": "La burrata va mangiata entro 1-2 giorni dall'acquisto."
+ },
+ "feta_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Metti {feta} intera in una pirofila piccola con {pomodorini} tagliati a metà e {olive} intorno.",
+   "Condisci con {olio} e {origano}.",
+   "Cuoci 15 min, finché i pomodorini sono appassiti e la feta morbida.",
+   "Servi caldo con {pane} per raccogliere il sughetto."
+  ]
+ },
+ "scamorza_spinaci": {
+  "steps": [
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi {spinaci} e cuoci 8 min con un pizzico di sale.",
+   "Taglia {scamorza} a fette.",
+   "Scalda bene una padella antiaderente e cuoci le fette 1-2 min per lato.",
+   "Servi la scamorza sopra gli spinaci, con {pane}."
+  ]
+ },
+ "hummus_pinoli": {
+  "steps": [
+   "Tosta {pinoli} in una padella asciutta per 2 min, mescolando, finché sono dorati.",
+   "Pela {carote} e tagliale a bastoncini; taglia {cetriolo} a bastoncini.",
+   "Metti {hummus} in una ciotola con i pinoli sopra, {olio} e un pizzico di {paprika}.",
+   "Servi con le verdure e {pane} da intingere."
+  ]
+ },
+ "ceci_limone": {
+  "steps": [
+   "Scola {ceci} e sciacquali sotto l'acqua corrente.",
+   "Affetta sottile {cipollotti} e trita {prezzemolo}.",
+   "Condisci i ceci con {olio}, il succo di {limone}, sale, pepe, cipollotto e prezzemolo.",
+   "Mescola e lascia insaporire qualche minuto.",
+   "Servi con {pane}."
+  ]
+ },
+ "cannellini_sedano_noci": {
+  "steps": [
+   "Scola {cannellini} e sciacquali.",
+   "Taglia {sedano} a rondelle sottili e spezzetta {noci}.",
+   "In una ciotola unisci tutto e condisci con {olio}, sale e il succo di {limone}.",
+   "Servi con {pane}."
+  ]
+ },
+ "borlotti_cipolla_pomodori": {
+  "steps": [
+   "Scola {borlotti} e sciacquali.",
+   "Taglia {pomodori} a cubetti e {cipolla} sottilissima.",
+   "In una ciotola unisci tutto e condisci con {olio}, {aceto}, sale e {origano}.",
+   "Mescola e servi con {pane}."
+  ]
+ }
+}

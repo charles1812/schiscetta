@@ -1,0 +1,23 @@
+{
+  "_nota": "idx = indice di convenienza Altroconsumo 2025, classifica sul carrello 'primo prezzo' (100 = la catena più economica). Il fattore applicato ai prezzi base è idx / 120 (i prezzi base sono stimati al livello di un supermercato medio, indice ~120). Fonte: indagine Altroconsumo supermercati 2025 (riportata da greenme.it e scattidigusto.it, settembre 2025).",
+  "base_idx": 120,
+  "fonte": "Indagine Altroconsumo sui supermercati 2025",
+  "supermercati": [
+    {"id": "esselunga", "n": "Esselunga", "idx": 121, "c": "#1f6fb2"},
+    {"id": "carrefour", "n": "Carrefour Iper", "idx": 120, "c": "#1e4f9c"},
+    {"id": "carrefour_market", "n": "Carrefour Market", "idx": 135, "c": "#2b6cb0"},
+    {"id": "coop", "n": "Coop", "idx": 123, "c": "#d7262b"},
+    {"id": "ipercoop", "n": "Ipercoop", "idx": 115, "c": "#c0262b"},
+    {"id": "conad", "n": "Conad", "idx": 125, "c": "#e2001a"},
+    {"id": "pam", "n": "Pam", "idx": 127, "c": "#d71920"},
+    {"id": "famila", "n": "Famila", "idx": 130, "c": "#e5332a"},
+    {"id": "iperal", "n": "Iperal", "idx": 118, "c": "#00853f"},
+    {"id": "bennet", "n": "Bennet", "idx": 119, "c": "#e30613"},
+    {"id": "eurospin", "n": "Eurospin", "idx": 100, "c": "#003c8f", "discount": true},
+    {"id": "aldi", "n": "Aldi", "idx": 101, "c": "#00205b", "discount": true},
+    {"id": "lidl", "n": "Lidl", "idx": 102, "c": "#0050aa", "discount": true},
+    {"id": "md", "n": "MD", "idx": 109, "c": "#e30613", "discount": true},
+    {"id": "penny", "n": "Penny", "idx": 110, "c": "#cd1719", "discount": true},
+    {"id": "altro", "n": "Altro supermercato", "idx": 120, "c": "#6b7280"}
+  ]
+}

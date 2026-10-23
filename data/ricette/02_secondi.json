@@ -1,0 +1,349 @@
+{
+ "tortellini_panna": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua e salala.",
+   "Taglia {cotto} a striscioline sottili.",
+   "In una padella larga scalda il prosciutto a fuoco medio per 1 min, poi versa {panna} e lascia scaldare 2 min a fuoco basso, senza far bollire forte: la panna si addensa un po'.",
+   "Butta {tortellini} e cuocili per il tempo della confezione (di solito 4 min), con l'acqua che bolle piano.",
+   "Scolali e versali nella padella, aggiungi {grana} e mescola delicatamente per 1 min.",
+   "Se il condimento è troppo denso, aggiungi un cucchiaio d'acqua di cottura."
+  ]
+ },
+ "pollo_piastra": {
+  "steps": [
+   "Se le fette di {pollo} sono spesse più di un dito, mettile tra due fogli di carta forno e battile con il fondo di un pentolino: cuociono in modo uniforme e restano morbide.",
+   "Ungile con un po' d'olio (prendilo da {olio/3}) e salale leggermente.",
+   "Scalda bene una piastra o una padella antiaderente a fuoco alto per 2 min: deve essere caldissima.",
+   "Appoggia il pollo e cuocilo 4 min per lato senza muoverlo: si forma la crosticina e si stacca da solo quando è pronto. Dentro deve essere bianco, non rosa.",
+   "Intanto lava {insalata} e {pomodorini}; taglia i pomodorini a metà.",
+   "Condisci l'insalata con {olio*2/3}, il succo di {limone} e un pizzico di sale.",
+   "Taglia il pollo a straccetti e servilo sopra l'insalata."
+  ],
+  "note": "Per la schiscetta tieni l'insalata condita a parte e uniscila al momento: così non appassisce."
+ },
+ "cotoletta_patate": {
+  "steps": [
+   "Accendi il forno a 200 °C ventilato e fodera una teglia con carta forno.",
+   "Distribuisci {patate_surg} sulla teglia in un solo strato, senza sovrapporle: così diventano croccanti.",
+   "Inforna nel ripiano centrale per 20 min.",
+   "Aggiungi {cotoletta} sulla teglia accanto alle patate e cuoci altri 10 min, girando cotolette e patate a metà cottura (controlla comunque i tempi sulle confezioni).",
+   "Sala le patate appena sfornate e servi."
+  ]
+ },
+ "hamburger_insalata": {
+  "steps": [
+   "Scalda bene una padella antiaderente o una piastra a fuoco medio-alto, senza olio.",
+   "Appoggia {hamburger} e cuocilo 4 min per lato (5 se lo vuoi ben cotto), senza schiacciarlo con la paletta: perderebbe i succhi.",
+   "Salalo solo alla fine, altrimenti rilascia acqua.",
+   "Intanto lava {insalata} e taglia {pomodori} a spicchi.",
+   "Condisci l'insalata con {olio} e un pizzico di sale e servila accanto all'hamburger."
+  ]
+ },
+ "frittata_zucchine": {
+  "steps": [
+   "Lava {zucchine}, togli le estremità e tagliale a rondelle sottili. Affetta {cipolla}.",
+   "In una padella antiaderente di circa 20-24 cm scalda {olio} e cuoci zucchine e cipolla con un pizzico di sale per 8 min a fuoco medio, finché sono morbide e un po' dorate.",
+   "In una ciotola sbatti {uova} con {grana}, un pizzico di sale e il pepe, finché sono spumose.",
+   "Versa le uova sulle zucchine, distribuiscile bene e abbassa la fiamma. Copri con il coperchio e cuoci 6 min: il sopra deve essere quasi rappreso.",
+   "Per girarla appoggia un piatto (o il coperchio) sulla padella, capovolgi e fai scivolare di nuovo la frittata nella padella dal lato crudo.",
+   "Cuoci ancora 2 min e servi con {pane}."
+  ],
+  "note": "Buona anche fredda: in schiscetta va benissimo, tagliata a spicchi."
+ },
+ "uova_spinaci": {
+  "steps": [
+   "In una padella scalda {olio/2} con {aglio|l'aglio} schiacciato, aggiungi {spinaci} (anche surgelati) e cuocili con il coperchio a fuoco medio per 8 min, mescolando ogni tanto.",
+   "Togli il coperchio, lascia evaporare l'acqua per 1 min, togli l'aglio e sala.",
+   "In un'altra padella antiaderente scalda {olio/2} a fuoco medio-basso. Rompi {uova} una alla volta in una tazzina e falle scivolare nella padella: così il tuorlo resta intero.",
+   "Cuoci a fuoco basso per 3 min, finché l'albume è tutto bianco e il tuorlo ancora morbido. Sala solo l'albume.",
+   "Servi le uova sopra gli spinaci, con {pane} per intingere il tuorlo."
+  ]
+ },
+ "salmone_patate": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Lava e pela {patate} e tagliale a cubetti di circa 2 cm, tutti uguali così cuociono insieme.",
+   "Condiscile direttamente sulla teglia con {olio*2/3}, sale e pepe, mescolando con le mani, e inforna per 20 min.",
+   "Intanto taglia {limone} a fettine sottili e trita {prezzemolo}.",
+   "Sposta le patate ai lati e metti al centro {salmone} con {olio/3}, un pizzico di sale e le fettine di limone sopra.",
+   "Cuoci altri 15 min: il salmone è pronto quando si sfalda con la forchetta.",
+   "Spolvera con il prezzemolo e servi."
+  ],
+  "note": "Il salmone fresco va mangiato entro 1-2 giorni dalla spesa: mettilo a inizio settimana."
+ },
+ "bastoncini_piselli": {
+  "steps": [
+   "Accendi il forno a 220 °C e fodera una teglia con carta forno.",
+   "Disponi {bastoncini} sulla teglia e cuocili 15 min, girandoli a metà (in alternativa in padella con un filo d'olio, 4 min per lato).",
+   "Intanto trita {cipolla} e falla appassire in un pentolino con {olio} per 2 min a fuoco medio.",
+   "Aggiungi {piselli} (anche surgelati), un pizzico di sale e mezzo bicchiere d'acqua.",
+   "Copri e cuoci 10 min a fuoco basso, finché i piselli sono teneri e l'acqua quasi asciugata.",
+   "Servi i bastoncini con i piselli accanto."
+  ]
+ },
+ "polpette_sugo": {
+  "steps": [
+   "In una ciotola metti {macinato}, {uova}, {pangrattato}, {grana}, un pizzico di sale e il pepe.",
+   "Impasta con le mani per 2 min, finché il composto è compatto e si stacca dalla ciotola. Se è troppo morbido aggiungi un cucchiaio di pangrattato.",
+   "Con le mani bagnate forma delle polpette grandi come una noce: rotolale tra i palmi, devono essere lisce senza crepe.",
+   "In una padella larga con il bordo alto scalda {olio} con {aglio|l'aglio} schiacciato per 1 min, poi versa {passata} e mezzo bicchiere d'acqua. Sala e porta a bollore.",
+   "Metti le polpette crude nel sugo una accanto all'altra, copri e cuoci a fuoco basso per 25 min. A metà cottura girale delicatamente con un cucchiaio.",
+   "Togli l'aglio e servi con {pane} per la scarpetta."
+  ],
+  "note": "Cuocendo nel sugo restano morbidissime. Si congelano bene già cotte, con il loro sugo."
+ },
+ "scaloppine_pure": {
+  "steps": [
+   "Pela {patate}, tagliale a pezzi grandi uguali e mettile in una pentola con acqua fredda salata. Porta a bollore e cuocile 20 min, finché la forchetta entra senza sforzo.",
+   "Scaldale {latte} in un pentolino, senza farlo bollire.",
+   "Scola le patate e schiacciale subito, ancora calde, con lo schiacciapatate direttamente nella pentola.",
+   "Rimetti sul fuoco basso, aggiungi {burro/2} e il latte caldo poco alla volta, mescolando con un cucchiaio di legno finché il purè è liscio e morbido. Aggiusta di sale.",
+   "Passa le fette di {tacchino} in {farina} da entrambi i lati e scuotile per togliere quella in eccesso.",
+   "In una padella scalda {burro/2} con {olio} a fuoco vivace e cuoci le scaloppine 2 min per lato, finché sono dorate.",
+   "Aggiungi il succo di {limone} e un goccio d'acqua, scuoti la padella e lascia addensare 1 min: la farina forma una salsina.",
+   "Servi le scaloppine con la loro salsa e il purè."
+  ]
+ },
+ "salsiccia_patate": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Lava {patate} (puoi lasciare la buccia se è sottile) e tagliale a cubetti di 2-3 cm. Taglia {cipolla} a spicchi.",
+   "Metti patate e cipolla in una teglia, condisci con {olio}, {rosmarino}, sale e pepe e mescola con le mani.",
+   "Taglia {salsiccia} a pezzi di 4-5 cm e sistemala tra le patate.",
+   "Inforna per 40 min, mescolando a metà cottura, finché le patate sono dorate e la salsiccia cotta.",
+   "Lascia riposare 2 min e servi."
+  ],
+  "note": "Il grasso della salsiccia insaporisce le patate: non serve aggiungere altro olio."
+ },
+ "merluzzo_gratinato": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Trita {prezzemolo} e mescolalo in una ciotolina con {pangrattato}, {olio/2} e un pizzico di sale.",
+   "Disponi {merluzzo} sulla teglia (va bene anche ancora surgelato) e coprilo con il pangrattato, premendo un po' con le dita.",
+   "Inforna per 20 min, finché la panatura è dorata e il pesce si sfalda.",
+   "Intanto porta a bollore un pentolino d'acqua salata e cuoci {fagiolini} per 10 min.",
+   "Scolali e condiscili con {olio/2}, il succo di {limone} e un pizzico di sale. Servi accanto al merluzzo."
+  ]
+ },
+ "straccetti_rucola": {
+  "steps": [
+   "Lava {rucola} e stendila nel piatto.",
+   "Scalda bene una padella con {olio/2} a fuoco alto: deve essere molto calda, così la carne si sigilla e non bolle.",
+   "Cuoci {manzo} a fuoco vivo per 3 min, mescolando: devono restare appena rosati dentro.",
+   "Salali alla fine, fuori dal fuoco.",
+   "Mettili sopra la rucola con {grana} a scaglie, {olio/2} e qualche goccia di {aceto} balsamico."
+  ],
+  "note": "Da mangiare subito: riscaldata la carne diventa dura."
+ },
+ "caprese": {
+  "steps": [
+   "Lava {pomodori} e tagliali a fette spesse mezzo centimetro. Taglia {mozzarella} a fette dello stesso spessore e lasciala qualche minuto su un piatto inclinato a perdere il latte.",
+   "Alterna nel piatto fette di pomodoro, mozzarella e foglie di {basilico}.",
+   "Condisci con {olio}, un pizzico di sale e {origano}.",
+   "Servi con {pane}."
+  ],
+  "note": "In schiscetta tieni la mozzarella a parte e condisci al momento: resta più buona."
+ },
+ "bresaola_rucola": {
+  "steps": [
+   "Stendi {bresaola} nel piatto, una fetta accanto all'altra.",
+   "Lava e asciuga {rucola} e mettila sopra.",
+   "Fai {grana} a scaglie con un pelapatate e distribuiscilo sopra.",
+   "In una tazzina sbatti {olio} con il succo di {limone} e versalo sul piatto.",
+   "Servi con {pane}."
+  ]
+ },
+ "piadina_crudo": {
+  "steps": [
+   "Scalda una padella antiaderente a fuoco medio e scalda {piadina} 1 min per lato.",
+   "Spalma {stracchino} su metà di ogni piadina.",
+   "Aggiungi {crudo} e {rucola}.",
+   "Chiudi a mezzaluna e scalda ancora 1 min per lato, premendo leggermente: lo stracchino si scioglie."
+  ]
+ },
+ "wrap_pollo": {
+  "steps": [
+   "Taglia {pollo} a striscioline sottili.",
+   "Scalda {olio} in padella a fuoco vivace e cuoci il pollo per 6 min, mescolando, finché è dorato. Salalo alla fine.",
+   "Prepara la salsa: mescola {yogurt} con un po' di succo di {limone} e un pizzico di sale.",
+   "Lava {insalata}; taglia {pomodori} a fettine; scola {mais}.",
+   "Scalda {tortillas} in padella asciutta 30 secondi per lato: diventano morbide e non si rompono.",
+   "Spalma la salsa al centro di ogni tortilla, aggiungi insalata, pomodori, mais e pollo.",
+   "Ripiega i lati verso il centro e arrotola stretto. Per la schiscetta avvolgili nella carta forno."
+  ]
+ },
+ "pollo_curry": {
+  "steps": [
+   "Porta a bollore abbondante acqua salata e cuoci {riso_basmati} per il tempo della confezione (circa 12 min), poi scolalo.",
+   "Taglia {pollo} a bocconcini di 2-3 cm e {cipolla} a fettine sottili.",
+   "In una padella larga scalda {olio} e fai appassire la cipolla per 3 min a fuoco medio.",
+   "Aggiungi il pollo e fallo dorare per 5 min, mescolando.",
+   "Aggiungi {curry} (circa un cucchiaino a persona) e mescola per 1 min: scaldandosi le spezie sprigionano il profumo.",
+   "Versa {latte_cocco}, sala e cuoci a fuoco basso per 10 min, finché la salsa si addensa e vela il pollo.",
+   "Servi con il riso accanto."
+  ]
+ },
+ "chili": {
+  "steps": [
+   "Trita {cipolla} e taglia {peperoni} a cubetti piccoli.",
+   "In una pentola scalda {olio} e rosola cipolla e peperone per 5 min a fuoco medio.",
+   "Aggiungi {macinato} e fallo rosolare per 5 min, sgranandolo con il cucchiaio di legno finché non è più rosa.",
+   "Aggiungi {spezie_chili} (paprika e cumino) e {peperoncino} e mescola 1 min.",
+   "Versa {passata}, {fagioli_rossi} scolati e mezzo bicchiere d'acqua. Sala, copri e cuoci a fuoco basso per 25 min, mescolando ogni tanto.",
+   "Intanto cuoci {riso_basmati} in acqua salata (circa 12 min) e scolalo.",
+   "Servi il chili accanto al riso."
+  ],
+  "note": "Il giorno dopo è ancora più buono: perfetto per la schiscetta. Si congela bene."
+ },
+ "poke": {
+  "steps": [
+   "Cuoci {riso_basmati} in abbondante acqua salata per il tempo della confezione (circa 12 min).",
+   "Scolalo, sciacqualo sotto l'acqua fredda e lascialo raffreddare 10 min.",
+   "Taglia {avocado} a cubetti e spruzzalo subito con il succo di {limone}, così non annerisce.",
+   "Taglia {cetriolo} a cubetti; scola {mais}.",
+   "Componi la ciotola: riso sul fondo e sopra, a spicchi separati, {salmone_aff}, avocado, cetriolo e mais.",
+   "Condisci con {soia} solo al momento di mangiare."
+  ]
+ },
+ "insalatona_tonno": {
+  "steps": [
+   "Metti {uova} in un pentolino con acqua fredda, porta a bollore e cuocile 8 min: diventano sode.",
+   "Raffreddale sotto l'acqua fredda, sgusciale e tagliale a spicchi.",
+   "Lava e asciuga {insalata}. Taglia {pomodorini} a metà.",
+   "Scola {tonno} e {mais}.",
+   "In una ciotola grande unisci insalata, pomodorini, tonno, mais e uova.",
+   "Condisci con {olio}, {aceto} e un pizzico di sale solo al momento di mangiare."
+  ],
+  "note": "In schiscetta porta il condimento a parte, in un vasetto."
+ },
+ "torta_salata": {
+  "steps": [
+   "Accendi il forno a 200 °C statico.",
+   "In una padella scalda {olio} e cuoci {spinaci} (anche surgelati) per 8 min, finché non rilasciano più acqua. Lasciali intiepidire e strizzali bene con le mani: se restano bagnati la torta viene molle.",
+   "Tritali grossolanamente e mettili in una ciotola con {ricotta}, {uova}, {grana}, sale e pepe. Mescola bene.",
+   "Srotola {sfoglia} con la sua carta forno in una tortiera e bucherella il fondo con una forchetta: così non si gonfia.",
+   "Versa il ripieno e livellalo, poi ripiega i bordi della sfoglia verso l'interno.",
+   "Inforna nel ripiano basso per 30 min, finché la sfoglia è dorata anche sotto.",
+   "Lasciala intiepidire 10 min prima di tagliarla: il ripieno si assesta."
+  ],
+  "note": "Un rotolo di sfoglia fa 4 porzioni. In frigo si conserva 3 giorni ed è perfetta in schiscetta, anche fredda."
+ },
+ "pizza": {
+  "steps": [
+   "Accendi il forno alla massima temperatura (almeno 250 °C) e lascialo scaldare bene per 15 min.",
+   "Taglia {mozzarella} a pezzetti e mettila in un colino a scolare: se è bagnata la pizza si inzuppa.",
+   "Srotola {base_pizza} con la sua carta forno su una teglia.",
+   "Condisci {passata} con un pizzico di sale e metà dell'olio, e spalmala sull'impasto lasciando libero il bordo.",
+   "Inforna nel ripiano basso per 8 min.",
+   "Aggiungi la mozzarella, {origano} e l'olio rimasto e cuoci altri 7 min, finché il bordo è dorato.",
+   "Finisci con {basilico} fresco."
+  ]
+ },
+ "riso_cantonese": {
+  "steps": [
+   "Metti {riso_basmati} in una ciotola, coprilo d'acqua fredda, mescola con la mano e butta l'acqua torbida. Ripeti 3-4 volte finché l'acqua resta limpida: togli l'amido, così il riso non si appiccica.",
+   "Porta a bollore una pentola d'acqua salata, butta il riso e cuocilo circa 10 min: deve restare al dente. Scolalo bene, allargalo su un piatto e lascialo raffreddare e asciugare.",
+   "Mentre il riso cuoce, butta {piselli} (anche surgelati) in un pentolino d'acqua bollente per 5 min, finché sono morbidi ma ancora verde brillante. Scolali.",
+   "Taglia {cotto|il prosciutto cotto} a cubetti piccoli, di mezzo centimetro.",
+   "In una ciotola sbatti {uova} con un pizzico di sale.",
+   "Nel wok o in una padella grande scalda {olio/3}. Versa le uova e mescola continuamente finché sono ben cotte e asciutte (circa 3 min). Toglile, mettile in un piatto e spezzettale con una forchetta.",
+   "Nella stessa padella scalda {olio/3}, aggiungi prosciutto e piselli con un pizzico di sale e falli saltare 2 min. Mettili da parte.",
+   "Scalda {olio/3} a fuoco alto, aggiungi il riso e saltalo per 3 min, staccando i chicchi con il cucchiaio.",
+   "Aggiungi uova, prosciutto e piselli, abbassa la fiamma e mescola 2 min finché è tutto caldo e amalgamato. Assaggia, aggiusta di sale e servi."
+  ],
+  "note": "Il riso cotto la sera prima viene ancora meglio: è più asciutto e i chicchi restano separati. Se vuoi il gusto della soia senza soia, metti mezzo dado sbriciolato insieme al riso e sala poco il resto."
+ },
+ "noodles_verdure": {
+  "steps": [
+   "Porta a bollore un pentolino d'acqua e cuoci {noodles} per il tempo della confezione (di solito 4 min). Scolali e passali sotto l'acqua fredda, così non si incollano.",
+   "Taglia {pollo} a striscioline sottili.",
+   "In un wok o in una padella larga scalda {olio} a fuoco alto e salta il pollo per 5 min, finché è dorato.",
+   "Aggiungi {verdure_wok} ancora surgelate e cuoci 5 min a fuoco vivo, mescolando: devono restare croccanti.",
+   "Unisci i noodles e {soia} e salta tutto insieme per 1 min."
+  ],
+  "note": "Non serve sale: la soia è già salata."
+ },
+ "polenta_gorgonzola": {
+  "steps": [
+   "Porta a bollore in una pentola l'acqua salata nella quantità indicata sulla confezione di {polenta} (di solito 4 volte il suo peso).",
+   "Abbassa la fiamma e versa la polenta a pioggia, mescolando con una frusta: così non si formano grumi.",
+   "Cuoci per 8 min a fuoco basso mescolando sempre con un cucchiaio di legno: schizza, tieni il coperchio a portata di mano.",
+   "Spegni e aggiungi {burro}, mescolando finché si scioglie.",
+   "Versa la polenta nei piatti e metti sopra {gorgonzola} a pezzetti, che si scioglie con il calore."
+  ]
+ },
+ "pasta_fagioli": {
+  "steps": [
+   "Trita finemente {cipolla}, {carote} e {sedano}: è il soffritto.",
+   "In una pentola scalda {olio} e rosola il soffritto per 5 min a fuoco medio-basso, mescolando, finché è morbido.",
+   "Aggiungi {borlotti} scolati, {passata}, {rosmarino} e {dado} sbriciolato. Copri abbondantemente con acqua calda e cuoci 10 min.",
+   "Togli il rosmarino e frulla un terzo dei fagioli con il frullatore a immersione, direttamente nella pentola: la minestra diventa cremosa.",
+   "Butta {pasta_corta} nella minestra e cuocila per il tempo della confezione (circa 10 min), mescolando spesso e aggiungendo acqua calda se si asciuga troppo.",
+   "Assaggia, aggiusta di sale e servi con un filo d'olio crudo e pepe."
+  ],
+  "note": "Riposando si addensa molto: nella schiscetta aggiungi un goccio d'acqua prima di scaldarla."
+ },
+ "minestrone": {
+  "steps": [
+   "Lava e pela le verdure. Taglia a cubetti piccoli (circa 1 cm) {patate}, {carote}, {zucchine}, {sedano} e {cipolla}: più sono piccoli, più cuociono in fretta.",
+   "In una pentola capiente scalda {olio} e rosola cipolla, carote e sedano per 5 min a fuoco medio.",
+   "Aggiungi patate, zucchine, {fagiolini}, {piselli}, {borlotti} scolati, {passata} e {dado}.",
+   "Copri d'acqua fino a 2 dita sopra le verdure e porta a bollore.",
+   "Abbassa la fiamma e cuoci con il coperchio per 50 min, mescolando ogni tanto: più cuoce, più diventa cremoso. Se si asciuga troppo aggiungi acqua calda.",
+   "Assaggia, aggiusta di sale e servi con un filo d'olio crudo e {grana}."
+  ],
+  "note": "Lungo da cuocere ma solo 20 minuti di lavoro: mentre bolle fai altro. Se ne fai di più, si congela benissimo a porzioni."
+ },
+ "vellutata_zucca": {
+  "steps": [
+   "Togli la buccia e i semi a {zucca} e tagliala a cubetti. Pela {patate} e tagliala a cubetti; affetta {cipolla}.",
+   "In una pentola scalda {olio} e fai appassire la cipolla per 3 min a fuoco medio.",
+   "Aggiungi zucca e patate, copri appena con acqua calda e aggiungi {dado}.",
+   "Cuoci con il coperchio per 25 min a fuoco medio, finché le verdure si schiacciano con la forchetta.",
+   "Frulla con il frullatore a immersione fino a che è liscia e vellutata. Se è troppo densa aggiungi un po' d'acqua calda; regola di sale e pepe.",
+   "Taglia {pane} a cubetti e tostalo in padella asciutta per 5 min, girandolo, finché è dorato.",
+   "Servi la vellutata con i crostini sopra e un filo d'olio."
+  ]
+ },
+ "zuppa_lenticchie": {
+  "steps": [
+   "Sciacqua {lenticchie} sotto l'acqua corrente in un colino (quelle piccole non vanno in ammollo: controlla la confezione).",
+   "Trita finemente {cipolla}, {carote} e {sedano}.",
+   "In una pentola scalda {olio} e rosola il trito per 5 min a fuoco medio-basso.",
+   "Aggiungi le lenticchie, {passata} e {dado}, poi copri con abbondante acqua calda (circa 3 dita sopra).",
+   "Cuoci con il coperchio a fuoco basso per 40 min, finché le lenticchie sono morbide. Se si asciugano troppo aggiungi acqua calda.",
+   "Sala solo alla fine (sale all'inizio le indurisce) e servi con {pane} tostato."
+  ]
+ },
+ "verdure_mozzarella": {
+  "steps": [
+   "Scalda {verdure_grigliate} in padella a fuoco medio per 5 min, girandole (o al microonde per 3 min).",
+   "Condiscile con {olio} e un pizzico di sale.",
+   "Taglia {mozzarella} a fette e servila accanto alle verdure, con {pane}."
+  ]
+ },
+ "pasta_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C. Metti sul fuoco una pentola d'acqua per la pasta.",
+   "Quando l'acqua bolle salala e cuoci {pasta_corta} per metà del tempo della confezione (circa 5 min): finirà di cuocere in forno.",
+   "Intanto taglia {mozzarella} a cubetti e scaldale {ragu} in un pentolino.",
+   "Scola la pasta e condiscila con il ragù, metà del grana ({grana/2}) e la mozzarella.",
+   "Ungi una pirofila con un po' di {burro} e versaci la pasta, livellandola.",
+   "Copri con {grana/2} e qualche fiocchetto del burro rimasto.",
+   "Inforna nel ripiano centrale per 20 min, poi accendi il grill per 3 min: si forma la crosticina.",
+   "Lascia riposare 5 min prima di servire."
+  ],
+  "note": "Si prepara anche il giorno prima e si inforna al momento. Perfetta in schiscetta."
+ },
+ "insalata_patate": {
+  "steps": [
+   "Pela {patate}, tagliale a cubetti di 2 cm e mettile in una pentola con acqua fredda salata.",
+   "Porta a bollore e cuocile 15 min, finché la forchetta entra facilmente ma non si sfaldano.",
+   "In un altro pentolino d'acqua bollente salata cuoci {fagiolini} per 10 min.",
+   "Scola tutto e lascia raffreddare per 10 min.",
+   "Scola {tonno}; trita {prezzemolo}.",
+   "In una ciotola unisci patate, fagiolini e tonno. Condisci con {olio}, {aceto}, sale e prezzemolo e mescola delicatamente."
+  ],
+  "note": "Meglio condire le patate ancora tiepide: assorbono di più il condimento."
+ }
+}

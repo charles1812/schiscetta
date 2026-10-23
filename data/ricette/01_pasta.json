@@ -1,0 +1,248 @@
+{
+ "pasta_pomodoro": {
+  "steps": [
+   "Riempi d'acqua una pentola capiente, un litro abbondante a persona, coprila e mettila sul fuoco alto: ci vorranno circa 10 min perché bolla.",
+   "Intanto sbuccia {aglio|l'aglio} e schiaccialo con il lato della lama del coltello: così profuma l'olio ma si toglie facilmente.",
+   "In una padella larga scalda {olio} a fuoco medio-basso con l'aglio schiacciato per 2 min, finché sfrigola e diventa appena dorato. Toglilo e buttalo.",
+   "Versa {passata} con un pizzico di sale (attenzione agli schizzi) e lascia cuocere il sugo a fuoco basso per 15 min, mescolando ogni tanto: deve addensarsi e perdere il sapore acidulo del crudo.",
+   "Quando l'acqua bolle aggiungi una manciata di sale grosso, aspetta che riprenda il bollore e butta {pasta_corta}. Mescola subito, così non si attacca.",
+   "Cuocila per il tempo scritto sulla confezione meno 1 minuto (di solito circa 10 min). Prima di scolarla tieni da parte una tazzina d'acqua di cottura.",
+   "Scolala e versala nella padella del sugo. Aggiungi {basilico} spezzettato con le mani e saltala a fuoco vivace per 1 min, con un goccio d'acqua di cottura se il sugo è troppo denso.",
+   "Servi con {grana} grattugiato sopra."
+  ],
+  "note": "Il sugo si può preparare anche il giorno prima: in frigo dura 3 giorni. Se la passata è molto acida, un pizzico di zucchero la ammorbidisce."
+ },
+ "pasta_pesto": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua abbondante, coperta. Quando bolle salala, una presa abbondante di sale grosso.",
+   "Intanto lava {pomodorini} e tagliali in quattro. Metti {pesto} in una ciotola grande, quella in cui condirai la pasta.",
+   "Butta {pasta_corta} nell'acqua che bolle e cuocila per il tempo della confezione (circa 10 min), mescolando ogni tanto.",
+   "Un attimo prima di scolarla prendi mezzo mestolo d'acqua di cottura e versane 2-3 cucchiai nel pesto, mescolando: diventa più cremoso e si attacca meglio alla pasta.",
+   "Scola la pasta e versala nella ciotola con il pesto, a fuoco spento: il pesto non va mai cotto, altrimenti il basilico diventa scuro e amaro.",
+   "Mescola bene, aggiungi i pomodorini e servi."
+  ],
+  "note": "Va bene sia calda che fredda: per la schiscetta fredda condiscila e lasciala raffreddare prima di chiuderla nel contenitore."
+ },
+ "tortellini_rana": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua, un litro abbondante a persona e salala.",
+   "Intanto versa {sugo_rana} in un pentolino e scaldalo a fuoco basso per 3 min, mescolando: deve solo diventare caldo.",
+   "Butta {tortellini} nell'acqua che bolle e cuocili per il tempo indicato sulla confezione (di solito 4 min). Abbassa un po' la fiamma: se l'acqua bolle troppo forte i tortellini si rompono.",
+   "Scolali con una schiumarola o scolandoli piano nel colapasta.",
+   "Versali nel pentolino del sugo, mescola delicatamente e servi con {grana}."
+  ],
+  "note": "Se avanza del sugo, il barattolo aperto dura 3-4 giorni in frigo."
+ },
+ "penne_arrabbiata": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua abbondante per la pasta, coperta.",
+   "Sbuccia {aglio|l'aglio} e taglialo a fettine sottili. Trita {prezzemolo} e tienilo da parte.",
+   "In una padella scalda {olio} a fuoco basso con l'aglio e {peperoncino} per 2 min: l'aglio deve diventare appena dorato, non marrone, altrimenti diventa amaro.",
+   "Aggiungi {passata} e un pizzico di sale, mescola e cuoci a fuoco basso per 15 min, finché il sugo si è addensato.",
+   "Quando l'acqua bolle salala, butta {pasta_corta} e cuocila per il tempo della confezione meno 1 minuto (circa 11 min). Tieni da parte un po' d'acqua di cottura.",
+   "Scola le penne nella padella del sugo e saltale a fuoco vivo per 1 min, aggiungendo un goccio d'acqua di cottura se serve.",
+   "Spegni, spolvera con il prezzemolo e servi subito."
+  ],
+  "note": "Il piccante si regola con il peperoncino: per un sapore più delicato toglilo dalla padella prima di versare la passata."
+ },
+ "aglio_olio": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua abbondante e salala, una presa abbondante di sale grosso.",
+   "Intanto sbuccia {aglio|l'aglio} e taglialo a fettine sottili; trita finemente {prezzemolo}.",
+   "Butta {spaghetti} e cuocili per il tempo della confezione meno 1 minuto (circa 10 min).",
+   "Mentre la pasta cuoce, metti in una padella larga {olio} con l'aglio e {peperoncino}, a fuoco basso, per circa 3 min: l'aglio deve appena dorare. Se scurisce diventa amaro: in quel caso meglio ricominciare.",
+   "Prima di scolare tieni da parte un mestolo d'acqua di cottura.",
+   "Scola gli spaghetti nella padella, aggiungi mezzo mestolo d'acqua di cottura e salta a fuoco vivo per 1 min: l'amido dell'acqua si lega con l'olio e forma una cremina.",
+   "Spegni, aggiungi il prezzemolo, mescola e servi subito."
+  ],
+  "note": "È un piatto da mangiare subito: non va bene in schiscetta perché gli spaghetti si asciugano e si incollano."
+ },
+ "pasta_tonno": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua per la pasta, coperta.",
+   "Scola {tonno} dall'olio della scatoletta e sbriciolalo con una forchetta. Trita {prezzemolo}.",
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato per 2 min a fuoco medio-basso, poi togli l'aglio.",
+   "Versa {passata} con un pizzico di sale e cuoci a fuoco basso per 10 min, mescolando ogni tanto.",
+   "Aggiungi il tonno e lascia insaporire 2 min: non cuocerlo di più, altrimenti diventa stopposo.",
+   "Quando l'acqua bolle salala e cuoci {pasta_corta} per il tempo della confezione (circa 10 min).",
+   "Scolala nella padella, salta 1 min con un goccio d'acqua di cottura e finisci con il prezzemolo."
+  ],
+  "note": "Si scalda bene: ottima per la schiscetta. Sala poco, il tonno è già sapido."
+ },
+ "pasta_zucchine": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua per la pasta, coperta.",
+   "Lava {zucchine}, togli le estremità e tagliale a cubetti di circa 1 cm. Affetta sottile {cipolla}.",
+   "In una padella larga scalda {olio} a fuoco medio e fai appassire la cipolla per 3 min, mescolando, finché è morbida e trasparente.",
+   "Aggiungi le zucchine con un pizzico di sale e cuocile a fuoco medio per 10 min, mescolando ogni tanto: devono diventare morbide e un po' dorate sui bordi.",
+   "Quando l'acqua bolle salala e cuoci {pasta_corta} per il tempo della confezione (circa 10 min). Tieni da parte un mestolo d'acqua di cottura.",
+   "Scola la pasta nella padella delle zucchine, aggiungi {grana}, una macinata di pepe e qualche cucchiaio d'acqua di cottura.",
+   "Mescola a fuoco spento per 30 secondi: il grana si scioglie con l'acqua e diventa una crema."
+  ],
+  "note": "Per una versione più cremosa schiaccia con la forchetta qualche cubetto di zucchina mentre mescoli."
+ },
+ "carbonara": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua e salala poco: pancetta e formaggio sono già molto saporiti.",
+   "Taglia {pancetta} a listarelle (se non è già a cubetti) e mettila in una padella fredda, senza olio. Accendi a fuoco medio e falla rosolare per 5 min, finché il grasso diventa trasparente e lei croccante. Spegni.",
+   "In una ciotola sbatti {uova} con {grana} e una generosa macinata di pepe, fino a ottenere una crema densa.",
+   "Butta {spaghetti} e cuocili per il tempo della confezione meno 1 minuto (circa 10 min). Prima di scolarli tieni da parte un mestolo d'acqua di cottura.",
+   "Scola gli spaghetti nella padella della pancetta, a fuoco spento, e mescola per farli insaporire nel grasso.",
+   "Aspetta 30 secondi che la padella si intiepidisca, poi versa la crema di uova e mescola velocemente aggiungendo un po' d'acqua di cottura: deve diventare una crema lucida, non una frittata. Se è troppo liquida, mescola ancora qualche secondo.",
+   "Servi subito con altro pepe."
+  ],
+  "note": "Il segreto è non cuocere le uova sul fuoco: il calore della pasta basta. Non va in schiscetta, scaldata si rapprende."
+ },
+ "pasta_ceci": {
+  "steps": [
+   "Scola {ceci} dal liquido della scatola e sciacquali sotto l'acqua corrente. Metti a scaldare in un pentolino circa mezzo litro d'acqua a persona.",
+   "In una pentola scalda {olio} a fuoco medio con {aglio|l'aglio} schiacciato per 2 min, poi togli l'aglio.",
+   "Aggiungi i ceci, {passata} e {rosmarino} e lascia insaporire 2 min, mescolando.",
+   "Copri con l'acqua calda (circa il triplo del volume dei ceci), aggiungi {dado} sbriciolato e cuoci a fuoco medio per 10 min.",
+   "Togli il rametto di rosmarino e frulla metà dei ceci con il frullatore a immersione direttamente nella pentola: la minestra diventa cremosa.",
+   "Butta {pasta_corta} direttamente nella pentola e cuocila per il tempo della confezione (circa 10 min), mescolando spesso perché tende ad attaccarsi. Se si asciuga troppo aggiungi un mestolo d'acqua calda.",
+   "Assaggia, aggiusta di sale e servi con un filo d'olio crudo e pepe."
+  ],
+  "note": "Riposando si addensa: per la schiscetta va benissimo, al momento di scaldarla aggiungi un goccio d'acqua."
+ },
+ "gnocchi_sorrentina": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua per gli gnocchi.",
+   "In una padella larga scalda {olio}, versa {passata} con un pizzico di sale e cuoci a fuoco basso per 10 min, finché il sugo si addensa.",
+   "Taglia {mozzarella} a cubetti e mettila in un colino: deve perdere il latte, altrimenti rende il piatto acquoso.",
+   "Quando l'acqua bolle salala e butta {gnocchi}: sono pronti quando salgono a galla (circa 2 min). Raccoglili con una schiumarola.",
+   "Versa gli gnocchi nel sugo, aggiungi la mozzarella, {basilico} spezzettato e {grana}.",
+   "Mescola a fuoco spento per 1 min, finché la mozzarella comincia a filare, e servi."
+  ],
+  "note": "Per la versione al forno: metti tutto in una pirofila, copri con altro grana e gratina 10 min a 200 °C."
+ },
+ "risotto_milanese": {
+  "steps": [
+   "Prepara il brodo: porta a bollore in un pentolino circa 300 ml d'acqua a persona con {dado} e tienilo caldo a fuoco bassissimo per tutta la cottura.",
+   "Trita finissima {cipolla}: più è fine, più si scioglie nel risotto.",
+   "In una casseruola dal fondo spesso sciogli {burro/2} a fuoco basso e fai appassire la cipolla per 3 min, senza farla colorare.",
+   "Alza la fiamma, aggiungi {riso_carnaroli} e tostalo per 2 min mescolando con un cucchiaio di legno, finché i chicchi diventano lucidi e caldi al tatto.",
+   "Versa un mestolo di brodo caldo e mescola. Quando è quasi assorbito aggiungine un altro: continua così per circa 17 min, a fuoco medio, mescolando spesso.",
+   "A metà cottura sciogli {zafferano} in un mestolino di brodo e versalo nel riso: diventerà giallo oro.",
+   "Assaggia: il riso deve essere morbido fuori e appena al dente dentro, con il risotto ancora 'all'onda' (un po' liquido). Aggiusta di sale.",
+   "Spegni il fuoco, aggiungi {burro/2} freddo e {grana} e mescola energicamente per 1 min: è la mantecatura, che lo rende cremoso. Copri e lascia riposare 1 min prima di servire."
+  ],
+  "note": "Il brodo deve essere sempre caldo: se lo aggiungi freddo il riso si blocca e cuoce male."
+ },
+ "risotto_funghi": {
+  "steps": [
+   "Prepara il brodo: porta a bollore circa 300 ml d'acqua a persona con {dado} e tienilo caldo a fuoco bassissimo.",
+   "Trita finemente {cipolla} e {prezzemolo}.",
+   "In una casseruola scalda {olio} e fai appassire la cipolla a fuoco medio-basso per 3 min.",
+   "Aggiungi {funghi} (anche surgelati, senza scongelarli) e cuocili 5 min a fuoco medio, finché hanno perso l'acqua.",
+   "Aggiungi {riso_carnaroli} e tostalo per 2 min mescolando.",
+   "Versa un mestolo di brodo alla volta, mescolando e aggiungendone altro quando si asciuga, per circa 17 min. Assaggia e aggiusta di sale.",
+   "A fuoco spento manteca con {burro}, {grana} e il prezzemolo, mescolando energicamente. Copri e lascia riposare 1 min."
+  ],
+  "note": "Con i funghi secchi: mettine in ammollo una manciata in acqua tiepida per 20 min e usa anche l'acqua filtrata nel brodo, il sapore è più intenso."
+ },
+ "pasta_ragu": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua abbondante e salala.",
+   "Butta {pasta_corta} e cuocila per il tempo della confezione (circa 10 min).",
+   "Intanto versa {ragu} in un pentolino con un cucchiaio d'acqua di cottura della pasta e scaldalo a fuoco basso per 5 min, mescolando.",
+   "Scola la pasta, versala nel pentolino del ragù e mescola bene per 1 min a fuoco basso.",
+   "Servi con {grana}."
+  ],
+  "note": "Il vasetto aperto dura 4 giorni in frigo: abbinalo a un altro piatto col ragù nella stessa settimana."
+ },
+ "ravioli_burro_salvia": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua e salala.",
+   "In una padella larga metti {burro} e {salvia} (foglie intere) a fuoco basso per 3 min: il burro deve sciogliersi e diventare dorato e profumato di nocciola, non marrone scuro.",
+   "Butta {ravioli} e cuocili per il tempo della confezione (di solito 3 min), con l'acqua che bolle piano: se bolle forte si aprono.",
+   "Raccoglili con una schiumarola e mettili nella padella del burro, con un cucchiaio d'acqua di cottura.",
+   "Saltali delicatamente per 1 min e servi con {grana}."
+  ]
+ },
+ "pasta_fredda": {
+  "steps": [
+   "Porta a bollore l'acqua, salala e cuoci {pasta_corta} per il tempo della confezione meno 1 minuto (circa 10 min): raffreddandosi si ammorbidisce ancora.",
+   "Scolala e passala sotto l'acqua fredda per fermare la cottura. Allargala su un vassoio, condiscila con metà dell'olio ({olio/2}) e lasciala raffreddare 10 min: così non si incolla.",
+   "Intanto taglia {pomodorini} in quattro e {mozzarella} a cubetti; lascia la mozzarella in un colino a perdere il latte.",
+   "Scola {tonno} e {olive}.",
+   "In una ciotola grande unisci pasta, pomodorini, mozzarella, tonno e olive. Condisci con {olio/2}, un pizzico di sale e {basilico} spezzettato.",
+   "Mescola bene e tieni in frigo fino al momento di mangiarla."
+  ],
+  "note": "In frigo si conserva 2 giorni. Tirala fuori 10 minuti prima di mangiarla: troppo fredda perde sapore."
+ },
+ "insalata_riso": {
+  "steps": [
+   "Porta a bollore abbondante acqua salata e cuoci {riso_basmati} per il tempo della confezione (circa 12 min).",
+   "Intanto metti {uova} in un pentolino con acqua fredda, porta a bollore e cuocile 8 min: diventano sode. Raffreddale sotto l'acqua fredda e sgusciale.",
+   "Scola il riso e sciacqualo sotto l'acqua fredda: si ferma la cottura e i chicchi restano separati. Lascialo sgocciolare e raffreddare 10 min.",
+   "Scola {condiriso} e {tonno} dall'olio.",
+   "In una ciotola mescola il riso con condiriso, tonno, {olio} e le uova a spicchi. Assaggia e aggiusta di sale.",
+   "Tieni in frigo fino al momento di mangiarla."
+  ],
+  "note": "Meglio prepararla qualche ora prima: riposando in frigo si insaporisce. Dura 2 giorni."
+ },
+ "cous_cous_verdure": {
+  "steps": [
+   "Metti a bollire un pentolino con tanta acqua quanto è il peso del cous cous ({cous_cous}), con un pizzico di sale.",
+   "Scongela {verdure_grigliate} in padella a fuoco medio per 5 min (o al microonde) e tagliale a pezzetti.",
+   "Metti il cous cous in una ciotola, versaci sopra l'acqua bollente e metà dell'olio ({olio/2}). Copri con un piatto e aspetta 5 min: assorbe tutta l'acqua.",
+   "Sgrana il cous cous con una forchetta, così i chicchi si staccano.",
+   "Scola e sciacqua {ceci}. Sbriciola {feta}.",
+   "Aggiungi al cous cous verdure, ceci e feta. Condisci con il succo di {limone}, {olio/2} e un pizzico di sale e mescola."
+  ],
+  "note": "Buono sia tiepido che freddo: in frigo dura 2 giorni."
+ },
+ "lasagna_pronta": {
+  "steps": [
+   "Accendi il forno a 200 °C statico e aspetta che sia caldo (circa 10 min).",
+   "Togli la pellicola dalla vaschetta di {lasagna} (se è in alluminio puoi infornarla così).",
+   "Inforna nel ripiano centrale per il tempo della confezione (circa 30 min), finché la superficie è dorata e il centro è bollente: controlla infilando un coltello e toccandone la punta.",
+   "Lascia riposare 5 min fuori dal forno prima di tagliarla: si compatta e le porzioni restano intere."
+  ],
+  "note": "La vaschetta è da 2 porzioni: se mangi da solo, la seconda è già una schiscetta pronta."
+ },
+ "pasta_broccoli_salsiccia": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua per la pasta.",
+   "Lava {broccoli} e dividili in cimette piccole; il gambo sbuccialo e taglialo a cubetti, è buono anche lui.",
+   "Togli la pelle a {salsiccia} incidendola con un coltello e sbriciolala con le mani.",
+   "In una padella larga scalda {olio} con {aglio|l'aglio} schiacciato e {peperoncino}, aggiungi la salsiccia e rosolala a fuoco medio per 8 min, sgranandola con il cucchiaio, finché è dorata.",
+   "Quando l'acqua bolle salala e cuoci i broccoli per 5 min.",
+   "Nella stessa acqua butta {pasta_corta} e cuocila insieme ai broccoli per il tempo della confezione (circa 10 min): la pasta prende il sapore dei broccoli.",
+   "Scola pasta e broccoli insieme nella padella della salsiccia, aggiungi un mestolo d'acqua di cottura e mescola a fuoco vivo per 1 min, schiacciando un po' i broccoli: fanno una crema.",
+   "Togli l'aglio e servi con {grana}."
+  ],
+  "note": "Si scalda benissimo: è un'ottima schiscetta."
+ },
+ "spaghetti_gamberetti": {
+  "steps": [
+   "Metti sul fuoco una pentola d'acqua per la pasta.",
+   "Lava {zucchine}, togli le estremità e tagliale a cubetti piccoli. Taglia a metà {pomodorini}. Trita {prezzemolo}.",
+   "In una padella larga scalda {olio} con {aglio|l'aglio} schiacciato a fuoco medio per 1 min, poi aggiungi le zucchine e cuocile 8 min, mescolando ogni tanto.",
+   "Aggiungi {gamberetti} ancora surgelati e i pomodorini con un pizzico di sale e cuoci 4 min: i gamberetti diventano rosati. Non di più, altrimenti diventano gommosi.",
+   "Quando l'acqua bolle salala e cuoci {spaghetti} per il tempo della confezione meno 1 minuto (circa 10 min).",
+   "Scolali nella padella con mezzo mestolo d'acqua di cottura e salta a fuoco vivo per 1 min.",
+   "Togli l'aglio, aggiungi il prezzemolo e servi."
+  ]
+ },
+ "pasta_panna_prosciutto": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua, salala e butta {pasta_corta}: cuocila per il tempo della confezione (circa 10 min).",
+   "Intanto in una padella scalda {olio} e aggiungi {piselli} (anche surgelati) con 2 cucchiai d'acqua. Cuocili a fuoco medio per 6 min, con il coperchio.",
+   "Taglia {cotto} a striscioline e aggiungilo ai piselli; versa {panna} e scalda 2 min a fuoco basso, senza far bollire forte.",
+   "Scola la pasta nella padella, aggiungi {grana} e mescola per 1 min, finché la salsa avvolge bene la pasta."
+  ],
+  "note": "Se il condimento si asciuga troppo, allungalo con un cucchiaio d'acqua di cottura."
+ },
+ "gnocchi_pesto": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua e salala.",
+   "Metti {pesto} in una ciotola grande.",
+   "Butta {gnocchi}: sono pronti quando salgono a galla (circa 2 min). Prima di scolarli prendi un mestolino d'acqua di cottura.",
+   "Raccogli gli gnocchi con una schiumarola e versali nella ciotola del pesto con un cucchiaio d'acqua di cottura.",
+   "Mescola delicatamente a fuoco spento e servi con {grana}."
+  ],
+  "note": "Il pesto non va scaldato in padella: perde colore e profumo."
+ }
+}

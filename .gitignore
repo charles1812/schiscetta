@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+android/build-cli/
+android/keystore/
+dist/
+_site/
+data/prezzi/gist.txt
+data/prezzi/ultimo-aggiornamento.log
+data/prezzi/.gist-payload.json

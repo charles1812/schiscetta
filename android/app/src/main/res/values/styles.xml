@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema chiaro: la WebView usa isLightTheme per prefers-color-scheme -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#E0533B</item>
+        <item name="android:colorAccent">#2F8A57</item>
+        <item name="android:windowBackground">@color/bg</item>
+    </style>
+    <color name="bg">#FBF7F2</color>
+</resources>

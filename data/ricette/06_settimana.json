@@ -1,0 +1,396 @@
+{
+ "polenta_funghi": {
+  "steps": [
+   "Pulisci {champignon} con un panno umido e affettali.",
+   "In una padella larga scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi i funghi e cuocili a fuoco vivace per 10 min, finché l'acqua è evaporata e sono dorati.",
+   "Sala, togli l'aglio e aggiungi {prezzemolo} tritato.",
+   "Prepara {polenta} come indicato sulla confezione (di solito 5 min nell'acqua bollente salata, versata a pioggia mescolando con la frusta).",
+   "A fuoco spento mantecala con {burro} e {grana}.",
+   "Servi la polenta con i funghi sopra."
+  ]
+ },
+ "salmone_spinaci_riso": {
+  "steps": [
+   "Cuoci {riso_basmati} in acqua salata per il tempo della confezione e scolalo.",
+   "In una padella scalda {olio/2} con {aglio|l'aglio} schiacciato e cuoci {spinaci} per 6 min. Sala e togli l'aglio.",
+   "In un'altra padella scalda {olio/2} a fuoco medio-alto e appoggia {salmone} dal lato della pelle.",
+   "Cuocilo 5 min senza muoverlo (la pelle diventa croccante), poi giralo e cuoci 2 min. Salalo.",
+   "Servi salmone, spinaci e riso con una spruzzata di {limone}."
+  ]
+ },
+ "merluzzo_ceci": {
+  "steps": [
+   "Scongela {merluzzo} e asciugalo con carta da cucina.",
+   "In una padella larga con coperchio scalda {olio} con {aglio|l'aglio} schiacciato.",
+   "Aggiungi {pomodorini} tagliati a metà e {ceci} scolati e sciacquati; cuoci 5 min.",
+   "Adagia il merluzzo sopra, salalo, copri e cuoci 8 min a fuoco medio-basso, finché si sfalda.",
+   "Finisci con {prezzemolo} tritato e servi con {pane}."
+  ]
+ },
+ "lasagne_funghi": {
+  "steps": [
+   "Metti {porcini} in acqua tiepida per 15 min, poi strizzali e tritali.",
+   "Pulisci e affetta {champignon}.",
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato e cuoci champignon e porcini per 10 min. Sala e togli l'aglio.",
+   "Accendi il forno a 200 °C. Mescola metà dei funghi con {besciamella}.",
+   "In una pirofila stendi un velo di besciamella, poi uno strato di {lasagne_sfoglie}, funghi e {grana}. Continua a strati.",
+   "Finisci con besciamella e grana. Se le sfoglie sono secche, aggiungi mezzo bicchiere d'acqua ai bordi.",
+   "Cuoci 30 min e lascia riposare 10 min prima di tagliare."
+  ]
+ },
+ "pasta_patate_cozze": {
+  "steps": [
+   "Pela {patate} e tagliale a cubetti piccoli; taglia {pomodorini} a metà.",
+   "In una pentola scalda {olio} con {aglio|l'aglio} schiacciato e {peperoncino}, aggiungi patate e pomodorini e rosola 2 min.",
+   "Copri con acqua calda, sala poco e cuoci 15 min, finché le patate iniziano a disfarsi.",
+   "Aggiungi {pasta_corta} e cuocila nella pentola mescolando spesso, unendo acqua calda se serve.",
+   "Negli ultimi 3 min aggiungi {cozze} sgusciate.",
+   "Togli l'aglio e finisci con {prezzemolo} tritato."
+  ],
+  "note": "È un classico napoletano: le patate rendono il fondo cremoso senza panna."
+ },
+ "insalata_pollo_finocchi": {
+  "steps": [
+   "Scalda bene una piastra e cuoci {pollo} 3 min per lato. Salalo e taglialo a striscioline.",
+   "Affetta sottile {finocchi}.",
+   "Taglia {mele} a fettine sottili lasciando la buccia e bagnale con un po' di succo di {limone}, così non anneriscono.",
+   "Trita grossolanamente {mandorle}.",
+   "In una ciotola unisci pollo, finocchio, mela e mandorle. Condisci con {olio}, il resto del limone e un pizzico di sale.",
+   "Servi con {pane}."
+  ]
+ },
+ "pasta_tonno_limone": {
+  "steps": [
+   "Porta a bollore l'acqua, salala e cuoci {pasta_corta} per il tempo della confezione.",
+   "In una ciotola grande schiaccia {tonno} sgocciolato con {olio}, la scorza grattugiata e il succo di {limone} e una macinata di pepe.",
+   "Scola la pasta tenendo un po' d'acqua di cottura.",
+   "Versala nella ciotola con un cucchiaio d'acqua di cottura e mescola.",
+   "Aggiungi {rucola} e mescola ancora."
+  ],
+  "note": "Buona anche fredda: in schiscetta aggiungi la rucola al momento."
+ },
+ "uova_strapazzate": {
+  "steps": [
+   "Taglia {pomodorini} a metà.",
+   "In una padella antiaderente scalda {olio} e salta i pomodorini per 3 min.",
+   "In una ciotola sbatti {uova} con {grana} e un pizzico di sale.",
+   "Abbassa la fiamma al minimo, versa le uova e mescola piano con una spatola per 2-3 min.",
+   "Toglile dal fuoco quando sono ancora morbide e lucide: finiscono di cuocere da sole.",
+   "Servi con {basilico} e {pane} tostato."
+  ]
+ },
+ "salmone_patate_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Pela {patate} e tagliale a cubetti. Condiscile sulla teglia con {olio/2}, sale e {rosmarino} e cuocile 15 min.",
+   "Aggiungi {fagiolini} (anche surgelati) con {olio/2} e cuoci 5 min.",
+   "Appoggia {salmone} salato sopra le verdure e cuoci 12 min.",
+   "Servi con spicchi di {limone}."
+  ]
+ },
+ "pasta_ceci_cozze": {
+  "steps": [
+   "In una pentola scalda {olio} con {aglio|l'aglio} schiacciato e {peperoncino}.",
+   "Aggiungi {ceci} sciacquati e {pomodorini} tagliati e cuoci 5 min.",
+   "Togli un terzo dei ceci, frullali con un po' d'acqua e rimettili in pentola. Aggiungi acqua calda fino a coprire e sala poco.",
+   "Butta {pasta_corta} e cuocila nella pentola mescolando spesso.",
+   "Negli ultimi 3 min aggiungi {cozze}.",
+   "Togli l'aglio e finisci con {prezzemolo} tritato."
+  ]
+ },
+ "pasta_pomodoro_ricotta": {
+  "steps": [
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi {passata}, sala e cuoci 12 min a fuoco basso.",
+   "Porta a bollore l'acqua, salala e cuoci {pasta_corta} per il tempo della confezione.",
+   "Togli l'aglio, scola la pasta e condiscila con il sugo.",
+   "Aggiungi {ricotta} a cucchiaiate, {basilico} e {grana} e mescola appena: la ricotta deve restare a macchie."
+  ]
+ },
+ "pasta_mortadella": {
+  "steps": [
+   "In una padella scalda {olio}, aggiungi {piselli} e mezzo bicchiere d'acqua e cuoci 8 min.",
+   "Taglia {mortadella} a striscioline e aggiungila per 1 min.",
+   "Cuoci {pasta_corta} in acqua salata per il tempo della confezione.",
+   "In una ciotola schiaccia {ricotta} con {grana}, una macinata di pepe e un mestolino d'acqua della pasta, fino a una crema.",
+   "Scola la pasta e mescolala con piselli, mortadella e crema di ricotta."
+  ]
+ },
+ "pasta_pesto_zucchine": {
+  "steps": [
+   "Lava {zucchine} e tagliale a rondelle.",
+   "In una padella scalda {olio/2} con {aglio|l'aglio} schiacciato e cuoci le zucchine 6 min. Salale e togli l'aglio.",
+   "Metti sul fuoco l'acqua per la pasta e cuoci {pasta_corta}.",
+   "Frulla due terzi delle zucchine con {mandorle}, {grana}, {basilico}, {olio/2} e qualche cucchiaio d'acqua della pasta, fino a una crema.",
+   "Scola la pasta e condiscila con il pesto e le zucchine rimaste."
+  ],
+  "note": "Buona anche fredda."
+ },
+ "boscaiola": {
+  "steps": [
+   "Togli la pelle a {salsiccia} e sbriciolala; pulisci e affetta {champignon}.",
+   "In una padella scalda {olio} e rosola la salsiccia per 5 min.",
+   "Aggiungi {aglio|l'aglio} schiacciato, i funghi e {piselli} e cuoci 6 min.",
+   "Unisci {passata}, sala e cuoci 8 min.",
+   "Cuoci {pasta_corta} in acqua salata, scolala al dente e saltala nel sugo con {grana}."
+  ]
+ },
+ "pasta_forno_ricotta": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Cuoci {spinaci} in padella per 6 min, salali e tritali.",
+   "Cuoci {pasta_corta} in acqua salata per metà del tempo della confezione e scolala.",
+   "In una ciotola mescola {ricotta} con {latte}, gli spinaci e {grana/2}.",
+   "Unisci la pasta e {mozzarella} a cubetti e mescola.",
+   "Versa in una pirofila, copri con {grana/2} e cuoci 20 min."
+  ]
+ },
+ "zuppa_farro_fagioli": {
+  "steps": [
+   "Trita {carote}, {sedano} e {cipolla}.",
+   "In una pentola scalda {olio*2/3} e fai appassire il trito per 6 min.",
+   "Aggiungi {borlotti}, {passata} e {rosmarino}. Frulla un terzo dei fagioli per rendere la zuppa cremosa.",
+   "Sciacqua {farro}, aggiungilo e copri abbondantemente con acqua calda. Sala e cuoci 25-30 min.",
+   "Servi con {olio/3} crudo."
+  ],
+  "note": "È la zuppa tipica della Garfagnana, vicino a Lucca."
+ },
+ "pollo_ligure": {
+  "steps": [
+   "In una casseruola scalda {olio} e rosola {cosce_pollo} 4 min per lato, partendo dalla pelle, finché è dorata.",
+   "Aggiungi {aglio|l'aglio} schiacciato e {rosmarino}, poi versa {vino} e lascialo evaporare.",
+   "Unisci {olive} e {capperi} sciacquati e sala poco.",
+   "Copri e cuoci 35 min a fuoco basso, aggiungendo un po' d'acqua se si asciuga."
+  ],
+  "note": "In Liguria si aggiunge una manciata di pinoli negli ultimi minuti."
+ },
+ "lonza_mele": {
+  "steps": [
+   "Taglia {mele} a spicchi sottili (puoi lasciare la buccia).",
+   "In una padella sciogli {burro} con {rosmarino} e cuoci le mele 5 min, finché sono morbide. Tienile da parte.",
+   "Nella stessa padella cuoci {lonza} 2-3 min per lato a fuoco vivace e salala.",
+   "Versa {vino}, rimetti le mele e lascia insaporire 2 min.",
+   "Servi con {pane}."
+  ]
+ },
+ "polpette_ceci": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Scola e sciacqua {ceci}, poi frullali con {uova}, {grana}, {aglio|l'aglio}, {prezzemolo} e un pizzico di sale.",
+   "Aggiungi {pangrattato} un po' alla volta, finché l'impasto si lavora con le mani senza appiccicarsi.",
+   "Con le mani bagnate forma delle polpette grandi come una noce e mettile sulla teglia.",
+   "Spennellale con {olio} e cuocile 20-25 min, girandole a metà.",
+   "Servile con {insalata} condita."
+  ]
+ },
+ "polpette_ricotta": {
+  "steps": [
+   "In una ciotola mescola {ricotta}, {uova}, {grana}, {pangrattato} e un pizzico di sale. Se l'impasto è molle aggiungi un po' di pangrattato. Lascialo riposare 10 min in frigo.",
+   "In una padella larga scalda {olio} e {passata}, sala e cuoci 5 min.",
+   "Con le mani bagnate forma delle polpette e adagiale nel sugo.",
+   "Copri e cuoci 12 min a fuoco basso, girandole una volta con delicatezza.",
+   "Finisci con {basilico}."
+  ],
+  "note": "Il sugo avanzato è perfetto per condire la pasta il giorno dopo."
+ },
+ "involtini_verza": {
+  "steps": [
+   "Porta a bollore una pentola d'acqua salata.",
+   "Stacca le foglie esterne di {verza} e sbollentale 3 min: diventano morbide e non si rompono. Scolale e togli la parte più dura della costa.",
+   "In una ciotola impasta {macinato} con {uova}, {grana}, {pangrattato} e un pizzico di sale.",
+   "Metti un cucchiaio di ripieno su ogni foglia, ripiega i lati e arrotola.",
+   "Sistema gli involtini in una padella con {olio} e {passata}, con la chiusura verso il basso.",
+   "Aggiungi mezzo bicchiere d'acqua, copri e cuoci 30 min a fuoco basso."
+  ],
+  "note": "In Piemonte si chiamano «capunet»: un modo intelligente di usare la verza invernale."
+ },
+ "peperoni_ripieni": {
+  "steps": [
+   "Accendi il forno a 190 °C.",
+   "Taglia {peperoni} a metà per il lungo e togli semi e filamenti bianchi.",
+   "Trita {olive} e {capperi}; in una ciotola mescolali con {pangrattato}, {tonno} sgocciolato, {grana}, {prezzemolo} e {olio/2}.",
+   "Riempi i peperoni e mettili in una teglia.",
+   "Condisci con {olio/2} e versa un dito d'acqua sul fondo della teglia.",
+   "Cuoci 35-40 min, finché i peperoni sono morbidi e la superficie è dorata."
+  ]
+ },
+ "torta_zucca_salsiccia": {
+  "steps": [
+   "Accendi il forno a 190 °C.",
+   "In una padella rosola {salsiccia} sbriciolata per 5 min.",
+   "Aggiungi {zucca} a cubetti piccoli e un po' d'acqua; cuoci 12 min, finché è morbida. Lascia intiepidire.",
+   "In una ciotola mescola zucca e salsiccia con {ricotta}, {uova} e {grana}.",
+   "Srotola {sfoglia} nella teglia con la sua carta, bucherella il fondo, versa il ripieno e ripiega i bordi.",
+   "Cuoci 30-35 min e lasciala intiepidire prima di tagliarla."
+  ]
+ },
+ "pizza_prosciutto_funghi": {
+  "steps": [
+   "Accendi il forno al massimo (almeno 230 °C) con la teglia dentro, così scalda bene.",
+   "Taglia {mozzarella} a pezzetti e lasciala scolare. Affetta sottili {champignon}.",
+   "Stendi {base_pizza} sulla sua carta e condiscila con {passata} salata e {olio}.",
+   "Fai scivolare la pizza sulla teglia calda e cuocila 8 min nella parte bassa del forno.",
+   "Aggiungi mozzarella, funghi e {cotto} e cuoci altri 6-7 min, finché la mozzarella è sciolta e il bordo dorato."
+  ]
+ },
+ "caponata": {
+  "steps": [
+   "Lava {melanzane} e tagliale a cubetti.",
+   "In una padella larga scalda {olio*2/3} e cuoci le melanzane 12 min, finché sono dorate. Salale e tienile da parte.",
+   "Nella stessa padella scalda {olio/3} e cuoci {cipolla} e {sedano} a pezzetti per 6 min.",
+   "Aggiungi {pelati} schiacciati, {olive} e {capperi} sciacquati e cuoci 8 min.",
+   "Rimetti le melanzane, aggiungi {aceto} e cuoci 3 min: deve essere agrodolce e asciutta.",
+   "Cuoci {uova} 9 min in acqua bollente, raffreddale e sgusciale.",
+   "Servi la caponata a temperatura ambiente con le uova e {pane}."
+  ],
+  "note": "In Sicilia si aggiunge un cucchiaino di zucchero con l'aceto. È più buona il giorno dopo."
+ },
+ "ravioli_pomodoro": {
+  "steps": [
+   "In un pentolino scalda {olio}, versa {passata} con un pizzico di sale e cuoci 8 min.",
+   "Porta a bollore l'acqua, salala e cuoci {ravioli} per il tempo della confezione (di solito 3-4 min), con l'acqua che bolle piano.",
+   "Scolali delicatamente con una schiumarola.",
+   "Condiscili con il sugo, {basilico} e {grana}."
+  ]
+ },
+ "gnocchi_burro_salvia": {
+  "steps": [
+   "Porta a bollore l'acqua e salala.",
+   "In una padella larga sciogli {burro} con {salvia} a fuoco basso, finché il burro è dorato.",
+   "Butta {gnocchi}: sono pronti 1 min dopo che salgono a galla.",
+   "Raccoglili con una schiumarola e mettili nella padella con un cucchiaio d'acqua di cottura.",
+   "Aggiungi {grana} e mescola delicatamente."
+  ]
+ },
+ "pasta_zucchine_speck": {
+  "steps": [
+   "Metti sul fuoco l'acqua per la pasta.",
+   "Taglia {speck} a listarelle e {zucchine} a cubetti.",
+   "In una padella scalda {olio} e rosola lo speck 2 min, poi aggiungi le zucchine e cuoci 7 min.",
+   "Cuoci {pasta_corta} in acqua salata.",
+   "Aggiungi al condimento {panna} e un mestolino d'acqua della pasta e lascia addensare 1 min.",
+   "Scola la pasta nella padella e saltala con {grana}."
+  ]
+ },
+ "hamburger_patate": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Lava {patate}, tagliale a spicchi, condiscile con {olio}, sale e {rosmarino} e cuocile 30-35 min, girandole a metà.",
+   "Negli ultimi 10 min scalda bene una padella o una piastra.",
+   "Cuoci {hamburger} 3-4 min per lato senza schiacciarli e salali alla fine.",
+   "Servi con le patate e {pomodori} a fette."
+  ]
+ },
+ "crema_cannellini_gamberi": {
+  "steps": [
+   "In un pentolino scalda {olio/2} con {aglio|l'aglio} schiacciato e {rosmarino}.",
+   "Aggiungi {cannellini} sciacquati e un bicchiere d'acqua; cuoci 8 min.",
+   "Togli aglio e rosmarino e frulla fino a una crema, aggiungendo acqua se è troppo densa. Sala.",
+   "In una padella scalda {olio/2} e salta {gamberetti} per 3 min.",
+   "Servi la crema nei piatti con i gamberetti sopra e {pane} tostato."
+  ]
+ },
+ "insalata_ceci_pollo": {
+  "steps": [
+   "Scalda bene una piastra e cuoci {pollo} 3 min per lato. Salalo e taglialo a cubetti.",
+   "Taglia {peperoni} a cubetti piccoli e {cipolla} a fettine sottili.",
+   "Scola e sciacqua {ceci}.",
+   "In una ciotola unisci ceci, pollo e verdure. Condisci con {olio}, il succo di {limone}, {prezzemolo} e sale."
+  ]
+ },
+ "involtini_bresaola": {
+  "steps": [
+   "Trita qualche foglia di {rucola}.",
+   "In una ciotola mescola {ricotta} con {grana}, la rucola tritata, un pizzico di sale e pepe.",
+   "Metti un cucchiaino di crema su ogni fetta di {bresaola} e arrotolala.",
+   "Condisci il resto della rucola con {olio} e il succo di {limone} e disponici sopra gli involtini.",
+   "Servi con {pane}."
+  ]
+ },
+ "riso_patate": {
+  "steps": [
+   "Trita {cipolla}, {sedano} e {carote}.",
+   "In una pentola scalda {olio} e fai appassire il trito per 5 min.",
+   "Pela {patate}, tagliale a cubetti e aggiungile con {passata}. Copri con acqua calda, sala e cuoci 12 min.",
+   "Aggiungi {riso_carnaroli} e cuocilo nella pentola 15-16 min, aggiungendo acqua calda poca alla volta e mescolando, come un risotto.",
+   "A fuoco spento manteca con {scamorza} a cubetti e {grana}."
+  ],
+  "note": "Variante napoletana della pasta e patate: col riso viene ancora più cremosa."
+ },
+ "pasta_melanzane_salsiccia": {
+  "steps": [
+   "Lava {melanzane} e tagliala a cubetti.",
+   "In una padella scalda {olio} e cuoci le melanzane 10 min, finché sono dorate. Tienile da parte.",
+   "Nella stessa padella rosola {salsiccia} sbriciolata per 5 min, poi aggiungi {passata} e cuoci 8 min.",
+   "Rimetti le melanzane e sala.",
+   "Cuoci {pasta_corta} in acqua salata, scolala al dente e saltala nel sugo con {basilico}."
+  ]
+ },
+ "ragu_bianco": {
+  "steps": [
+   "Trita {carote}, {sedano} e {cipolla}.",
+   "In una casseruola scalda {olio} e fai appassire il trito per 6 min.",
+   "Aggiungi {macinato} e rosolalo 8 min a fuoco medio-alto, sgranandolo. Versa {vino} e lascialo evaporare.",
+   "Unisci {rosmarino} e un bicchiere d'acqua, sala, copri e cuoci 25 min a fuoco basso.",
+   "Cuoci {pasta_corta} in acqua salata, scolala e mantecala con il ragù, un po' d'acqua di cottura e {grana}."
+  ],
+  "note": "Senza pomodoro: è il ragù «in bianco» della tradizione toscana e romagnola."
+ },
+ "pasta_verza_salsiccia": {
+  "steps": [
+   "Togli la pelle a {salsiccia} e sbriciolala; trita {cipolla}.",
+   "In una padella scalda {olio} e rosola salsiccia e cipolla per 5 min.",
+   "Taglia {verza} a listarelle sottili, aggiungila con mezzo bicchiere d'acqua, copri e cuoci 15 min, finché è morbida.",
+   "Cuoci {pasta_corta} in acqua salata.",
+   "Scolala e mantecala con la verza, un po' d'acqua di cottura e {grana}."
+  ]
+ },
+ "uova_fiorentina": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "In una padella sciogli {burro} e cuoci {spinaci} per 6 min. Salali.",
+   "Stendili in una pirofila e fai delle conche con un cucchiaio.",
+   "Rompi {uova} nelle conche.",
+   "Versa {besciamella} intorno alle uova e spolvera con {grana}.",
+   "Cuoci 10-12 min, finché l'albume è rappreso. Servi con {pane}."
+  ]
+ },
+ "uova_salsa_verde": {
+  "steps": [
+   "Pela {patate}, tagliale a cubetti e lessale in acqua salata per 12 min.",
+   "In un pentolino d'acqua bollente cuoci {uova} per 9 min, poi raffreddale in acqua fredda e sgusciale.",
+   "Prepara la salsa verde: togli la crosta a {pane}, bagna la mollica nell'{aceto|aceto} e strizzala.",
+   "Trita finemente {prezzemolo}, {capperi}, {acciughe} e la mollica, e mescola con {olio}.",
+   "Servi le uova tagliate a metà e le patate, condite con la salsa verde."
+  ],
+  "note": "È il «bagnet verd» piemontese: la stessa salsa sta benissimo sul bollito."
+ },
+ "polpette_tonno": {
+  "steps": [
+   "Lava {patate} e lessale con la buccia per 25 min. Sbucciale e schiacciale.",
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "In una ciotola mescola le patate con {tonno} sgocciolato, {uova}, {grana}, {prezzemolo} tritato e sale.",
+   "Forma delle polpette e passale in {pangrattato}.",
+   "Mettile sulla teglia, spennellale con {olio} e cuoci 15 min, finché sono dorate.",
+   "Servile con {insalata}."
+  ]
+ },
+ "focaccia_mortadella": {
+  "steps": [
+   "Accendi il forno al massimo (almeno 230 °C).",
+   "Stendi {base_pizza} sulla sua carta e premila con i polpastrelli per fare dei buchi.",
+   "Condisci con {olio}, sale e {rosmarino}.",
+   "Cuoci 12-15 min, finché è dorata, e lasciala intiepidire.",
+   "Tagliala a metà come un panino e farciscila con {mortadella} e {stracchino}."
+  ]
+ },
+ "riso_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Cuoci {riso_carnaroli} in acqua salata per metà del tempo della confezione; negli ultimi 3 min aggiungi {piselli}. Scola.",
+   "In una ciotola mescola riso e piselli con {ragu}, {uova} e {grana/2}.",
+   "In una pirofila alterna strati di riso e {mozzarella} a cubetti.",
+   "Finisci con {grana/2} e cuoci 20 min, finché si forma la crosticina."
+  ],
+  "note": "È un sartù semplificato: si taglia a fette come una torta."
+ }
+}

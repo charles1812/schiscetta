@@ -1,0 +1,385 @@
+{
+ "pollo_impanato_forno": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Lava {patate} e tagliale a spicchi; condiscile sulla teglia con {olio/2}, sale e {rosmarino} e infornale 15 min.",
+   "In un piatto mescola {pangrattato}, {grana} e un pizzico di sale.",
+   "Se le fette di {pollo} sono spesse, battile un po'. Ungile con {olio/2} e passale nel pangrattato, premendo bene con le mani su entrambi i lati.",
+   "Sposta le patate ai lati e metti il pollo al centro della teglia.",
+   "Cuoci 15 min, girando il pollo a metà, finché la panatura è dorata."
+  ],
+  "note": "Croccante come la cotoletta ma senza friggere. Senza pangrattato non si fa: se manca, scegli un altro piatto."
+ },
+ "pizzoccheri": {
+  "steps": [
+   "Porta a bollore abbondante acqua salata in una pentola capiente.",
+   "Pela {patate} e tagliale a cubetti di 2 cm; taglia {verza} a striscioline larghe un dito.",
+   "Butta patate e verza nell'acqua e cuoci 5 min.",
+   "Aggiungi {pizzoccheri} nella stessa pentola e cuocili per il tempo della confezione (circa 12 min).",
+   "Intanto in un pentolino sciogli {burro} a fuoco basso con {aglio|l'aglio} schiacciato e {salvia}, finché diventa color nocciola. Togli l'aglio.",
+   "Taglia {fontina} a fettine sottili.",
+   "Scola tutto e in una pirofila calda fai strati di pizzoccheri con verdure, fontina e {grana}.",
+   "Versa sopra il burro alla salvia, mescola delicatamente e servi subito, quando il formaggio fila."
+  ],
+  "note": "In Valtellina si usa il formaggio Casera: se lo trovi, mettilo al posto della fontina."
+ },
+ "spezzatino_patate": {
+  "steps": [
+   "Asciuga {spezzatino} con carta da cucina e passalo in {farina}, scuotendo via l'eccesso.",
+   "In una casseruola scalda {olio} a fuoco alto e rosola la carne 5 min, girandola, finché è dorata su tutti i lati. Non mettere troppi pezzi insieme, altrimenti bolle invece di rosolare.",
+   "Trita {cipolla} e {carote}, aggiungile e cuoci 3 min.",
+   "Versa {vino} e lascialo evaporare 2 min.",
+   "Aggiungi {passata}, {rosmarino} e acqua calda fino quasi a coprire. Sala, copri e cuoci a fuoco minimo per 1 ora (60 min), mescolando ogni tanto.",
+   "Pela {patate}, tagliale a pezzi grandi e aggiungile. Cuoci altri 30 min, finché carne e patate sono tenere e il sugo è denso."
+  ],
+  "note": "Più cuoce piano, più diventa tenero: la pentola a pressione dimezza i tempi. Il giorno dopo è ancora più buono."
+ },
+ "spezzatino_piselli": {
+  "steps": [
+   "Asciuga {spezzatino} e passalo in {farina}.",
+   "In una casseruola scalda {olio} a fuoco alto e rosola la carne 5 min, finché è dorata.",
+   "Trita {cipolla}, aggiungila e cuoci 3 min. Versa {vino} e lascialo evaporare.",
+   "Unisci {passata} e acqua calda fino quasi a coprire. Sala, copri e cuoci a fuoco minimo per 1 ora (60 min).",
+   "Aggiungi {piselli} (anche surgelati) e cuoci altri 15 min."
+  ]
+ },
+ "polenta_spezzatino": {
+  "steps": [
+   "In una casseruola scalda {olio} a fuoco alto e rosola {spezzatino} per 5 min, finché è dorato.",
+   "Trita {cipolla}, aggiungila e cuoci 3 min. Versa {vino} e lascialo evaporare.",
+   "Unisci {passata}, {rosmarino} e acqua calda fino quasi a coprire. Sala, copri e cuoci a fuoco minimo per 70 min.",
+   "Negli ultimi minuti prepara {polenta} come indicato sulla confezione (di solito 5 min in acqua bollente salata, versata a pioggia mescolando con la frusta).",
+   "Servi la polenta con lo spezzatino e il suo sugo sopra."
+  ]
+ },
+ "verza_salsiccia": {
+  "steps": [
+   "Taglia {salsiccia} a pezzi e rosolala in una casseruola con {olio} per 6 min.",
+   "Affetta {cipolla}, aggiungila e cuoci 2 min. Versa {vino} e lascialo evaporare.",
+   "Togli le foglie esterne dure di {verza} e tagliala a listarelle: si riduce molto in cottura.",
+   "Aggiungila con {passata}, sala poco e mescola.",
+   "Copri e cuoci 40 min a fuoco basso, mescolando ogni tanto, finché la verza è morbida.",
+   "Servi con {pane} (o con la polenta)."
+  ],
+  "note": "È una versione veloce della cassoeula milanese, che usa anche costine e cotenne."
+ },
+ "ribollita": {
+  "steps": [
+   "Trita {cipolla}, {carote} e {sedano}.",
+   "In una pentola capiente scalda {olio/2} e fai appassire il trito per 6 min.",
+   "Togli le coste dure a {cavolo_nero} e {verza} e tagliali a listarelle. Pela {patate} e tagliale a cubetti.",
+   "Aggiungi le verdure con {pelati} schiacciati e metà dei {cannellini}.",
+   "Frulla l'altra metà dei fagioli con un po' d'acqua e aggiungila: rende la zuppa densa. Copri con acqua calda, sala e cuoci 50 min a fuoco basso.",
+   "Metti {pane} raffermo a fette sul fondo delle scodelle, versa sopra la zuppa e lascia riposare 10 min.",
+   "Finisci con {olio/2} crudo."
+  ],
+  "note": "Il nome viene dal ribollirla il giorno dopo: è proprio allora che è più buona."
+ },
+ "gnocchi_romana": {
+  "steps": [
+   "In una pentola scalda {latte} con un pizzico di sale e {burro/2}.",
+   "Prima che bolla versa {semolino} a pioggia, mescolando con la frusta per evitare grumi.",
+   "Cuoci 8-10 min a fuoco basso mescolando con un cucchiaio di legno, finché è molto denso e si stacca dalle pareti.",
+   "A fuoco spento unisci {uova} e {grana/2} e mescola velocemente.",
+   "Stendi l'impasto alto un dito su un foglio di carta forno bagnato, livellandolo con una spatola bagnata. Lascialo raffreddare almeno 30 min.",
+   "Accendi il forno a 200 °C. Taglia dei dischi con un bicchiere e disponili in una pirofila imburrata, un po' sovrapposti come tegole.",
+   "Copri con {burro/2} a fiocchetti e {grana/2} e gratina 20 min, finché sono dorati."
+  ],
+  "note": "Si possono preparare fino al passaggio dei dischi il giorno prima: poi basta infornarli."
+ },
+ "pasta_sgombro": {
+  "steps": [
+   "Porta a bollore l'acqua per la pasta e salala.",
+   "Cuoci {pasta_corta} per il tempo della confezione.",
+   "Intanto in una padella scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi {pomodorini} tagliati a metà e cuoci 5 min.",
+   "Aggiungi {olive}, {capperi} sciacquati e {sgombro} sgocciolato a pezzi; scalda 1 min senza cuocerlo troppo.",
+   "Scola la pasta nel sugo, togli l'aglio e salta 1 min con {prezzemolo} tritato."
+  ],
+  "note": "Lo sgombro ha più omega-3 del tonno e costa meno. Buona anche fredda."
+ },
+ "insalata_sgombro": {
+  "steps": [
+   "Pela {patate}, tagliale a cubetti e lessale in acqua salata per 12 min; negli ultimi 6 min aggiungi {fagiolini}.",
+   "In un pentolino d'acqua bollente cuoci {uova} per 9 min, poi raffreddale in acqua fredda, sgusciale e tagliale a spicchi.",
+   "Scola patate e fagiolini e lasciali intiepidire.",
+   "In una ciotola unisci patate, fagiolini, {sgombro} a pezzi, {olive} e l'uovo.",
+   "Condisci con {olio}, {aceto} e un pizzico di sale e mescola delicatamente."
+  ]
+ },
+ "spaghetti_cozze": {
+  "steps": [
+   "Porta a bollore l'acqua per la pasta, salala e cuoci {spaghetti} per il tempo della confezione meno 1 minuto.",
+   "Intanto in una padella larga scalda {olio} con {aglio|l'aglio} schiacciato e {peperoncino}.",
+   "Aggiungi {pomodorini} tagliati a metà e cuoci 5 min.",
+   "Aggiungi {cozze} sgusciate (anche surgelate), versa {vino} e cuoci 4 min.",
+   "Scola la pasta nella padella e saltala 1 min con {prezzemolo} tritato."
+  ],
+  "note": "Le cozze sgusciate surgelate sono già cotte: bastano pochi minuti, altrimenti diventano gommose."
+ },
+ "spaghetti_frutti_mare": {
+  "steps": [
+   "Scongela {calamari} e {gamberetti} e asciugali bene. Taglia i calamari ad anelli.",
+   "Metti sul fuoco l'acqua per la pasta.",
+   "In una padella larga scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi i calamari e cuoci 2 min a fuoco alto. Versa {vino} e lascialo evaporare.",
+   "Aggiungi {pomodorini} tagliati e cuoci 5 min.",
+   "Aggiungi {cozze} e gamberetti e cuoci altri 3 min. Sala.",
+   "Cuoci {spaghetti} in acqua salata, scolali al dente nella padella e salta 1 min con {prezzemolo}."
+  ]
+ },
+ "insalata_mare": {
+  "steps": [
+   "Pela {patate}, tagliale a cubetti e lessale in acqua salata per 12 min. Scolale con una schiumarola e tieni l'acqua sul fuoco.",
+   "Nella stessa acqua cuoci {calamari} (scongelati, ad anelli) per 3 min, poi aggiungi {gamberetti} e {cozze} per 2 min.",
+   "Scola tutto e lascia raffreddare.",
+   "Taglia {sedano} a fettine sottili e trita {prezzemolo}.",
+   "In una ciotola unisci pesce, patate e sedano; condisci con {olio}, il succo di {limone}, il prezzemolo e un pizzico di sale.",
+   "Lascia insaporire 20 min in frigo prima di mangiarla."
+  ]
+ },
+ "polenta_concia": {
+  "steps": [
+   "Porta a bollore l'acqua salata indicata sulla confezione di {polenta}.",
+   "Versa la polenta a pioggia mescolando con la frusta e cuocila per il tempo della confezione, tenendola un po' morbida.",
+   "Taglia {fontina} a cubetti.",
+   "A fuoco spento aggiungi la fontina e {grana} e mescola finché si sciolgono.",
+   "In un pentolino sciogli {burro} finché diventa color nocciola.",
+   "Versa la polenta nei piatti e condiscila con il burro fuso."
+  ],
+  "note": "Piatto della Valle d'Aosta e del Biellese: con un'insalata è un pasto completo."
+ },
+ "valdostana": {
+  "steps": [
+   "Se {fettine} sono spesse, battile un po'. Passale in {farina} e scuoti via l'eccesso.",
+   "In una padella larga sciogli {burro} a fuoco medio-alto e rosola le fettine 2 min per lato. Salale.",
+   "Versa {vino} e lascialo evaporare 1 min.",
+   "Su ogni fettina appoggia una fetta di {cotto} e una di {fontina}.",
+   "Copri e cuoci 2-3 min a fuoco basso, finché il formaggio si scioglie."
+  ]
+ },
+ "carbonara_zucchine": {
+  "steps": [
+   "Lava {zucchine} e tagliale a cubetti piccoli.",
+   "In una padella larga scalda {olio} e cuoci le zucchine per 8 min a fuoco medio-alto, finché sono dorate. Salale.",
+   "In una ciotola sbatti {uova} con {pecorino} e una macinata di {pepe}.",
+   "Cuoci {pasta_corta} in acqua salata, scolala al dente e tieni da parte un po' d'acqua di cottura.",
+   "Spegni il fuoco sotto le zucchine, aspetta 30 secondi e aggiungi la pasta.",
+   "Versa l'uovo con un goccio d'acqua di cottura e mescola velocemente finché diventa una crema."
+  ],
+  "note": "Il fuoco spento è il segreto: con la padella troppo calda l'uovo diventa una frittata."
+ },
+ "pasta_zucca": {
+  "steps": [
+   "Trita {cipolla} e falla appassire in una pentola con {olio} per 5 min.",
+   "Togli buccia e semi a {zucca}, tagliala a cubetti e aggiungila. Copri con acqua calda, sala e cuoci 15 min, finché si disfa.",
+   "Aggiungi {pasta_corta} e cuocila nella pentola mescolando spesso, unendo acqua calda se serve: deve restare cremosa.",
+   "A fuoco spento manteca con {grana} e una macinata di pepe."
+  ],
+  "note": "È la ricetta napoletana: con un pezzo di provola dentro diventa ancora più ricca."
+ },
+ "genovese": {
+  "steps": [
+   "Affetta sottilissime {cipolla}; trita {carote} e {sedano}.",
+   "In una casseruola dal fondo spesso scalda {olio} e rosola {spezzatino} per 5 min a fuoco medio-alto.",
+   "Aggiungi tutte le verdure e un pizzico di sale e mescola.",
+   "Copri e cuoci a fuoco minimo per 2 ore e mezza (150 min), mescolando ogni tanto: le cipolle diventano una crema scura e dolce. Se si attacca aggiungi un goccio d'acqua.",
+   "Togli il coperchio, versa {vino} e lascia restringere 15 min. Sfilaccia la carne con la forchetta.",
+   "Cuoci {pasta_corta} (meglio ziti spezzati o mezze maniche), scolala al dente e condiscila con il sugo e {grana}."
+  ],
+  "note": "Nonostante il nome è un piatto di Napoli. Si fa la domenica in quantità: il sugo si congela benissimo."
+ },
+ "farro_pollo": {
+  "steps": [
+   "Sciacqua {farro} e cuocilo in acqua salata per il tempo della confezione (di solito 20 min). Scolalo e lascialo raffreddare.",
+   "Scalda bene una piastra e cuoci {pollo} 3 min per lato. Salalo e taglialo a striscioline.",
+   "Taglia {zucchine} a cubetti e saltale in padella con un po' d'olio (da {olio/3}) per 5 min.",
+   "Taglia {pomodorini} in quattro.",
+   "In una ciotola unisci farro, pollo, zucchine e pomodorini. Condisci con {olio*2/3}, il succo di {limone}, {basilico} e sale."
+  ]
+ },
+ "couscous_pollo": {
+  "steps": [
+   "Porta a bollore tanta acqua quanto è il peso del cous cous ({cous_cous}) con {dado}.",
+   "Versala sul cous cous in una ciotola, copri e lascia gonfiare 5 min. Sgrana con la forchetta.",
+   "Taglia a cubetti {zucchine}, {peperoni} e {pollo}; affetta {cipolla}.",
+   "In una padella scalda {olio} e cuoci cipolla e verdure per 8 min.",
+   "Aggiungi il pollo con un pizzico di {curry} e cuoci altri 6 min. Sala.",
+   "Mescola tutto con il cous cous."
+  ]
+ },
+ "frittata_spinaci": {
+  "steps": [
+   "Accendi il forno a 180 °C.",
+   "Cuoci {spinaci} in padella per 6 min finché l'acqua evapora. Salali, lasciali intiepidire e strizzali bene.",
+   "In una ciotola sbatti {uova} con {ricotta} e {grana} fino a una crema, poi unisci gli spinaci tritati.",
+   "Ungi una teglia piccola con {olio}, versa il composto e livellalo.",
+   "Cuoci 20-25 min, finché il centro è sodo (infila uno stuzzicadenti: deve uscire asciutto)."
+  ],
+  "note": "Fredda si taglia a quadrotti: perfetta in schiscetta."
+ },
+ "lenticchie_salsiccia": {
+  "steps": [
+   "Trita {cipolla}, {carote} e {sedano}.",
+   "In una casseruola scalda {olio} e fai appassire il trito per 5 min.",
+   "Taglia {salsiccia} a pezzi, aggiungila e rosola 5 min.",
+   "Sciacqua {lenticchie} e aggiungile con {passata}, {rosmarino} e acqua calda fino a coprire di due dita.",
+   "Copri e cuoci 35 min a fuoco basso, aggiungendo acqua se serve. Sala solo alla fine."
+  ],
+  "note": "È il «cotechino e lenticchie» di tutti i giorni: con il cotechino diventa il piatto di Capodanno."
+ },
+ "ceci_spinaci": {
+  "steps": [
+   "In una padella larga scalda {olio/2} con {aglio|l'aglio} schiacciato e cuoci {spinaci} per 6 min.",
+   "Aggiungi {ceci} scolati e sciacquati, {pomodorini} tagliati e {peperoncino}.",
+   "Cuoci 6 min, schiacciando qualche cece con il cucchiaio: fanno da cremina.",
+   "Sala, togli l'aglio e finisci con {olio/2} crudo.",
+   "Abbrustolisci {pane} e servilo accanto."
+  ]
+ },
+ "gateau_patate": {
+  "steps": [
+   "Lava {patate} e mettile intere con la buccia in una pentola d'acqua fredda. Porta a bollore e cuocile 25 min, finché la forchetta entra facilmente.",
+   "Sbucciale ancora calde (tienile con una forchetta) e schiacciale con lo schiacciapatate.",
+   "Accendi il forno a 200 °C.",
+   "Mescola le patate con {uova}, {grana}, metà del burro ({burro/2}) e un pizzico di sale.",
+   "Imburra una teglia con un po' del burro rimasto e cospargila con metà di {pangrattato}. Stendi metà delle patate.",
+   "Copri con {cotto} e {mozzarella} a pezzetti, poi con il resto delle patate. Livella, cospargi con il pangrattato rimasto e fiocchetti di burro.",
+   "Cuoci 25 min, finché c'è la crosticina. Lascialo riposare 10 min prima di tagliarlo."
+  ],
+  "note": "Piatto napoletano: si prepara il giorno prima e regge benissimo per più pasti."
+ },
+ "pasta_salmone_zucchine": {
+  "steps": [
+   "Metti sul fuoco l'acqua per la pasta.",
+   "Togli la pelle a {salmone} e taglialo a cubetti; taglia {zucchine} a cubetti piccoli.",
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato e cuoci le zucchine 6 min.",
+   "Aggiungi il salmone e cuoci 3 min, mescolando piano. Sala.",
+   "Cuoci {pasta_corta} in acqua salata, scolala al dente nella padella e salta 1 min con {prezzemolo} e la scorza grattugiata di {limone}."
+  ]
+ },
+ "merluzzo_impanato": {
+  "steps": [
+   "Accendi il forno a 200 °C e fodera una teglia con carta forno.",
+   "Lava {patate}, tagliale a spicchi, condiscile con {olio/2} e sale e cuocile 15 min.",
+   "In un piatto mescola {pangrattato}, {grana}, {prezzemolo} tritato e un pizzico di sale.",
+   "Asciuga bene {merluzzo}, ungilo con {olio/2} e passalo nella panatura premendo bene.",
+   "Mettilo nella teglia con le patate e cuoci 15 min.",
+   "Servi con spicchi di {limone}."
+  ]
+ },
+ "risotto_pescatora": {
+  "steps": [
+   "Prepara il brodo: porta a bollore mezzo litro d'acqua a persona con {dado} (meglio vegetale) e tienilo caldo.",
+   "Scongela {calamari} e {gamberetti} e asciugali; taglia i calamari ad anelli e {pomodorini} a metà.",
+   "In una padella scalda {olio/2} con {aglio|l'aglio} schiacciato, aggiungi i calamari e cuoci 2 min a fuoco alto.",
+   "Aggiungi pomodorini, {cozze} e gamberetti e cuoci 3 min. Tieni da parte.",
+   "In una casseruola tosta {riso_carnaroli} con {olio/2} per 2 min, versa {vino} e lascialo evaporare.",
+   "Cuoci 14 min aggiungendo il brodo un mestolo alla volta.",
+   "Aggiungi il sugo di pesce e cuoci altri 3-4 min. Finisci con {prezzemolo}, senza formaggio."
+  ]
+ },
+ "insalata_riso_gamberetti": {
+  "steps": [
+   "Cuoci {riso_basmati} in acqua salata per il tempo della confezione, scolalo e passalo sotto l'acqua fredda. Scolalo bene.",
+   "Taglia {zucchine} a cubetti e saltale in padella con un filo d'olio (da {olio/3}) per 5 min.",
+   "Aggiungi {gamberetti} e cuoci 2 min.",
+   "Taglia {pomodorini} in quattro.",
+   "In una ciotola unisci riso, zucchine, gamberetti e pomodorini. Condisci con {olio*2/3}, il succo di {limone}, {basilico} e sale."
+  ]
+ },
+ "pasta_fredda_pollo_pesto": {
+  "steps": [
+   "Cuoci {pasta_corta} in acqua salata, scolala al dente e passala sotto l'acqua fredda.",
+   "Scalda bene una piastra con {olio} e cuoci {pollo} 3 min per lato. Salalo e taglialo a striscioline.",
+   "Taglia {pomodorini} in quattro.",
+   "In una ciotola mescola pasta, pollo, pomodorini e {pesto}."
+  ],
+  "note": "In frigo dura 2 giorni."
+ },
+ "piadina_tonno": {
+  "steps": [
+   "Scalda {piadina} in padella 1 min per lato.",
+   "Taglia {mozzarella} a fette e lasciala scolare su carta da cucina. Taglia {pomodori} a fette.",
+   "Farcisci la piadina con {tonno} sgocciolato, mozzarella, pomodoro e {insalata}.",
+   "Condisci con {olio} e un pizzico di sale e ripiegala a metà."
+  ]
+ },
+ "pollo_limone_riso": {
+  "steps": [
+   "Cuoci {riso_basmati} in acqua salata per il tempo della confezione e scolalo.",
+   "Passa le fettine di {pollo} in {farina} e scuoti via l'eccesso.",
+   "In una padella scalda {burro} con {olio} e cuoci il pollo 2-3 min per lato a fuoco medio-alto.",
+   "Aggiungi il succo di {limone} e due cucchiai d'acqua, sala e lascia addensare 1 min.",
+   "Servi il pollo con la sua salsina sul riso e {prezzemolo} tritato."
+  ]
+ },
+ "pollo_pizzaiola": {
+  "steps": [
+   "In una padella scalda {olio} con {aglio|l'aglio} schiacciato, aggiungi {passata}, sala e cuoci 5 min.",
+   "Adagia le fettine di {pollo} nel sugo e cuocile 4 min per lato.",
+   "Metti sopra {mozzarella} a fettine e {origano}.",
+   "Copri e cuoci 2 min, finché la mozzarella fila."
+  ]
+ },
+ "tacchino_salvia_pure": {
+  "steps": [
+   "Pela {patate}, tagliale a pezzi uguali e mettile in acqua fredda salata. Porta a bollore e cuocile 20 min.",
+   "Scaldale {latte} in un pentolino senza farlo bollire.",
+   "Scola le patate e schiacciale subito. Rimettile sul fuoco basso con {burro/2}, il latte caldo poco alla volta e {grana}, mescolando finché il purè è liscio. Aggiusta di sale.",
+   "Passa {tacchino} in {farina} e scuoti via l'eccesso.",
+   "In una padella sciogli {burro/2} con {salvia} e cuoci il tacchino 2 min per lato a fuoco medio-alto.",
+   "Versa {vino}, sala e lascia ridurre 1 min.",
+   "Servi con il purè e il sughetto della padella."
+  ]
+ },
+ "insalata_lenticchie_feta": {
+  "steps": [
+   "Sciacqua {lenticchie} e cuocile in acqua non salata per 20-25 min, finché sono tenere ma intere.",
+   "Salale alla fine, scolale e lasciale raffreddare.",
+   "Taglia {pomodorini}, affetta sottile {cipolla} e sbriciola {feta}.",
+   "In una ciotola unisci tutto con {prezzemolo} tritato, {olio} e {aceto}.",
+   "Servi con {pane}."
+  ]
+ },
+ "melanzane_ripiene": {
+  "steps": [
+   "Accendi il forno a 200 °C.",
+   "Taglia {melanzane} a metà per il lungo e scava la polpa con un cucchiaino, lasciando un bordo di un dito.",
+   "Trita la polpa e cuocila in padella con {olio} per 5 min.",
+   "Aggiungi {macinato} e rosola 6 min, sgranandolo. Sala.",
+   "Fuori dal fuoco unisci {uova}, {grana}, {pangrattato} e {basilico} spezzettato.",
+   "Riempi le barchette di melanzana, mettile in una teglia e versa {passata} intorno e sopra.",
+   "Cuoci 30 min, finché le melanzane sono morbide."
+  ]
+ },
+ "zucchine_ripiene": {
+  "steps": [
+   "Accendi il forno a 190 °C.",
+   "Taglia {zucchine} a metà per il lungo e scava la polpa con un cucchiaino.",
+   "Trita la polpa e mescolala in una ciotola con {macinato}, {uova}, {grana}, {pangrattato} e un pizzico di sale.",
+   "Riempi le zucchine con il composto.",
+   "Versa {passata} sul fondo di una teglia, appoggia le zucchine e condiscile con {olio}.",
+   "Cuoci 30-35 min, finché la superficie è dorata."
+  ]
+ },
+ "risotto_parmigiano": {
+  "steps": [
+   "Prepara il brodo: porta a bollore mezzo litro d'acqua a persona con {dado} e tienilo caldo.",
+   "Trita finemente {cipolla} e falla appassire in una casseruola con {burro/2} per 3 min.",
+   "Aggiungi {riso_carnaroli} e tostalo 2 min. Versa {vino} e lascialo evaporare.",
+   "Cuoci 16-18 min aggiungendo il brodo un mestolo alla volta e mescolando.",
+   "A fuoco spento manteca con {burro/2} e {grana}, copri e lascia riposare 1 min."
+  ],
+  "note": "È la base di tutti i risotti: con un pugno di piselli o di funghi lo trasformi."
+ },
+ "canederli": {
+  "steps": [
+   "Taglia {pane} raffermo a cubetti piccoli e bagnalo con {latte}. Lascialo riposare 15 min.",
+   "Trita {cipolla} e falla appassire in padella con {burro}; aggiungi {speck} a dadini e cuoci 2 min.",
+   "In una ciotola mescola il pane, lo speck, {uova}, {farina}, {prezzemolo} tritato e un pizzico di sale. Lascia riposare 10 min.",
+   "Con le mani bagnate forma delle palline grandi come un mandarino, ben compatte.",
+   "Porta a bollore circa mezzo litro d'acqua a persona con {dado}, poi abbassa: deve appena sobbollire.",
+   "Cuoci i canederli nel brodo per 15 min e servili nel brodo."
+  ],
+  "note": "Se l'impasto è troppo morbido e non sta in forma, aggiungi un cucchiaio di farina."
+ }
+}

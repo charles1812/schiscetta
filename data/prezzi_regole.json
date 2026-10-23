@@ -1,0 +1,969 @@
+{
+ "_nota": "Regole per trovare, nelle sitemap pubbliche dei supermercati, tutti i prodotti equivalenti a ogni ingrediente (tutte le marche e i formati). 'tutti' = espressione regolare sul nome del prodotto nell'indirizzo (minuscolo, con trattini); 'no' = esclusioni; 'k' = unità del prodotto (g, ml o pz del prezzo al kg/l/pz) per un'unità dell'ingrediente (es. legumi 1.67 = 400 g di lattina per 240 g sgocciolati; piadina 130 = grammi di una piadina). Usato da tools/prezzi.py.",
+ "escludi_sempre": "no-gluten|senza-glutine|gluten-free|glutenfree|baby|bimb|omogeneizz|(^|-)cane(-|$)|gatto|cibo-per|crocchette|per-cani|per-gatti|shampoo|detersiv|surgelat[oaie]-per-animali|integratore|proteic|keto|salsa-per-|patatine-|chips|crackers|biscott|snack|purina|friskies|felix|cesar|whiskas|sheba|monge|almo-nature|adoc|special-dog|for-cats|mao-nature|bao-nature|vitakraft|lilys|mellin|plasmon|(^|-)hipp-|(^|-)bao-|(^|-)mao-",
+ "regole": {
+  "pomodorini": {
+   "tutti": "pomodor(ini|o)-(ciliegin|datterin|cocktail|grappolo|pachino|piccadilly|ciliegia)|pomodorini-",
+   "no": "secch|pelat|polpa|passata|sugo|conserva|vellutata|sott|salsa|essicc"
+  },
+  "pomodori": {
+   "tutti": "^pomodor[io]-(grappolo|ramato|insalat|costolut|tondo|cuore|perino|camone)",
+   "no": "secch|pelat|polpa|passata|sugo|ciliegin|datterin|vellutata|salsa"
+  },
+  "insalata": {
+   "tutti": "^(insalat|insalatin|misticanza|lattug|valeriana|songino|iceberg)",
+   "no": "russa|di-riso|di-mare|di-pollo|di-tonno|di-farro|condit|pronta-con"
+  },
+  "rucola": {
+   "tutti": "^(esselunga-(naturama-|bio-)?|carrefour-[a-z-]*)?rucola-(confezionat|[0-9]+-g|selvatica|lavata|coltivata)",
+   "no": "pesto|sugo|salsina"
+  },
+  "zucchine": {
+   "tutti": "^zucchin[ei](-|$)|^esselunga-zucchine|^zucchine-",
+   "no": "grigliat|surgelat|sott|trifolat|pastell|frittell|sugo|pesto"
+  },
+  "carote": {
+   "tutti": "^(esselunga-(naturama-)?|carrefour-[a-z-]*)?carot[ae](-sfus|-[0-9]|-del-fucino|-confezionat|-italia|$)|-carote-(1-kg|500-g|800-g)$",
+   "no": "baby|viola|tagliat|julienne|grattug|surgelat|succo"
+  },
+  "cipolla": {
+   "tutti": "(^|-)cipoll[ae]-[a-z-]*(dorat|ramat|bianch|rossa)",
+   "no": "tropea-in|sott|agrodolce|fritt|crema|zuppa|surgelat|borettan"
+  },
+  "aglio": {
+   "tutti": "^(aglio|esselunga-aglio)-[a-z0-9-]*(g|pz|teste|spicchi)$",
+   "no": "olio|tritat|polvere|granulare|pasta|crema|nero",
+   "k": 5
+  },
+  "patate": {
+   "tutti": "(^|-)patat[ae]-[a-z-]*(gialle|rosse|pasta-gialla|novelle|bologna|fucino|sila)[a-z0-9-]*kg",
+   "no": "dolci|americane|surgelat|forno|prefritt|chips|crocchet"
+  },
+  "sedano": {
+   "tutti": "^(esselunga-)?sedano(-verde|-bianco|$)|cuore-di-sedano",
+   "no": "rapa|soffritt"
+  },
+  "limone": {
+   "tutti": "^(esselunga-|carrefour-[a-z-]*)?limon[ie]-(sfus|confezionat|primo-fiore|verdello|di-sicilia|di-sorrento|bio|[0-9])",
+   "no": "succo|marmellat|candit|scorza|aroma",
+   "k": 125
+  },
+  "basilico": {
+   "tutti": "^(esselunga-|carrefour-[a-z-]*)?basilico-(confezionat|fresco|in-vaso|genovese-dop|[0-9]+-g)",
+   "no": "pesto|sugo|secco|essiccat|liofil"
+  },
+  "prezzemolo": {
+   "tutti": "^(esselunga-|carrefour-[a-z-]*)?prezzemolo-(confezionat|fresco|riccio|liscio|[0-9]+-g|mazzo)",
+   "no": "secco|essiccat|liofil|surgelat|tritat"
+  },
+  "salvia": {
+   "tutti": "^(esselunga-|carrefour-[a-z-]*)?salvia-(confezionat|fresca|[0-9]+-g|in-vaso)",
+   "no": "frantumat|secca|essiccat"
+  },
+  "avocado": {
+   "tutti": "(^|-)avocado-hass|^avocado(-|$)|natura-matura-avocado",
+   "no": "olio|crema|salsa|guacamole|sushi|maschera|shampoo|balsamo",
+   "k": 180
+  },
+  "cetriolo": {
+   "tutti": "^cetriol[io](-lungh|-$|$)|^cetrioli$|^cetrioli-(lunghi|barattieri)",
+   "no": "sott|aceto|agrodolce|snack",
+   "k": 300
+  },
+  "zucca": {
+   "tutti": "^zucca-(moscat|delica|tagliat|mantovan|butternut|a-cubetti-confez|a-pezzi)|^esselunga-zucca-a-pezzi",
+   "no": "surgelat|semi|grigliat|vellutat|crema|tortini|gnocchi"
+  },
+  "broccoli": {
+   "tutti": "^(broccol[io]|broccoletti|rosette-di-broccol|cime-di-broccol)",
+   "no": "surgelat|pesto|sott|crema|tortini|cotti"
+  },
+  "peperoni": {
+   "tutti": "^peperon[ie]-(rossi|gialli|misti|verdi|lamuyo|quadrat)|^peperoni$",
+   "no": "grigliat|sott|aceto|agrodolce|surgelat|pesto|crema|brace|ripieni"
+  },
+  "melanzane": {
+   "tutti": "^melanzan[ae](-tonde|-lunghe|-viola|$)",
+   "no": "grigliat|sott|surgelat|sugo|parmigiana|caponata|pesto"
+  },
+  "champignon": {
+   "tutti": "^(funghi-)?champignon[s]?(-bianchi|-freschi|-affettati|-interi|-confezionat|$)|^funghi-(fantasia|coltivati)-confezionat",
+   "no": "sott|surgelat|trifolat|olio"
+  },
+  "cavolfiore": {
+   "tutti": "^(esselunga-naturama-)?cavolfior[ie](-bianco|$)",
+   "no": "romanesco|surgelat|gratin"
+  },
+  "pane": {
+   "tutti": "^(esselunga-)?(pane-(comune|casereccio|di-semola|toscano|pugliese|bocconcino|rustico)|filone|pagnotta|rosette|michetta|michette|baguette)",
+   "no": "grattugiat|pangrattat|bauletto|carre|tostat|bruschett|panino-hamburger|crostini|integrale-in-cassetta"
+  },
+  "piadina": {
+   "tutti": "(^|-)piadin[ae]-[a-z0-9-]*(classica|romagnola|sfogliat|fresca|riminese)",
+   "no": "integrale|kamut|farro|legumi|senza|vegan|olio-di-oliva-extra|mini",
+   "k": 130
+  },
+  "tortillas": {
+   "tutti": "tortill?as?-[a-z0-9-]*(wrap|frumento|grano|soft|25-cm)",
+   "no": "mais|chips|snack|picadora|patatas",
+   "k": 60
+  },
+  "pancarre": {
+   "tutti": "pan-?carre|pane-[a-z-]*per-toast|pan-bauletto-bianco",
+   "no": "integrale|cereali|senza|semi"
+  },
+  "uova": {
+   "tutti": "(^|-)6-uova-fresche|uova-fresche-[a-z-]*6-(pz|uova)",
+   "no": "sod|pasqua|cioccolato|tuorlo|albume|quaglia"
+  },
+  "latte": {
+   "tutti": "latte-[a-z-]*intero[a-z-]*(1-l|1000-ml)$",
+   "no": "senza-lattosio|zymil|bio|capra|polvere|condensat|cioccolat|caffe|vegetal|avena|soia|riso|mandorl|cocco|accadi|fieno"
+  },
+  "burro": {
+   "tutti": "(^|-)burro-[a-z-]*(250-g|200-g|125-g)$|^esselunga-burro-250-g$",
+   "no": "chiarificat|salat|light|vegetal|arachid|cacao|spalmabile"
+  },
+  "mozzarella": {
+   "tutti": "(^|-)mozzarella-[a-z-]*125-g$|mozzarella-[a-z-]*3-x-125|fior-di-latte-[a-z-]*125",
+   "no": "bufala|light|senza-lattosio|pizza|julienne|ciliegin|bocconcin|treccia|filone|affumicat|vegan"
+  },
+  "grana": {
+   "tutti": "grana-padano-[a-z0-9-]*grattugiat|parmigiano-reggiano-[a-z0-9-]*grattugiat",
+   "no": "riserva-oltre-20|top"
+  },
+  "ricotta": {
+   "tutti": "(^|-)ricotta-[a-z-]*(250-g|200-g|2-x-250)$|^esselunga-ricotta-250-g$",
+   "no": "salata|affumicat|bufala|light|senza-lattosio|pecora|capra"
+  },
+  "stracchino": {
+   "tutti": "(^|-)(stracchino|crescenza)-[a-z0-9-]*-g$",
+   "no": "light|senza-lattosio"
+  },
+  "feta": {
+   "tutti": "(^|-)feta-dop|feta-(greca|autentica|classica)|-feta-[0-9]+-g$",
+   "no": "insalat|cereallegre|cous|farro|fregola|pasta|cubetti-in-olio"
+  },
+  "gorgonzola": {
+   "tutti": "gorgonzola-[a-z-]*dolce",
+   "no": "crema|sugo|salsa|mascarpone|noci"
+  },
+  "panna": {
+   "tutti": "(^|-)panna-(da-)?cucina|panna-[a-z-]*per-cucinare",
+   "no": "vegetal|soia|avena|riso|spray|montare|light-vegetal"
+  },
+  "yogurt": {
+   "tutti": "yogurt-greco-[a-z0-9-]*(bianco|naturale|colato|intero)[a-z0-9-]*-1[5-9]0-g$|yogurt-greco-[a-z0-9-]*-1[5-9]0-g$",
+   "no": "pesca|fragol|mirtill|cocco|vaniglia|miele|caffe|nocciol|cannella|mela|frutti|limone|cioccolat"
+  },
+  "cotto": {
+   "tutti": "prosciutto-cotto-[a-z0-9-]*-([89]0|1[0-9]{2})-g$",
+   "no": "merenda|panin|snack|dadini|cubetti|spunti|tramezz"
+  },
+  "crudo": {
+   "tutti": "prosciutto-crudo-[a-z0-9-]*-([6-9]0|1[0-9]{2})-g$",
+   "no": "merenda|panin|snack|dadini|cubetti|grissin"
+  },
+  "bresaola": {
+   "tutti": "(^|-)bresaola-[a-z0-9-]*(fett|affettat|[0-9]+-g$|igp)",
+   "no": "carpaccio|panin|rucola"
+  },
+  "pancetta": {
+   "tutti": "(cubetti-di-pancetta|pancetta-[a-z-]*cubetti|guanciale-[a-z-]*cubetti|cubetti-di-guanciale|pancetta-[a-z-]*dadini)",
+   "no": "vegan|vegetal"
+  },
+  "tortellini": {
+   "tutti": "(^|-)tortellini-[a-z0-9-]*(prosciutto|carne|emilian|bolognes)",
+   "no": "brodo-pronto|surgelat|tortellini-alla-panna|sugo"
+  },
+  "ravioli": {
+   "tutti": "(^|-)ravioli-[a-z0-9-]*ricotta-e-spinaci|(^|-)tortelloni-[a-z0-9-]*ricotta-e-spinaci",
+   "no": "surgelat|gyoza"
+  },
+  "gnocchi": {
+   "tutti": "(^|-)gnocchi-[a-z0-9-]*patat[ae]",
+   "no": "sorrentina|surgelat|ripieni|zucca|spinaci|integral|dolci|patate-dolci"
+  },
+  "sugo_rana": {
+   "tutti": "(rana-[a-z-]*sugo|sugo-fresco|sughi-freschi)",
+   "no": "zzz"
+  },
+  "sfoglia": {
+   "tutti": "pasta-sfoglia-[a-z0-9-]*(rotond|rotolo|230)",
+   "no": "rettangolar|integrale|senza|vegan|burro",
+   "k": 230
+  },
+  "base_pizza": {
+   "tutti": "(pasta|impasto)-(per|della)-pizza-[a-z0-9-]*(rotolo|stesa|rettangolar|tonda|pronta)|pizza-pasta-per-pizza",
+   "no": "farina|preparato|lievito",
+   "k": 400
+  },
+  "lasagna": {
+   "tutti": "lasagn[ea]-[a-z-]*(bolognese|ragu|al-ragu|alla-bolognese|vitello)",
+   "no": "sfoglia|verdi-sfoglie|secche|crude"
+  },
+  "salmone_aff": {
+   "tutti": "salmone-[a-z-]*affumicato-[a-z0-9-]*-(50|80|100|150|200)-g$",
+   "no": "a-caldo|sugo|crema|pate|pennette|sushi|tartare|cubetti|carpaccio"
+  },
+  "wurstel": {
+   "tutti": "(w(u|ue)rstel|wuerstel|frankfurter)",
+   "no": "pollo-e-tacchino-mini|cocktail|vegan|vegetal|soia|panin"
+  },
+  "speck": {
+   "tutti": "speck-[a-z0-9-]*(affettat|a-fette|fett)",
+   "no": "sticks|dadini|cubetti|radicchio|panin"
+  },
+  "spalmabile": {
+   "tutti": "formaggio-fresco-(da-)?spalmabil[ea]-[a-z0-9-]*(g|original|classico)$|philadelphia-original",
+   "no": "salmone|erbe|light|senza-lattosio|yogurt|olive|peperoncino|noci|tartufo|zola|bio"
+  },
+  "scamorza": {
+   "tutti": "(^|-)scamorza-[a-z0-9-]*(g|bianca|affumicata)",
+   "no": "fette-light|bufala|panin"
+  },
+  "hummus": {
+   "tutti": "hummus-[a-z0-9-]*(ceci|classico|naturale|[0-9]+-g$)",
+   "no": "barbabietol|piccante|lasagne|avocado|pomodori|peperoni|carota|pesto|curcuma"
+  },
+  "tofu": {
+   "tutti": "(^|-)tofu-[a-z0-9-]*(naturale|bianco|al-naturale)",
+   "no": "affumicat|marinat|erbe|basilico|olive|curry"
+  },
+  "pollo": {
+   "tutti": "petto-di-pollo-[a-z-]*(fette|fettine|a-fette)",
+   "no": "impanat|panat|cotto|forno|arrosto|affettat|brace|marinat|grigliat|almo|nature|daily|kitchen"
+  },
+  "macinato": {
+   "tutti": "(macinato|carne-macinata|trito)-[a-z-]*(bovino|manzo|scottona|vitellone)|(bovino|scottona|vitellone|manzo)-[a-z-]*(macinato|trito)",
+   "no": "pollo|tacchino|suino|misto"
+  },
+  "hamburger": {
+   "tutti": "hamburger-[a-z0-9-]*(bovino|manzo|scottona|chianina|piemontese)",
+   "no": "pollo|vegan|vegetal|soia|panin|coniglio|maxi-panino",
+   "k": 125
+  },
+  "salsiccia": {
+   "tutti": "(^|-)salsicc(ia|e)(-di-suino|-fresca|-luganega|$|-[0-9])|suino-italiano-salsiccia$|(^|-)luganega",
+   "no": "cubetti|secca|stagionat|piccante|pollo|tacchino|vegan|fegato|arrotolat|wurstel"
+  },
+  "tacchino": {
+   "tutti": "(fesa|petto)-di-tacchino-[a-z-]*(fette|fettine)|tacchino-fesa-a-fette|sottilissime-di-fesa-di-tacchino",
+   "no": "forno|arrosto|affettat|cotto|panin|impanat|snello|leggerezze"
+  },
+  "manzo": {
+   "tutti": "(straccetti|striscioline|tagliata)-[a-z-]*(manzo|bovino|scottona|vitellone)|(scottona|bovino|manzo)-[a-z-]*straccetti",
+   "no": "formaggio|rucola|marinat|condit|panin"
+  },
+  "cotoletta": {
+   "tutti": "cotolett[ae]-di-pollo-[a-z0-9-]*(surgelat|panat|impanat|-g$|kg$)|cotolette-di-pollo-[0-9]",
+   "no": "orecchia|vegan|light|cotosnella",
+   "k": 100
+  },
+  "cosce_pollo": {
+   "tutti": "(cosce|fusi|sovracosce|cosc?ette)-di-pollo",
+   "no": "panat|impanat|arrosto|cott|marinat|forno|brace|grigliat"
+  },
+  "salmone": {
+   "tutti": "(filetto|tranci[o]?)-di-salmone",
+   "no": "affumicat|naturale-150|scatola|vapore|surgelat|marinat|cotto|grigliat|sott|olio"
+  },
+  "pasta_corta": {
+   "tutti": "(^|-)(penne|pennette|mezze-penne|fusilli|sedani|rigatoni|mezze-maniche|tortiglioni|maccheroni|eliche)-[a-z0-9-]*(500-?g|1-?kg|1000-g)$",
+   "no": "integral|farro|legumi|lenticchie|ceci|piselli|kamut|alla-carbonara|pronte|senza|proteic|riso|mais|grano-saraceno|al-salmone|bio-"
+  },
+  "spaghetti": {
+   "tutti": "(^|-)(spaghetti|spaghettini|vermicelli|linguine)-[a-z0-9-]*(500-?g|1-?kg|1000-g)$",
+   "no": "integral|farro|legumi|lenticchie|ceci|kamut|riso|soia|konjac|senza|proteic|mais|grano-saraceno|chitarra|alla-"
+  },
+  "riso_carnaroli": {
+   "tutti": "riso-[a-z-]*carnaroli-[a-z0-9-]*(1-?kg|1000-g|500-g)$",
+   "no": "pronto|risotto-|integrale|insalate"
+  },
+  "riso_basmati": {
+   "tutti": "riso-[a-z-]*basmati-[a-z0-9-]*(g|kg)$",
+   "no": "pronto|rapido|precotto|integrale|in-busta|microonde|express|curry|venere"
+  },
+  "cous_cous": {
+   "tutti": "(^|-)cous-cous-[a-z0-9-]*(500-g|1-kg|1000-g|medio|grosso|fine)",
+   "no": "integrale|farro|condit|verdure|pollo|vegetariano|cereallegre|riso|piatto|kit"
+  },
+  "farro": {
+   "tutti": "farro-[a-z-]*perlato",
+   "no": "precotto|insalat|pronto|zuppa|cereallegre|pasta"
+  },
+  "polenta": {
+   "tutti": "(polenta-[a-z0-9-]*(istantanea|rapida|pronta-in|valsugana-la-classica)|farina-per-polenta-[a-z-]*istantanea)",
+   "no": "taragna-pronta|cotta|gia-pronta|fette"
+  },
+  "noodles": {
+   "tutti": "(^|-)(noodles|tagliolini-cinesi|ramen-noodles|udon-noodles|egg-noodles)-[a-z0-9-]*-(250|300|400|500)-g$",
+   "no": "cup|bowl|istantane|pollo-|manzo-|gamberi|piccant|sichuan|yakisoba-pollo|soba-wok"
+  },
+  "lenticchie": {
+   "tutti": "(^|-)lenticchie-[a-z-]*(500-g|1-kg|400-g)$",
+   "no": "lessate|cotte|in-scatola|vapore|rosse-decorticate-bio|zuppa|pasta"
+  },
+  "ceci": {
+   "tutti": "(^|-)ceci-[a-z0-9-]*(400-g|3-x-200|3-x-400|2-x-400|lessati|al-naturale)",
+   "no": "secchi|messicani|farina|hummus|pasta|zuppa|minestra|falafel|snack|tostati",
+   "k": 1.67
+  },
+  "borlotti": {
+   "tutti": "fagioli-borlotti-[a-z0-9-]*(400-g|3-x-200|3-x-380|2-x-400|360-g|380-g|lessati)",
+   "no": "secchi|zuppa|pasta",
+   "k": 1.67
+  },
+  "fagioli_rossi": {
+   "tutti": "fagioli-(rossi|kidney)[a-z0-9-]*(400-g|3-x-200|3-x-380|2-x-400|lessati|380-g)",
+   "no": "secchi|insalat|zuppa|chili",
+   "k": 1.67
+  },
+  "mais": {
+   "tutti": "(^|-)mais-[a-z0-9-]*(dolce|300-g|3-x|340-g|285-g|in-scatola|in-chicchi)",
+   "no": "pop-corn|popcorn|farina|tortilla|chips|olio|fiocchi|soffiat",
+   "k": 1.2
+  },
+  "tonno": {
+   "tutti": "(^|-)tonno-[a-z0-9-]*(olio|naturale)[a-z0-9-]*(3-x-80|4-x-80|3-x-60|4-x-60|2-x-80|6-x-80|80-g)",
+   "no": "insalat|pate|sugo|pesto|crema|maionese|vetro-[0-9]{3}",
+   "k": 1
+  },
+  "olive": {
+   "tutti": "olive-nere-[a-z-]*denocciolat",
+   "no": "pate|crema|pesto|olio|taggiasche-in-olio",
+   "k": 1.4
+  },
+  "passata": {
+   "tutti": "(^|-)passata-(di-)?pomodor[oi]?-?[a-z0-9-]*(500|680|690|700|720|750)-g$|passata-di-pomodoro-[a-z-]*700-g",
+   "no": "bio|biolog|ciliegin|datterin|basilico|rustica-con|sugo|gialla|siccagno"
+  },
+  "ragu": {
+   "tutti": "(^|-)(sugo-)?ragu-[a-z-]*(bolognese|di-carne|classico|di-manzo|alla-bolognese)",
+   "no": "cinghiale|vegan|vegetal|soia|lasagn|chianina|anatra|selvaggina|bianco"
+  },
+  "pesto": {
+   "tutti": "pesto-(alla-)?genovese",
+   "no": "rosso|senza-basilico|vegan|fresco-con|pistacchi|zucchine|olive"
+  },
+  "condiriso": {
+   "tutti": "(condiriso|condimento-per-(insalata-di-)?riso|condimento-per-insalate-di-riso|giardiniera-per-riso)",
+   "no": "zzz"
+  },
+  "latte_cocco": {
+   "tutti": "latte-di-cocco-[a-z0-9-]*(ml|coconut-milk)$",
+   "no": "merenda|bevanda|drink|shampoo|bagno"
+  },
+  "pure": {
+   "tutti": "(pure|preparato-per-pure)-di-patate-[a-z0-9-]*fiocchi",
+   "no": "pronto|surgelat"
+  },
+  "zafferano": {
+   "tutti": "zafferano-[a-z0-9-]*(bustine|x-0|polvere|in-polvere)",
+   "no": "risotto|riso-|pistilli",
+   "k": 0.15
+  },
+  "orzo": {
+   "tutti": "(^|-)orzo-[a-z-]*perlato",
+   "no": "solubile|caffe|bevanda|tostat|insalat|zuppa|precotto|cereallegre"
+  },
+  "olio": {
+   "tutti": "olio-(extra-?vergine|evo)[a-z0-9-]*(1-l|1-litro|1000-ml)$",
+   "no": "spray|aromatizzat|peperoncino|tartufo|limone|aglio|basilico|filtrat-bio|sgombro|tonno|sardine"
+  },
+  "sale": {
+   "tutti": "(^|-)sale-[a-z-]*(fino|iodato)[a-z0-9-]*(1-kg|1000-g|500-g)$",
+   "no": "lavastoviglie|rosa|himalaya|nero|aromatizzat|erbe|grosso-integrale-di-trapani"
+  },
+  "pepe": {
+   "tutti": "pepe-nero-[a-z0-9-]*macinat",
+   "no": "mulino|grani|maionese|salsa|limone"
+  },
+  "aceto": {
+   "tutti": "aceto-balsamico-di-modena-[a-z0-9-]*(250|500)-ml$",
+   "no": "glassa|crema|dop-tradizionale|spray|invecchiato-[0-9]"
+  },
+  "peperoncino": {
+   "tutti": "peperoncino-[a-z0-9-]*(frantumat|macinat|in-polvere|secco)",
+   "no": "olio|crema|salsa|pesto|grappolo-confezionat|fresco"
+  },
+  "origano": {
+   "tutti": "(^|-)origano-[a-z0-9-]*(foglie|secco|essiccat|[0-9]+-g$)",
+   "no": "costine|suino|olio|pizza"
+  },
+  "rosmarino": {
+   "tutti": "(^|-)rosmarino-[a-z0-9-]*(foglie|secco|essiccat|macinat|bio-foglie)",
+   "no": "costine|suino|olio|vitello|prosciutto|anticalcare|patate"
+  },
+  "curry": {
+   "tutti": "-curry-(macinato|in-polvere|dolce|forte|madras|[0-9]+-g$)|spezie-curry|^[a-z-]*-curry-[0-9]+-g$",
+   "no": "ceci|riso|pollo|salsa|ketchup|lenticchie"
+  },
+  "spezie_chili": {
+   "tutti": "(^|-)(paprika|cumino)-[a-z-]*(dolce|forte|affumicat|macinat|semi|in-polvere)[a-z0-9-]*-[0-9]+-g$",
+   "no": "peanuts|patatine|chips|coppa|suino"
+  },
+  "dado": {
+   "tutti": "dad[oi]-[a-z0-9-]*vegetal",
+   "no": "bio-senza|granulare|gel|brodo-pronto|liquido",
+   "k": 10
+  },
+  "pangrattato": {
+   "tutti": "(^|-)pangrattat[oa](-|$)|pane-grattugiato",
+   "no": "senza|riso|panko|aromatizzat|erbe|integrale"
+  },
+  "farina": {
+   "tutti": "farina-[a-z-]*(tipo-)?00-[a-z0-9-]*(1-kg|1000-g)$|farina-di-grano-tenero-tipo-00",
+   "no": "manitoba|pizza|dolci|integrale|3000|5-kg|biologic"
+  },
+  "soia": {
+   "tutti": "salsa-di-soia",
+   "no": "dolce|teriyaki|sushi-kit|piccant"
+  },
+  "capperi": {
+   "tutti": "(^|-)capperi-[a-z0-9-]*(sale|aceto|asciutti|salamoia|[0-9]+-g$)",
+   "no": "olive|pomodori|tonno|pate|crema|pesto|acciughe"
+  },
+  "piselli": {
+   "tutti": "piselli-[a-z-]*surgelat",
+   "no": "carote|prosciutto|risotto|zuppa|minestr|verdure-miste"
+  },
+  "spinaci": {
+   "tutti": "spinaci-[a-z-]*surgelat",
+   "no": "ricotta|panna|crema|tortini|gnocchi|ravioli|torta|sformat|besciamella"
+  },
+  "fagiolini": {
+   "tutti": "fagiolini-[a-z-]*surgelat",
+   "no": "patate|carote|misti|tortini|sformat"
+  },
+  "verdure_grigliate": {
+   "tutti": "verdure-grigliat[ea]-[a-z-]*surgelat|grigliata-di-verdure-[a-z-]*surgelat",
+   "no": "branzino|pesce|panin|piadin|sott"
+  },
+  "funghi": {
+   "tutti": "funghi-[a-z-]*(misti|trifolati|porcini-e|champignon)[a-z-]*surgelat",
+   "no": "risotto|zuppa|pasta|pizza|crema|sugo"
+  },
+  "verdure_wok": {
+   "tutti": "(verdure|mix)-[a-z-]*(wok|orientali|asiatich|cinesi|thai|stir-fry)[a-z-]*surgelat|wok-[a-z-]*verdure[a-z-]*surgelat",
+   "no": "noodles-pollo|riso-|pollo|manzo|gamberi"
+  },
+  "bastoncini": {
+   "tutti": "bastoncini-[a-z-]*(merluzzo|pesce|di-pesce)",
+   "no": "vegan|vegetal|soia|filetti-di-merluzzo-impanati-12|surimi|granchio",
+   "k": 25
+  },
+  "merluzzo": {
+   "tutti": "filett[io]-di-merluzzo-[a-z-]*surgelat|merluzzo-[a-z-]*filetti-[a-z-]*surgelat",
+   "no": "impanat|panat|pastella|gratin|bastoncini|sugo|limone|sott"
+  },
+  "gamberetti": {
+   "tutti": "gamberetti-[a-z-]*(sgusciat|surgelat)",
+   "no": "cocktail|salsa|risotto|insalata|panat|impanat|pastella|sushi"
+  },
+  "patate_surg": {
+   "tutti": "patate-[a-z-]*(forno|spicchi|al-forno|da-forno|rustiche|duchessa)[a-z0-9-]*surgelat|patate-[a-z-]*surgelat[a-z-]*(forno|spicchi)",
+   "no": "fritte-da-friggere|crocchette|chips|rosti|purè"
+  },
+  "banane": {
+   "tutti": "^(esselunga-(bio-)?)?banane(-chiquita|-bio|-sfuse|-vassoio|-confezionate|$)",
+   "no": "frullat|yogurt|essiccat|chips"
+  },
+  "mele": {
+   "tutti": "^(esselunga-(bio-)?)?mele-(golden|pink|gala|fuji|red|renetta|kanzi|ambrosia|smitten|granny|stark|evelina|morgana|sweetango|samboa|snack|giga|annurca|melinda|val)",
+   "no": "succo|frullat|composta|chips|essiccat|purea"
+  },
+  "mandorle": {
+   "tutti": "^[a-z-]*?mandorle-(sgusciat|pelat|naturali|tostat)",
+   "no": "cioccolat|zuccher|salat|a-fette|farina|granella|bevanda|olio|barrett|miele"
+  },
+  "pecorino": {
+   "tutti": "pecorino-romano-[a-z0-9-]*grattugiat",
+   "no": "pesto|sugo"
+  },
+  "cannellini": {
+   "tutti": "fagioli-cannellini-[a-z0-9-]*(400-g|3-x-200|3-x-380|2-x-400|360-g|380-g|lessati)",
+   "no": "secchi|zuppa|pasta|vellutata",
+   "k": 1.67
+  },
+  "tagliatelle": {
+   "tutti": "(^|-)tagliatelle-[a-z0-9-]*(250-?g|500-?g)$",
+   "no": "gluten|senza|integral|spinaci|farro|legumi|tartufo|bio-|rustiche"
+  },
+  "lasagne_sfoglie": {
+   "tutti": "(^|-)lasagne-(pasta-)?(all-?uovo|alluovo|di-semola|sfoglia)[a-z0-9-]*-(250|500)-?g$|(^|-)lasagne-pasta-alluovo-500g$",
+   "no": "bolognese|ragu|verdure|zucchine|carciofi|spinaci|schar|gluten"
+  },
+  "besciamella": {
+   "tutti": "besciamella-[a-z-]*500-ml$|(^|-)besciamella-500-ml$",
+   "no": "leggera|senza|condisoia"
+  },
+  "fettine": {
+   "tutti": "(scottona|bovino|vitellone|manzo)-[a-z-]*fettine-(scelte|sottili$|per-)|fettine-[a-z-]*(scottona|bovino|vitellone|vitello)",
+   "no": "formaggio|rucola|straccetti|impanat|marinat|tagliata|branzino|pizzaiola"
+  },
+  "lonza": {
+   "tutti": "lonza[a-z-]*(fettine|fette)|fettine-di-lonza",
+   "no": "impanat|salvia|tagliata|cott"
+  },
+  "calamari": {
+   "tutti": "anelli-di-(totano|calamar)[a-z0-9-]*|calamari-[a-z-]*(anelli|surgelat|congelat)",
+   "no": "croccant|fritt|impanat|pastell|sugo|misto|romana"
+  },
+  "acciughe": {
+   "tutti": "filetti-di-(alici|acciughe)[a-z0-9-]*olio",
+   "no": "marinat|salsa|pasta|720"
+  },
+  "mortadella": {
+   "tutti": "(^|-)mortadella-[a-z0-9-]*(bologna|igp|affettat|fette|[0-9]+-g)",
+   "no": "pistacchi|fegato|tartufo|cubett"
+  },
+  "carciofi": {
+   "tutti": "carciof[io]-[a-z-]*surgelat|cuori-di-carciofo[a-z-]*surgelat",
+   "no": "patate|misto|crema"
+  },
+  "pelati": {
+   "tutti": "(^|-)(pomodori-)?pelati-[a-z0-9-]*(400-g|800-g|2-x-400|3-x-400)",
+   "no": "bio|ciliegin|datterin|basilico|san-marzano"
+  },
+  "vino": {
+   "tutti": "(^|-)vino-bianco[a-z0-9-]*(1-l|75-cl|750-ml)$",
+   "no": "aceto|frizzant|spumant|dolce|1500"
+  },
+  "cime_rapa": {
+   "tutti": "cime-di-rapa[a-z0-9-]*(surgelat|primavera)",
+   "no": "vapore|aglio|condit"
+  },
+  "finocchi": {
+   "tutti": "^(esselunga-)?finocchi(-tagliati|-confezionati|-sfusi|$)",
+   "no": "grigliat|olio|finocchiett"
+  },
+  "porcini": {
+   "tutti": "funghi-porcini-secchi|porcini-secchi",
+   "no": "misto|risotto|crema"
+  },
+  "verza": {
+   "tutti": "^(esselunga-)?(cavolo-)?verza(-scura|-sfus|-cat|-intera|-confezionat|$)",
+   "no": "aglio|ravioli|gyoza|zuppa"
+  },
+  "pizzoccheri": {
+   "tutti": "pizzoccheri-(della-valtellina|[0-9])",
+   "no": "tris|cucina|viva-la-mamma|con-"
+  },
+  "fontina": {
+   "tutti": "fontina-(dop|[a-z0-9-]*fetta|da-banco)",
+   "no": "fonduta|pizzocc"
+  },
+  "spezzatino": {
+   "tutti": "(bovino|scottona|vitello|vitellone|manzo)-[a-z-]*spezzatino|spezzatino-di-(vitello|bovino|manzo)",
+   "no": "tacchino|pollo|suino|agnello"
+  },
+  "cavolo_nero": {
+   "tutti": "^(esselunga-)?(naturama-)?(cavolo-nero(-sfuso|-foglia|$)|cimette-di-cavolo-nero)",
+   "no": "zuppa|ribollita|erbazzone"
+  },
+  "sgombro": {
+   "tutti": "filetti-di-sgombro-[a-z-]*(olio|naturale)",
+   "no": "piccante|peperoncino|limone"
+  },
+  "cozze": {
+   "tutti": "cozze-[a-z-]*sgusciate",
+   "no": "pomodoro|tris|zuppa|vongole"
+  },
+  "semolino": {
+   "tutti": "semola[a-z-]*semolino|(^|-)semolino-(di-grano-duro|[0-9])",
+   "no": "mellin|hipp|crema|svezzamento"
+  },
+  "pastina": {
+   "tutti": "(^|-)(stelline|anellini|tempestine|filini|ditalini|puntine|risoni|pastina)-[a-z0-9-]*(250|500)-?g$",
+   "no": "integral|mellin|plasmon|pappa|bio-|uovo|senza"
+  },
+  "fusi_pollo": {
+   "tutti": "fusi-di-pollo|fusi-pollo|pollo-[a-z-]*fusi",
+   "no": "impanat|arrosto|cott|marinat|speziat"
+  },
+  "ali_pollo": {
+   "tutti": "ali-di-pollo|alette-di-pollo",
+   "no": "impanat|marinat|piccant|cott|bbq"
+  },
+  "pollo_bocconcini": {
+   "tutti": "(bocconcini|cubetti|spiedini)-di-pollo|pollo-[a-z-]*(bocconcini|cubetti)",
+   "no": "impanat|marinat|cott|curry|kebab|piccant|cucina|birbe|alloro"
+  },
+  "macinato_pollo": {
+   "tutti": "macinato-di-(pollo|tacchino)|(pollo|tacchino)-[a-z-]*macinat",
+   "no": "cott|ragu"
+  },
+  "macinato_misto": {
+   "tutti": "macinato-[a-z-]*(misto|suino-e-bovino|bovino-e-suino)",
+   "no": "cott|ragu"
+  },
+  "bistecca": {
+   "tutti": "(bistecca|bistecche|entrecote|controfiletto)-[a-z-]*(manzo|bovino|scottona|vitellone)|(scottona|bovino|manzo)-[a-z-]*(bistecca|entrecote|controfiletto)",
+   "no": "panin|hamburger|marinat|pizzaiola"
+  },
+  "filetto_maiale": {
+   "tutti": "filetto-di-(maiale|suino)|suino-[a-z-]*filetto",
+   "no": "marinat|bacon|speck|cott|prosciutto|pepe|nodini"
+  },
+  "braciole": {
+   "tutti": "(braciol[ae]|bracioline|costolett[ae])-[a-z-]*(maiale|suino)|suino-[a-z-]*(braciol|costolett)",
+   "no": "impanat|marinat"
+  },
+  "costine": {
+   "tutti": "costine-[a-z-]*(maiale|suino)|suino-[a-z-]*costine",
+   "no": "bbq|cott|marinat|glassat|affumicat|pront|gourmet"
+  },
+  "arista": {
+   "tutti": "(^|-)arista(-|$)",
+   "no": "fette|fettine|impanat|cott|salvia|tagliata"
+  },
+  "ossobuco": {
+   "tutti": "ossobuc|ossibuch",
+   "no": "cott|pronto|milanese"
+  },
+  "agnello": {
+   "tutti": "agnello",
+   "no": "lilys|cane|gatto|pate|ragu|sugo|impanat"
+  },
+  "coniglio": {
+   "tutti": "coniglio",
+   "no": "ragu|sugo|cott|pate|fegato|cucina|ligure"
+  },
+  "hamburger_pollo": {
+   "tutti": "(hamburger|burger)-[a-z-]*(pollo|tacchino)",
+   "no": "impanat|vegan|veget|cott"
+  },
+  "cotechino": {
+   "tutti": "cotechino",
+   "no": "lenticchie|zampone"
+  },
+  "guanciale": {
+   "tutti": "guanciale-(amatriciano|[0-9]|stagionat|a-cubetti|tagliett)|tagliette-di-guanciale",
+   "no": "memory|cuscin|soffice|saponetta|smart"
+  },
+  "salame": {
+   "tutti": "salame-[a-z-]*(affettat|fette|milano|ungherese|napoli|felino|nostrano|[0-9]+-g)",
+   "no": "piccante|cioccolat|pizza"
+  },
+  "coppa": {
+   "tutti": "(^|-)coppa-(piacentina|di-parma|stagionat|fette|affettat|[0-9])",
+   "no": "gelat|cioccolat|panna|scamerita|suino"
+  },
+  "orata": {
+   "tutti": "(^|-)orat[ae](-|$)",
+   "no": "surgelat|panat|impanat|tris|gratin|cott|burger"
+  },
+  "branzino": {
+   "tutti": "branzin|spigol",
+   "no": "surgelat|tris|panat|gratin|cott|burger"
+  },
+  "pesce_spada": {
+   "tutti": "pesce-spada",
+   "no": "affumicat|carpaccio|marinat"
+  },
+  "tonno_fresco": {
+   "tutti": "tonno-[a-z-]*(fresco|filetto)|trancio-di-tonno",
+   "no": "olio|naturale|scatola|vetro|sott"
+  },
+  "baccala": {
+   "tutti": "baccala|merluzzo-[a-z-]*dissalat",
+   "no": "mantecat|crema|frittell|fritt"
+  },
+  "platessa": {
+   "tutti": "platessa",
+   "no": "panat|impanat|gratin|croccant|pastell"
+  },
+  "trota": {
+   "tutti": "trota|trote",
+   "no": "affumicat"
+  },
+  "sogliola": {
+   "tutti": "sogliol",
+   "no": "panat|impanat|gratin"
+  },
+  "gamberoni": {
+   "tutti": "gamberon|mazzancoll",
+   "no": "panat|impanat|cott|sugo|tris|misto|tempura|sandwich|spiedin"
+  },
+  "vongole": {
+   "tutti": "vongol",
+   "no": "sugo|sughett|vongolata|condipresto|tris|cozze|misto|zuppa"
+  },
+  "polpo": {
+   "tutti": "polpo|polipo",
+   "no": "insalata|cott|carpaccio|sugo|panino|poke"
+  },
+  "seppie": {
+   "tutti": "seppi[ae]",
+   "no": "nero|sugo|insalata|cott|ripien|osso"
+  },
+  "sardine": {
+   "tutti": "sardin[ae]-[a-z-]*olio",
+   "no": "pate|piccant"
+  },
+  "asparagi": {
+   "tutti": "^(esselunga-)?asparag(i|o)-(verdi|bianchi|sfus|confezionat|mazzo|[0-9])",
+   "no": "crema|sott|grigliat|surgel|zuppa"
+  },
+  "spinaci_freschi": {
+   "tutti": "^(esselunga-(naturama-)?)?spinac(i|ini)-[a-z0-9-]*(freschi|lavati|novelli|busta|[0-9]+-g)$",
+   "no": "surgel|crema|ricotta|cott"
+  },
+  "bietole": {
+   "tutti": "^(esselunga-)?(biete|bietole|coste)(-|$)",
+   "no": "surgel|cott|vapore"
+  },
+  "cavolini": {
+   "tutti": "cavolini-di-bruxelles",
+   "no": "cott|crema"
+  },
+  "porri": {
+   "tutti": "^(esselunga-)?porr(i|o)(-|$)",
+   "no": "crema|zuppa"
+  },
+  "radicchio": {
+   "tutti": "^(esselunga-)?radicchio-(rosso|tardivo|chioggia|trevis|lungo|tondo|confez|sfus)",
+   "no": "grigliat|sott|risotto|crema"
+  },
+  "scalogno": {
+   "tutti": "scalogn",
+   "no": "sott|crema|aceto"
+  },
+  "cipollotti": {
+   "tutti": "cipollott",
+   "no": "sott"
+  },
+  "patate_dolci": {
+   "tutti": "patat(e|a)-dolc|patate-americane|batata",
+   "no": "chips|surgel|frit"
+  },
+  "barbabietole": {
+   "tutti": "^(esselunga-)?barbabietol|barbabietole-(rosse|precotte|cotte)",
+   "no": "succo|chips|crema|hummus|panino"
+  },
+  "zenzero": {
+   "tutti": "^(esselunga-)?zenzero(-fresco|-radice|$)",
+   "no": "polvere|tisana|candito|bevand|succo|shot"
+  },
+  "arance": {
+   "tutti": "^(esselunga-)?arance-(tarocco|navel|moro|sanguinell|bionde|da-tavola|sfus|rosse|bio|di-sicilia|confezionat)",
+   "no": "succo|spremut|marmellat|bevand"
+  },
+  "pere": {
+   "tutti": "^(esselunga-)?pere-(abate|williams|conference|kaiser|decana|coscia|santa-maria|sfus|confezionat|bio)",
+   "no": "succo|nettare|frullat|sciroppat"
+  },
+  "kiwi": {
+   "tutti": "^(esselunga-)?kiwi(-verde|-gold|-giallo|-sfus|-confezionat|$)",
+   "no": "succo|bevand|essiccat"
+  },
+  "fragole": {
+   "tutti": "^(esselunga-)?fragol(e|ine)-[a-z0-9-]*(250|500|confezion|vaschetta)",
+   "no": "succo|yogurt|confettur|gelat|surgel"
+  },
+  "uva": {
+   "tutti": "^(esselunga-)?uva-(bianca|nera|rosata|italia|vittoria|red-globe|senza-semi|sfus|confezionat)",
+   "no": "succo|passa|sultanina|uvetta"
+  },
+  "frutti_bosco": {
+   "tutti": "^(esselunga-|[a-z]+-)?frutti-di-bosco(-surgelat|-misti|-freschi|-[0-9]|$)",
+   "no": "yogurt|gelat|succo|confettur|tisana|infuso"
+  },
+  "bufala": {
+   "tutti": "mozzarella-di-bufala|bufala-campana",
+   "no": "pizza|burger|tris"
+  },
+  "burrata": {
+   "tutti": "burrat[ae]",
+   "no": "pizza|pesto"
+  },
+  "emmental": {
+   "tutti": "emmental",
+   "no": "fondut"
+  },
+  "provolone": {
+   "tutti": "provolone",
+   "no": "pizza|panin"
+  },
+  "mascarpone": {
+   "tutti": "mascarpone-[a-z0-9-]*(250|500)",
+   "no": "tiramisu|crema|gelat|torta"
+  },
+  "asiago": {
+   "tutti": "asiago-(fresco|stagionat|pressato|dop|d-allevo|mezzano)",
+   "no": "pizza|panin|ravioli|duetto|chips|fiordifrutta|mirtill|surgel"
+  },
+  "taleggio": {
+   "tutti": "taleggio",
+   "no": "panin|pizza"
+  },
+  "yogurt_bianco": {
+   "tutti": "yogurt-[a-z-]*(bianco|naturale|intero)-[a-z0-9-]*(500|450|4-x-125|2-x-125|125)",
+   "no": "greco|frutta|cocco|soia|magro|zero|skyr|vaniglia|bambin|dolce"
+  },
+  "burger_vegetale": {
+   "tutti": "burger-[a-z-]*(vegetal|vegan|soia|ceci|lenticchie)|(vegetal|vegan)-[a-z-]*burger",
+   "no": "pollo|bovino|manzo|tacchino|suino"
+  },
+  "riso_integrale": {
+   "tutti": "riso-[a-z-]*integrale-[a-z0-9-]*(500|1000|1-kg)",
+   "no": "gallett|soffiat|chips|bevanda|pronto|cott|risotto"
+  },
+  "quinoa": {
+   "tutti": "(^|-)quinoa-(bianca|rossa|nera|tricolore|real|bio|[0-9])",
+   "no": "chips|gallett|soffiat|insalat|pront|cracker|barret|snack|burger|minestr|verdure|cucina|bulgur"
+  },
+  "pasta_integrale": {
+   "tutti": "(penne|fusilli|spaghetti|mezze-maniche|sedanini|rigatoni)-[a-z0-9-]*integral[a-z0-9-]*500",
+   "no": "farro|kamut|legumi|senza"
+  },
+  "pasta_legumi": {
+   "tutti": "(pasta|fusilli|penne|sedanini|caserecce|spaghetti)-[a-z0-9-]*(di-lenticchie|di-ceci|di-piselli|legumi)",
+   "no": "zuppa|minestr"
+  },
+  "lenticchie_rosse": {
+   "tutti": "lenticchie-rosse-decorticat|lenticchie-rosse-[0-9]",
+   "no": "pasta|zuppa|chips|vellutata|burger"
+  },
+  "polpa_pomodoro": {
+   "tutti": "polpa-di-pomodoro|polpa-pronta",
+   "no": "bio|ciliegin|datterin|basilico|sugo"
+  },
+  "concentrato": {
+   "tutti": "concentrato-di-pomodoro",
+   "no": "bio"
+  },
+  "pomodori_secchi": {
+   "tutti": "pomodori-secchi",
+   "no": "pesto|crema|chips|pane|cracker|burger|pate"
+  },
+  "olive_verdi": {
+   "tutti": "olive-verdi",
+   "no": "ripien|ascolane|fritt|pate|crema|olio"
+  },
+  "pinoli": {
+   "tutti": "(^|-)pinoli-",
+   "no": "pesto|biscott|torta"
+  },
+  "noci": {
+   "tutti": "noci-sgusciat|gherigli",
+   "no": "biscott|torta|cioccolat|pesto|olio|cocco|anacard|pecan|macadamia"
+  },
+  "pistacchi": {
+   "tutti": "pistacchi-[a-z-]*(sgusciat|naturali|tostat)",
+   "no": "crema|cioccolat|gelat|pesto|granella"
+  },
+  "uvetta": {
+   "tutti": "uvetta|uva-sultanina|uva-passa",
+   "no": "cioccolat|biscott|pane"
+  },
+  "miele": {
+   "tutti": "miele-[a-z-]*(millefiori|acacia|castagno|agrumi|tiglio|eucalipto|italiano|[0-9]+-g)",
+   "no": "caramell|tisana|biscott|yogurt|cereali|barrett|propoli"
+  },
+  "zucchero": {
+   "tutti": "zucchero-[a-z-]*(semolato|bianco|di-canna|extrafine)",
+   "no": "velo|bustin|vanigl|cubett|confettur|caramell"
+  },
+  "avena": {
+   "tutti": "fiocchi-d-?avena|avena-[a-z-]*fiocchi",
+   "no": "biscott|barrett|bevanda|cioccolat|muesli|crunchy|granola"
+  },
+  "burro_arachidi": {
+   "tutti": "burro-di-arachidi|crema-[a-z-]*arachidi",
+   "no": "cioccolat|barrett|biscott"
+  },
+  "cioccolato": {
+   "tutti": "cioccolato-fondente-[a-z0-9-]*100-g",
+   "no": "nocciol|mandorl|arancia|peperonc|menta|caramel|cocco|biscott|pralin|ripien|crema|bevanda|gelat|muesli|sale"
+  },
+  "maionese": {
+   "tutti": "maionese",
+   "no": "light|vegan|senza-uova|tartara|cocktail|aglio|tartufo|limone|pepe|wasabi|curry|cucina"
+  },
+  "senape": {
+   "tutti": "senape-[a-z-]*(dijon|delicata|forte|classica|[0-9]+-g)",
+   "no": "miele|salsa|frutta|cremona|mantovan|bonduelle|contorn"
+  },
+  "ketchup": {
+   "tutti": "ketchup",
+   "no": "piccant|curry|zero|bbq"
+  },
+  "lievito": {
+   "tutti": "lievito-di-birra-[a-z-]*(secco|disidratat|liofilizzat|bustine|3-x)",
+   "no": "dolci|vanigl"
+  },
+  "paprika": {
+   "tutti": "paprika",
+   "no": "chips|patatin|pollo|salsa|crackers|taralli|suino|coppa"
+  },
+  "cumino": {
+   "tutti": "cumino",
+   "no": "pane|formaggio|crackers"
+  },
+  "noce_moscata": {
+   "tutti": "noce-moscata"
+  },
+  "cannella": {
+   "tutti": "cannella",
+   "no": "biscott|tisana|cereali|caramell|pane|muesli|granola|infuso|yogurt"
+  },
+  "curcuma": {
+   "tutti": "curcuma",
+   "no": "tisana|bevanda|integrat|capsul|latte|infuso|miele"
+  },
+  "timo": {
+   "tutti": "(^|-)timo(-|$)",
+   "no": "miele|tisana|tisane|infuso|intimo|detergent"
+  },
+  "alloro": {
+   "tutti": "(^|-)alloro-(foglie|[0-9])|foglie-di-alloro|erbe-alloro",
+   "no": "tisana|liquore"
+  },
+  "menta": {
+   "tutti": "^(esselunga-)?menta(-fresca|-confezionat|-in-vaso|$)",
+   "no": "chewing|gomm|caramell|tisana|sciroppo|liquor|cioccolat|infuso"
+  },
+  "erba_cipollina": {
+   "tutti": "erba-cipollina",
+   "no": "formaggio|salsa|crackers"
+  },
+  "brie": {
+   "tutti": "(^|-)brie(-|$)",
+   "no": "pizza|panin|tramezz"
+  },
+  "primo_sale": {
+   "tutti": "primo-sale|primosale",
+   "no": "pizza|panin"
+  },
+  "caciotta": {
+   "tutti": "caciott",
+   "no": "pizza|panin|grattugiat"
+  },
+  "kefir": {
+   "tutti": "(^|-)kefir",
+   "no": "semi|grani"
+  },
+  "biscotti": {
+   "tutti": "biscott",
+   "no": "cane|gatto|pet|gelato|crema|torta"
+  },
+  "fette_biscottate": {
+   "tutti": "fette-biscottate",
+   "no": "senza-glutine"
+  },
+  "muesli": {
+   "tutti": "muesli",
+   "no": "barrett"
+  },
+  "marmellata": {
+   "tutti": "marmellat|confettur",
+   "no": "crostat|biscott"
+  },
+  "caffe": {
+   "tutti": "caffe.*(macinat|moka)|(macinat|moka).*caffe",
+   "no": "capsul|cialde|solubile|orzo|decaf"
+  }
+ }
+}
