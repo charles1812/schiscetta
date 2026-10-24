@@ -44,7 +44,7 @@ function rangeLabel(start) {
 }
 
 /* ---------------- stato ---------------- */
-function newWeek(start) { return { start, slots: {}, status: 'plan', checked: {}, extras: [], spent: null, shopDate: null, done: {}, steps: {}, sfizi: {} }; }
+function newWeek(start) { return { start, uid: 'w' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), slots: {}, status: 'plan', checked: {}, extras: [], spent: null, shopDate: null, done: {}, steps: {}, sfizi: {} }; }
 function defaults() {
   return { v: 1, setup: false, market: 'esselunga', pc: 1, pp: 1, pantry: {}, prices: {}, favs: {},
     reminder: { on: true, t: '18:30' }, theme: 'auto', week: newWeek(nextMonday()), history: [], timers: [], custom: { piatti: [], ing: [] }, feeds: {}, apiKey: '', choice: {}, qty: {}, qmul: {} };
@@ -158,10 +158,11 @@ const tripKey = () => winKey() || 'settimana';
    Le voci della settimana in corso si ricostruiscono dai giri (w.trips); quelle passate restano com'erano. */
 const FONTI = { wallet: ['📲', 'Google Wallet'], scontrino: ['🧾', 'scontrino'], spesa: ['✍️', 'segnata a mano'] };
 function syncSpese(w = S.week) {
-  S.spese = (S.spese || []).filter(x => x.week !== w.start);
+  const uid = w.uid || w.start;      // solo le voci di questo menu (non quelle di un menu di prima partito lo stesso giorno)
+  S.spese = (S.spese || []).filter(x => x.wid !== uid);
   for (const [giro, tr] of Object.entries(w.trips || {})) {
-    S.spese.push({ id: w.start + '_' + giro, week: w.start, giro, date: tr.date, spent: tr.spent || null, stima: tr.stima || null,
-      store: tr.negozio || SM[tr.m || S.market].n, fonte: tr.fonte || 'spesa', items: tr.items || [], extras: tr.extras || [] });
+    S.spese.push(Object.assign({ id: uid + '_' + giro, wid: uid, week: w.start, giro, date: tr.date, spent: tr.spent || null, stima: tr.stima || null,
+      store: tr.negozio || SM[tr.m || S.market].n, fonte: tr.fonte || 'spesa', items: tr.items || [], extras: tr.extras || [] }, tr.pay ? { pay: tr.pay } : {}));
   }
   S.spese.sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
 }
@@ -352,6 +353,30 @@ function ckPrefill(ck, list) {
     }
   }
 }
+/* spese sparite con le versioni di prima (un menu nuovo nello stesso giorno cancellava quelle del menu precedente):
+   le ritrovo dai pagamenti di Google Wallet già registrati e dalle settimane archiviate. Una volta sola per ognuna. */
+function recoverSpese() {
+  S.spese = S.spese || [];
+  const rec = (S.spRec = S.spRec || {}), w = S.week;
+  for (const x of S.spese) if (!x.wid && x.week === w.start) x.wid = (w.trips || {})[x.giro] ? w.uid : 'old';     // voci di prima della v1.47
+  const near = (date, v) => S.spese.some(x => Math.abs(diffDays(x.date, date)) <= 1 && (!x.spent || Math.abs(x.spent - v) < 0.01));
+  let n = 0;
+  let all = [];
+  try { all = NATIVE && NATIVE.walletAll ? JSON.parse(NATIVE.walletAll() || '[]') : []; } catch (e) { all = []; }
+  for (const it of all) {
+    if (it.stato !== 'fatto' || !(it.totale > 0) || rec[it.pay] || S.spese.some(x => x.pay === it.pay) || near(it.date, it.totale)) continue;
+    addSpesa({ date: it.date, spent: Math.round(it.totale * 100) / 100, store: it.negozio || '', fonte: 'wallet', pay: it.pay, recovered: true });
+    rec[it.pay] = 1; n++;
+  }
+  for (const h of S.history || []) {
+    const k = 'h' + h.start;
+    if (!(h.spent > 0) || rec[k] || S.spese.some(x => x.week === h.start) || near(addDays(h.start, -1), h.spent)) continue;
+    addSpesa({ date: addDays(h.start, -1), week: h.start, giro: 'settimana', spent: h.spent, stima: h.cassa || null, store: '', fonte: 'spesa', recovered: true });
+    rec[k] = 1; n++;
+  }
+  if (n) { save(); setTimeout(() => toast(`🧾 Ho ritrovato ${n === 1 ? 'una spesa' : n + ' spese'}: le vedi in Spesa › Spese fatte`), 600); }
+  return n;
+}
 /* una spesa che non appartiene a un giro del menu (scontrino, a mano): resta nello storico anche se il menu ricomincia */
 function addSpesa(x) {
   S.spese = S.spese || [];
@@ -443,7 +468,7 @@ window.__updateDone = err => {
   if (err) toast(`Aggiornamento non riuscito: ${esc(err)}`);
 };
 /* novità della versione: si vedono una volta, dopo l'aggiornamento (tienile corte) */
-const NOVITA = { ver: '1.46', testo: "📅 Menu a calendario: tocca un pasto per la ricetta, «L'ho cucinato», «con altre dosi», «Ho mangiato altro», cambia o salta. 🏠 Nuova scheda Dispensa (in casa, da comprare, di base) con «Rifai il menu da qui». 🛒 Spesa con lista, spese fatte e cosa hai mangiato (con annulla e correggi). Lo scontrino ora finisce sempre nelle spese fatte." };
+const NOVITA = { ver: '1.47', testo: "🥫 Cose già pronte: scegli se compri sughi, gnocchi e pasta fresca, impanati, impasti (Impostazioni). 📝 Menu a lista: i piatti della settimana senza giorni, ogni giorno scegli cosa cucinare con quello che hai (Menu › Altro). 🧾 Spese fatte: quelle sparite si ritrovano dove possibile, e ogni spesa passata si modifica." };
 function updateBanner() {
   if (!upd) {
     if (NATIVE && appVer().name === NOVITA.ver && S.novitaVista !== NOVITA.ver)
@@ -1237,14 +1262,34 @@ const ALLERGENI = {
   sesamo: ['⚪', 'Sesamo', ['hummus']],
   solfiti: ['🍷', 'Solfiti', ['vino', 'aceto']]
 };
-/* prodotti pronti: con «Niente cose pronte» spariscono le ricette che li usano */
-const PRONTI = ['pure', 'ragu', 'sugo_rana', 'besciamella', 'lasagna', 'cotoletta', 'bastoncini', 'patate_surg', 'condiriso', 'base_pizza', 'hamburger_pollo', 'burger_vegetale'];
+/* prodotti pronti per categoria: chi non li compra (S.pronti[k] === false) non vede le ricette che li usano.
+   Sono cose diverse: il sugo pronto in Italia si compra poco, gli gnocchi sì. */
+const PRONTI_CAT = {
+  sughi: ['🍅', 'Sughi pronti', 'ragù, pesto, sugo fresco, besciamella', ['ragu', 'sugo_rana', 'pesto', 'condiriso', 'besciamella']],
+  pasta: ['🥟', 'Pasta fresca pronta', 'gnocchi, tortellini, ravioli', ['gnocchi', 'tortellini', 'ravioli']],
+  piatti: ['🍗', 'Piatti pronti e impanati', 'lasagne pronte, cotolette, bastoncini, patate surgelate', ['lasagna', 'cotoletta', 'bastoncini', 'patate_surg', 'hamburger_pollo', 'burger_vegetale', 'pure']],
+  basi: ['🍕', 'Impasti pronti', 'impasto per la pizza, pasta sfoglia', ['base_pizza', 'sfoglia']]
+};
+const PRONTI = Object.values(PRONTI_CAT).flatMap(c => c[3]);
 function excluded() {
   const out = new Set(Object.keys(S.noIng || {}));
+  for (const k in PRONTI_CAT) if ((S.pronti || {})[k] === false) PRONTI_CAT[k][3].forEach(i => out.add(i));
   for (const a in (S.allergie || {})) if (ALLERGENI[a]) ALLERGENI[a][2].forEach(i => out.add(i));
   return out;
 }
 const blocked = p => { const ex = excluded(); return ex.size > 0 && p.ing.some(([iid]) => ex.has(iid)); };
+
+function prontiHTML() {
+  return Object.entries(PRONTI_CAT).map(([k, [e, n, d, list]]) => {
+    const no = (S.pronti || {})[k] === false, nd = ALL.filter(p => p.ing.some(([i]) => list.includes(i))).length;
+    return `<div class="item pcheck${no ? ' manca' : ''}"><span style="font-size:22px">${e}</span><div class="grow"><div class="nm">${n}</div><div class="left">${d} · ${nd} ricette</div></div>
+      <div class="pbtn"><button class="${no ? '' : 'on ok'}" data-a="prontiSet" data-k="${k}" data-v="si">Li compro</button><button class="${no ? 'on no' : ''}" data-a="prontiSet" data-k="${k}" data-v="no">No</button></div></div>`;
+  }).join('');
+}
+/* come si organizza il menu: calendario (piatti per giorno) o lista di piatti da scegliere giorno per giorno */
+const STYLES = { giorni: ['📅', 'Piatti per giorno', 'un calendario: ogni giorno sai già cosa cucini'],
+  lista: ['📝', 'Lista di piatti', 'i piatti della settimana senza giorni: ogni giorno scegli cosa farti con quello che hai in casa'] };
+const styleHTML = () => Object.entries(STYLES).map(([k, [e, n, d]]) => `<div class="item" data-a="menuStyle" data-v="${k}"><span style="font-size:22px">${e}</span><div class="grow"><div class="nm">${n}</div><div class="left">${d}</div></div><span class="toggle${(S.menuStyle || 'giorni') === k ? ' on' : ''}"></span></div>`).join('');
 
 /* tipi di menu per «Componi tu» */
 const MODES = {
@@ -1554,7 +1599,7 @@ function renderMenu() {
     html += `<div class="hero mini"><div class="wk">📅 ${rangeLabel(w.start)} <button data-a="weekSheet">Cambia</button></div>
       ${ms.length ? `<div class="sub"><b class="num" style="font-size:22px">${eur(sh.cassa)}</b> da comprare${sh.usedVal > 0.5 ? ` · ${eur(sh.usedVal)} già in casa` : ''} · ${ms.length} pasti</div>` : `<div class="sub">Scegli pranzo e cena, oppure lascia fare a me.</div>`}
       <div class="acts">${empty ? `<button class="btn" data-a="autoSheet">✨ ${ms.length ? 'Completa tu' : 'Componi tu il menu'}</button>` : `<button class="btn" data-a="tab" data-t="${w.status === 'cook' ? 'stasera' : 'spesa'}">${w.status === 'cook' ? '🍳 Stasera' : '🛒 Spesa'}</button>`}${(S.dispensa || []).length ? '<button class="btn alt" data-a="menuScorte">🏠 Dalle scorte</button>' : ''}<button class="btn alt" data-a="menuMore">⋯ Altro</button></div></div>`;
-    html += calHTML() + tips.join('');
+    html += (S.menuStyle === 'lista' ? poolHTML() : calHTML()) + tips.join('');
     html += `<button class="btn btn-soft btn-block" data-a="menuView" style="margin:4px 0 12px">📋 Vedi i pasti in dettaglio</button>`;
     if (ms.length && w.status !== 'cook') html += `<button class="btn btn-primary btn-block" data-a="tab" data-t="spesa" style="margin-top:6px">🛒 Lista della spesa · ${eur(sh.cassa)}</button>`;
     return html;
@@ -1573,7 +1618,7 @@ function renderMenu() {
     <div class="steps3"><div class="${stage === 0 ? 'on' : 'done'}">1 · Menu</div><div class="${stage === 1 ? 'on' : stage > 1 ? 'done' : ''}">2 · Spesa</div><div class="${stage === 2 ? 'on' : ''}">3 · Cucina</div></div>
   </div>`;
   html += tips.join('');
-  if (!window.__TEST_LIST) html += `<button class="btn btn-soft btn-block" data-a="menuView" style="margin-bottom:12px">📅 Torna al calendario</button>`;
+  if (!window.__TEST_LIST) html += `<button class="btn btn-soft btn-block" data-a="menuView" style="margin-bottom:12px">${S.menuStyle === 'lista' ? '📝 Torna alla lista' : '📅 Torna al calendario'}</button>`;
   else html += homeCard(sh);
   for (let d = 0; d < 7; d++) {
     const date = addDays(w.start, d);
@@ -1803,7 +1848,7 @@ const giroLbl = x => x.giro === 'settimana' || !/^\d+-\d+$/.test(x.giro) ? `sett
 const ym = d => d.slice(0, 7);
 const monthLbl = m => { const s = fdate(m + '-01', { month: 'long', year: 'numeric' }); return s[0].toUpperCase() + s.slice(1); };
 function renderSpese() {
-  const L = (S.spese || []).filter(x => x.spent > 0 || x.week === S.week.start);
+  const L = S.spese || [];
   if (!L.length) return `<div class="empty"><div class="big">💶</div><h3>Ancora nessuna spesa</h3><p>Quando segni «Ho fatto la spesa», paghi con Google Wallet o fotografi lo scontrino, la spesa compare qui con data, negozio e importo.</p><button class="btn btn-primary" data-a="spesaAddSheet">＋ Aggiungi una spesa</button></div>`;
   const sum = m => L.filter(x => ym(x.date) === m).reduce((s, x) => s + (x.spent || 0), 0);
   const thisM = ym(TODAY), prevM = ym(addDays(thisM + '-01', -1));
@@ -1819,7 +1864,7 @@ function renderSpese() {
     const f = FONTI[x.fonte] || FONTI.spesa, diff = x.spent && x.stima ? x.spent - x.stima : null;
     html += `<div class="item" data-a="spesaInfo" data-id="${esc(x.id)}"><span style="font-size:22px">${f[0]}</span><div class="grow"><div class="nm">${esc(fday(x.date))}${x.store ? ' · ' + esc(x.store) : ''}</div>
       <div class="left">${esc(giroLbl(x))}${x.items.length ? ` · ${x.items.length} prodotti` : ''}${diff != null && Math.abs(diff) >= 0.5 ? ` · ${diff > 0 ? '+' : '−'}${eur(Math.abs(diff))} sulla stima` : ''}</div></div>
-      <b class="num">${x.spent ? eur(x.spent) : '—'}</b></div>`;
+      ${x.spent ? `<b class="num">${eur(x.spent)}</b>` : '<span class="badge">importo?</span>'}</div>`;
   }
   return html + '</div><button class="btn btn-soft btn-block" data-a="spesaAddSheet" style="margin-top:12px">＋ Aggiungi una spesa</button>';
 }
@@ -1868,6 +1913,69 @@ function renderDispensa() {
   }
   return html;
 }
+/* menu a lista: i piatti della settimana senza giorni. Oggi scegli quale cucinare tra quelli che si fanno con quello che hai:
+   il piatto scelto si scambia con quello del pasto di oggi, così spesa, dispensa e «L'ho cucinato» restano quelli di sempre. */
+const todayIdx = (w = S.week) => { const d = diffDays(TODAY, w.start); return d >= 0 && d < 7 ? d : -1; };
+function canMake(dish, n) {        // cosa manca in casa per farlo adesso (solo gli ingredienti principali, porzioni intere)
+  const tot = {}, miss = [];
+  for (const l of S.dispensa || []) if (ING[l.iid] && l.exp >= TODAY) tot[l.iid] = (tot[l.iid] || 0) + l.q;
+  for (const [iid, q] of ingOf(dish)) {
+    const i = ING[iid];
+    if (!i) continue;
+    if (i.disp) { if (S.pantry[iid] === false) miss.push(iid); continue; }
+    if (SOFT.has(iid) || MINOR.has(iid)) continue;
+    const have = Object.keys(tot).filter(x => sameUse(iid, x)).reduce((s2, x) => s2 + tot[x], 0);
+    if (have + 1e-6 < q * n) miss.push(iid);
+  }
+  return miss;
+}
+function todayRows(w = S.week) {      // i pasti di oggi: pranzo (se non è già passato), cena, schiscetta di domani
+  const d0 = todayIdx(w), out = [];
+  if (d0 < 0) return out;
+  if (new Date().getHours() < 15 && lunchKeys(d0, w).length) out.push([lunchKeys(d0, w)[0], '🍱 Pranzo di oggi']);
+  if (eaters(d0 + 'c', w).length) out.push([d0 + 'c', '🌙 Cena di stasera']);
+  if (d0 < 6 && lunchKeys(d0 + 1, w).length) out.push([lunchKeys(d0 + 1, w)[0], '🍱 Schiscetta di domani']);
+  return out;
+}
+function poolGroups(w = S.week) {     // piatti ancora da cucinare (dopo quelli di oggi), uguali raggruppati
+  const skip = new Set(todayRows(w).map(r => r[0])), g = new Map();
+  for (const m of meals(w)) {
+    if (m.left || m.dish.own || skip.has(m.key) || cookDate(w, m) < TODAY) continue;
+    const x = g.get(m.dish.id) || { dish: m.dish, keys: [], n: 0 };
+    x.keys.push(m.key); x.n += m.n; g.set(m.dish.id, x);
+  }
+  return [...g.values()].map(x => Object.assign(x, { miss: canMake(x.dish, slotN(x.keys[0], x.dish, w)) }));
+}
+const poolImg = p => p.img ? `<img src="${esc(p.img.u)}" alt="" loading="lazy" onerror="this.remove()">` : `<span class="cal-e">${p.e}</span>`;
+const missTxt = miss => miss.length ? `🛒 da comprare: ${esc(miss.slice(0, 3).map(i => ING[i].n.toLowerCase()).join(', '))}${miss.length > 3 ? '…' : ''}` : '✅ si fa con quello che hai';
+function poolHTML() {
+  const w = S.week, done = {};
+  for (const e of S.diario || []) done[e.date + e.t] = e;
+  let h = '';
+  const rows = todayRows(w);
+  if (rows.length) {
+    h += `<div class="sec-title">Oggi</div><div class="group">`;
+    for (const [k, l] of rows) {
+      const r = slotDish(w, k), date = addDays(w.start, kDay(k)), e = done[date + kT(k)];
+      if (r && r.dish) h += `<button class="pool-i" data-a="mealSheet" data-k="${k}">${poolImg(r.dish)}<div class="grow"><div class="left">${l}</div><div class="nm">${r.left ? '♻️ ' : ''}${esc(r.dish.n)}</div>
+        <div class="left">${e ? '✅ segnato' : r.dish.own ? '🍳 cucinato da te' : missTxt(canMake(r.dish, slotN(k, r.dish, w)))}</div></div><span class="add-btn">›</span></button>`;
+      else h += `<button class="pool-i empty" data-a="poolPick" data-k="${k}"><span class="cal-e">${r && r.skip ? '🚫' : '＋'}</span><div class="grow"><div class="left">${l}</div><div class="nm">${r && r.skip ? 'Saltato: scegli un piatto' : 'Scegli dalla lista'}</div></div><span class="add-btn">›</span></button>`;
+    }
+    h += '</div>';
+  }
+  const G = poolGroups(w).sort((a, b) => a.miss.length - b.miss.length);
+  h += `<div class="sec-title">Da cucinare nei prossimi giorni<span class="right">${G.reduce((s2, x) => s2 + x.keys.length, 0)} pasti</span></div>`;
+  h += G.length ? `<div class="group">${G.map(x => `<button class="pool-i" data-a="poolSheet" data-k="${x.keys[0]}">${poolImg(x.dish)}<div class="grow"><div class="nm">${esc(x.dish.n)}${x.keys.length > 1 ? ` <span class="badge">×${x.keys.length}</span>` : ''}</div>
+      <div class="left">${x.dish.sc ? '🍱 anche in schiscetta · ' : ''}⏱ ${mins(x.dish.tot)}</div><div class="left">${missTxt(x.miss)}</div></div><span class="add-btn">›</span></button>`).join('')}</div>`
+    : '<div class="empty"><p>Nessun piatto in lista. Premi «Componi tu il menu» o «Dalle scorte».</p></div>';
+  return h + `<p class="muted small" style="margin:4px 4px 12px">Ogni giorno tocca un piatto e scegli quando cucinarlo: prima quelli con ✅, che si fanno con quello che hai in casa.</p>`;
+}
+/* scambia (o sposta) il piatto del pasto k sul pasto di oggi «to» */
+function poolTargets(k, w = S.week) {
+  const p = (slotDish(w, k) || {}).dish;
+  return p ? todayRows(w).filter(([t]) => t !== k && (kT(t) !== 'p' || isTodayLunch(t) || p.sc) && !((slotDish(w, t) || {}).own)) : [];
+}
+
 /* menu a calendario: una riga per giorno, pranzo e cena con la foto del piatto; tocca un pasto per tutte le azioni */
 function calHTML() {
   const w = S.week, sh = (S.dispensa || []).length ? shopCache() : null, done = {};
@@ -2387,12 +2495,30 @@ function sfizioHTML(s) {
     <button class="btn btn-ghost btn-block" style="margin-top:6px;color:var(--tomato)" data-a="sfDel" data-k="${s.k}" data-j="${s.j}">Togli lo sfizio</button>`;
 }
 const SHEETS = {
+  poolSheet(s) {
+    const w = S.week, r = slotDish(w, s.k) || {}, p = r.dish;
+    if (!p) return '';
+    const n = slotN(s.k, p, w), miss = canMake(p, n), T = poolTargets(s.k, w);
+    return `<div class="sheet-h"><h2>${esc(p.n)}</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
+      <button class="dish-row" data-a="dish" data-id="${p.id}" data-k="${s.k}">${dishEmo(p, 'sm')}<div class="grow"><div class="nm">📖 Apri la ricetta</div><div class="meta"><span>${porz(Math.round(n * 10) / 10)}</span><span>⏱ ${mins(p.tot)}</span></div></div><span class="add-btn">›</span></button>
+      <div class="tip ${miss.length ? 'blue' : 'green'} small">${missTxt(miss)}</div>
+      ${T.map(([t, l]) => `<button class="btn ${miss.length ? 'btn-soft' : 'btn-primary'} btn-block" style="margin-top:8px" data-a="poolUse" data-k="${s.k}" data-to="${t}">Lo cucino: ${l.replace(/^\S+ /, '').toLowerCase()}</button>`).join('')}
+      <button class="btn btn-soft btn-block" style="margin-top:8px" data-a="pick" data-k="${s.k}">🔄 Cambia piatto</button>`;
+  },
+  poolPick(s) {
+    const w = S.week, G = poolGroups(w).filter(x => poolTargets(x.keys[0], w).some(([t]) => t === s.k)).sort((a, b) => a.miss.length - b.miss.length);
+    return `<div class="sheet-h"><h2>${esc(slotLabel(s.k))}</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
+      <p class="muted small" style="margin-top:0">Dai piatti della settimana: prima quelli che si fanno con quello che hai.</p>
+      ${G.length ? `<div class="group">${G.map(x => `<button class="pool-i" data-a="poolUse" data-k="${x.keys[0]}" data-to="${s.k}">${poolImg(x.dish)}<div class="grow"><div class="nm">${esc(x.dish.n)}</div><div class="left">${missTxt(x.miss)}</div></div></button>`).join('')}</div>` : '<p class="muted">Nessun piatto della lista va bene qui.</p>'}
+      <button class="btn btn-soft btn-block" style="margin-top:10px" data-a="pick" data-k="${s.k}">Un altro piatto (dalle ricette)</button>`;
+  },
   menuMore() {
     const w = S.week, ms = meals(w), b = (a, txt, extra = '') => `<button class="btn btn-soft btn-block" style="margin-top:8px" data-a="${a}"${extra}>${txt}</button>`;
     return `<div class="sheet-h"><h2>Menu</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
       ${(S.dispensa || []).length ? b('menuScorte', '🏠 Fai il menu dalle scorte (da oggi)') : ''}
       ${ms.length ? b('autoSheet', '🔄 Rifai il menu', ' data-redo="1"') : b('autoSheet', '✨ Componi tu il menu')}
-      ${b('menuView', S.menuList ? '📅 Vista calendario' : '📋 Vista con i pasti in dettaglio')}
+      ${b('menuStyle', S.menuStyle === 'lista' ? '📅 Menu a calendario (piatti per giorno)' : '📝 Menu a lista (scegli ogni giorno cosa cucinare)', ` data-v="${S.menuStyle === 'lista' ? 'giorni' : 'lista'}"`)}
+      ${b('menuView', S.menuList ? '↩️ Vista semplice' : '📋 Vista con i pasti in dettaglio')}
       ${ms.length ? b('saveMenuSheet', '💾 Salva questo menu') : ''}${b('savedSheet', `📂 Menu salvati${(S.saved || []).length ? ` (${S.saved.length})` : ''}`)}
       ${b('weekSheet', '📅 Cambia settimana')}${ms.length ? b('clearAsk', '🗑️ Svuota il menu') : ''}`;
   },
@@ -2417,13 +2543,14 @@ const SHEETS = {
     }
     return h;
   },
-  spesaAdd() {
-    return `<div class="sheet-h"><h2>🧾 Aggiungi una spesa</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
-      <p class="muted small" style="margin-top:0">Per una spesa che non hai segnato (o di cui non hai lo scontrino).</p>
-      <label class="small muted">Giorno</label><input type="date" data-sa="date" value="${TODAY}" style="margin:4px 0 10px">
-      <label class="small muted">Negozio</label><input type="text" data-sa="store" value="${esc(SM[S.market].n)}" style="margin:4px 0 10px">
-      <label class="small muted">Quanto hai speso (€)</label><input type="text" inputmode="decimal" data-sa="eur" placeholder="es. 52,30" style="margin:4px 0 14px">
-      <button class="btn btn-primary btn-block" data-a="spesaAdd">Aggiungi</button>`;
+  spesaAdd(s) {
+    const x = s.id && (S.spese || []).find(y => y.id === s.id);
+    return `<div class="sheet-h"><h2>🧾 ${x ? 'Modifica la spesa' : 'Aggiungi una spesa'}</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
+      <p class="muted small" style="margin-top:0">${x ? 'Anche per le spese dei giorni passati.' : 'Per una spesa che non hai segnato (o di cui non hai lo scontrino), anche di giorni fa.'}</p>
+      <label class="small muted">Giorno</label><input type="date" data-sa="date" value="${x ? x.date : TODAY}" max="${TODAY}" style="margin:4px 0 10px">
+      <label class="small muted">Negozio</label><input type="text" data-sa="store" value="${esc(x ? x.store || '' : SM[S.market].n)}" style="margin:4px 0 10px">
+      <label class="small muted">Quanto hai speso (€)</label><input type="text" inputmode="decimal" data-sa="eur" placeholder="es. 52,30" value="${x && x.spent ? String(x.spent).replace('.', ',') : ''}" style="margin:4px 0 14px">
+      <button class="btn btn-primary btn-block" data-a="spesaAdd"${x ? ` data-id="${esc(x.id)}"` : ''}>${x ? 'Salva' : 'Aggiungi'}</button>`;
   },
   cooked() {
     const ck = ui.ck, lots = (S.dispensa || []).slice().sort((a, b) => a.exp.localeCompare(b.exp));
@@ -2565,13 +2692,15 @@ const SHEETS = {
   spesaInfo(s) {
     const x = (S.spese || []).find(y => y.id === s.id);
     if (!x) return '';
-    const f = FONTI[x.fonte] || FONTI.spesa, cur = x.week === S.week.start;
+    const f = FONTI[x.fonte] || FONTI.spesa, cur = x.wid && x.wid === S.week.uid && (S.week.trips || {})[x.giro];
     return `<div class="sheet-h"><h2>${f[0]} ${esc(fday(x.date))}</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
       <div class="card"><div class="row"><div class="grow"><b>${esc(x.store || 'Supermercato')}</b><div class="muted small">${esc(giroLbl(x))} · ${f[1]}</div></div><b class="num" style="font-size:22px">${x.spent ? eur(x.spent) : '—'}</b></div>
         ${x.stima ? `<div class="muted small" style="margin-top:6px">Stima della lista: ${eur(x.stima)}${x.spent ? ` · ${x.spent >= x.stima ? 'hai speso ' + eur(x.spent - x.stima) + ' in più (cose fuori lista o prezzi diversi)' : 'hai risparmiato ' + eur(x.stima - x.spent)}` : ''}</div>` : ''}</div>
       ${x.items.length ? `<div class="sec-title">Cosa hai comprato<span class="right">${x.items.length}</span></div><div class="group">${x.items.map(([iid, n, q, c]) => ING[iid] ? `<div class="item"><span style="font-size:22px">${ING[iid].e}</span><div class="grow"><div class="nm">${esc(ING[iid].n)}</div><div class="left">${ING[iid].conf && n ? `${n} × ${ING[iid].u === 'pz' ? ING[iid].conf + ' ' + ING[iid].pzn[1] : fmass(ING[iid].conf, ING[iid].u)}` : fq(iid, q)}</div></div><span class="num">${eur(c)}</span></div>` : '').join('')}
         ${x.extras.map(([t, pr]) => `<div class="item"><span style="font-size:22px">🛍️</span><div class="grow"><div class="nm">${esc(t)}</div></div><span class="num">${pr ? eur(pr) : ''}</span></div>`).join('')}</div>` : '<p class="muted small">Per questa spesa non ho l\'elenco dei prodotti.</p>'}
-      ${cur ? `<p class="muted small">È una spesa di questa settimana: l'importo lo correggi dalla scheda Spesa («Modifica»).</p>` : `<button class="btn btn-ghost btn-block" style="color:var(--tomato)" data-a="spesaDel" data-id="${esc(x.id)}">Togli dallo storico</button>`}`;
+      ${x.recovered ? '<p class="muted small">Ritrovata dopo l\'aggiornamento: controlla data e importo.</p>' : ''}
+      ${cur ? `<p class="muted small">È una spesa di questa settimana: l'importo lo correggi dalla scheda Spesa («Modifica»).</p>` : `<button class="btn btn-soft btn-block" data-a="spesaAddSheet" data-id="${esc(x.id)}">✏️ Modifica data, negozio e importo</button>
+        <button class="btn btn-ghost btn-block" style="color:var(--tomato);margin-top:8px" data-a="spesaDel" data-id="${esc(x.id)}">Togli dallo storico</button>`}`;
   },
   spSearch(s) { return spSearchHTML(s); },
   sfizio(s) { return sfizioHTML(s); },
@@ -2714,8 +2843,8 @@ const SHEETS = {
       <div class="sec-title">Allergie e intolleranze</div>
       <div class="chips wrap">${Object.entries(ALLERGENI).map(([k, [e, n]]) => `<button class="chip${(S.allergie || {})[k] ? ' on' : ''}" data-a="allergyToggle" data-k="${k}">${e} ${n}</button>`).join('')}</div>
       <p class="muted small">Escludo le ricette con gli ingredienti che di solito contengono l'allergene (es. glutine: pasta, pane, farina, dado…). Controlla sempre l'etichetta dei prodotti.</p>
-      <div class="sec-title">Cose pronte</div>
-      <div class="set-row" data-a="noPronti"><div class="grow"><b>🥄 Niente cose pronte</b><div class="muted small">${esc(PRONTI.filter(i => ING[i]).map(i => ING[i].n.toLowerCase()).join(', '))}: si cucina da zero</div></div><span class="toggle${PRONTI.filter(i => ING[i]).every(i => (S.noIng || {})[i]) ? ' on' : ''}"></span></div>
+      <div class="sec-title">Cose già pronte: le compri?</div>
+      <div class="group">${prontiHTML()}</div>
       <div class="sec-title">Ingredienti che non mangi<span class="right">${Object.keys(S.noIng || {}).length}</span></div>
       <input type="search" placeholder="Cerca: cipolla, funghi, peperoni…" value="${esc(ui.alq || '')}" data-in="alq" style="margin-bottom:10px">
       <div class="group" id="al-list">${allergyList(list, ex)}</div>
@@ -2763,6 +2892,8 @@ const SHEETS = {
       </div>
       ${profileCard()}
       ${hasWallet() ? `<div class="card"><div class="set-row"><div class="grow"><b>📲 Leggi la spesa da Google Wallet</b><div class="muted small">${NATIVE.walletEnabled() ? '✅ Attivo: quando paghi in un supermercato ti chiedo se è la spesa' : '⚪ Da attivare: dai a Schiscetta l\'accesso alle notifiche (legge solo quelle di Google Wallet)'}</div></div><button class="btn btn-soft btn-sm" data-a="walletSettings">${NATIVE.walletEnabled() ? 'Impostazioni' : 'Attiva'}</button></div></div>` : ''}
+      <div class="card"><div class="set-row" data-a="prontiSheet"><div class="grow"><b>🥫 Cose già pronte</b><div class="muted small">${(n => n.length ? 'non compri: ' + esc(n.join(', ').toLowerCase()) : 'le compri tutte: sughi, gnocchi, cotolette, impasti…')(Object.keys(PRONTI_CAT).filter(k => (S.pronti || {})[k] === false).map(k => PRONTI_CAT[k][1]))}</div></div><span class="add-btn">›</span></div>
+        <div class="set-row" style="flex-wrap:wrap"><div class="grow"><b>🍽️ Il menu</b><div class="muted small">${STYLES[S.menuStyle || 'giorni'][2]}</div></div><div class="seg">${Object.entries(STYLES).map(([k, [e, n]]) => `<button class="${(S.menuStyle || 'giorni') === k ? 'on' : ''}" data-a="menuStyle" data-v="${k}">${e} ${k === 'giorni' ? 'Per giorno' : 'Lista'}</button>`).join('')}</div></div></div>
       <div class="card"><div class="set-row" data-a="allergySheet"><div class="grow"><b>🚫 Allergie e ingredienti che non mangi</b><div class="muted small">${(() => { const a = Object.keys(S.allergie || {}).map(k => ALLERGENI[k] && ALLERGENI[k][1]).filter(Boolean), i = Object.keys(S.noIng || {}).filter(k => ING[k]).map(k => ING[k].n); return a.length || i.length ? esc([...a, ...i].join(', ')) + ` · ${ALL.filter(blocked).length} ricette escluse` : 'nessuno: tutte le ricette sono disponibili'; })()}</div></div><span class="add-btn">›</span></div></div>
       <div class="card">
         <div class="set-row" data-a="remToggle"><div class="grow"><b>Promemoria serale</b><div class="muted small">Notifica con cena e schiscetta, dopo la spesa</div></div><span class="toggle${S.reminder.on ? ' on' : ''}"></span></div>
@@ -2787,6 +2918,11 @@ const SHEETS = {
       ${S.history.length ? `<div class="sec-title">📒 Settimane passate</div><div class="group">${S.history.slice(-8).reverse().map(h => `<div class="item"><div class="grow"><div class="nm">${rangeLabel(h.start)}</div><div class="left">${h.meals} pasti · stima ${eur(h.cassa)}</div></div><b class="num">${h.spent ? eur(h.spent) : '—'}</b></div>`).join('')}</div>` : ''}
       ${NATIVE && NATIVE.appVersion ? `<div class="card"><div class="set-row"><div class="grow"><b>📦 Versione ${esc(appVer().name || '')}</b><div class="muted small">${upd ? `disponibile la ${esc(upd.name)}` : 'gli aggiornamenti arrivano da soli: ti avviso quando esce una versione nuova'}</div></div>${upd ? '<button class="btn btn-green btn-sm" data-a="doUpdate">Aggiorna</button>' : '<button class="btn btn-soft btn-sm" data-a="checkUpd">Controlla</button>'}</div></div>` : ''}
       <p class="muted small" style="text-align:center">Schiscetta · ${ALL.length} piatti · ${Object.keys(ING).length} ingredienti · dati del ${esc(D.built)}</p>`;
+  },
+  pronti() {
+    return `<div class="sheet-h"><h2>🥫 Cose già pronte</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
+      <p class="muted small" style="margin-top:0">Se una cosa pronta non la compri, non ti propongo le ricette che la usano. Le altre restano.</p>
+      <div class="group">${prontiHTML()}</div>`;
   },
   importSheet() {
     return `<div class="sheet-h"><h2>Importa backup</h2><button class="icon-btn" data-a="close" aria-label="Chiudi">✕</button></div>
@@ -2849,7 +2985,7 @@ function closeSheet() { ui.sheets.pop(); renderSheet(); }
 
 /* ---------------- onboarding ---------------- */
 function renderOnb() {
-  const s = ui.onb, dots = `<div class="dots">${[0, 1, 2, 3, 4].map(i => `<i class="${i === s ? 'on' : ''}"></i>`).join('')}</div>`;
+  const s = ui.onb, dots = `<div class="dots">${[0, 1, 2, 3, 4, 5].map(i => `<i class="${i === s ? 'on' : ''}"></i>`).join('')}</div>`;
   if (s === 0) return `<div class="onb"><div class="art">🍱</div><h1>Ciao! Questa è Schiscetta.</h1><p class="lead">Il menu della settimana, la spesa giusta e cosa cucinare ogni sera.</p>
     <div class="feat"><div class="emo cat-primo">📅</div><div><b>Scegli pranzo e cena</b><span class="muted">tra ${D.piatti.length} piatti facili, o lascia che il menu lo componga io</span></div></div>
     <div class="feat"><div class="emo cat-secondo">🛒</div><div><b>Lista della spesa con i costi</b><span class="muted">quantità da comprare, confezioni e prezzi del tuo supermercato</span></div></div>
@@ -2863,6 +2999,11 @@ function renderOnb() {
     <div class="foot">${dots}<button class="btn btn-primary btn-block" data-a="onb" data-d="1">Avanti</button><button class="btn btn-ghost" data-a="onb" data-d="-1">Indietro</button></div></div>`;
   if (s === 3) return `<div class="onb"><h1>Il tuo profilo</h1><p class="lead">Per porzioni e calorie adatte a te. Se non ti interessa, spegnilo: puoi sempre cambiarlo nelle impostazioni.</p>
     ${profileCard()}
+    <div class="foot">${dots}<button class="btn btn-primary btn-block" data-a="onb" data-d="1">Avanti</button><button class="btn btn-ghost" data-a="onb" data-d="-1">Indietro</button></div></div>`;
+  if (s === 4) return `<div class="onb"><h1>Come ti organizzi?</h1><p class="lead">Due domande veloci. Puoi cambiare tutto nelle impostazioni.</p>
+    <div class="sec-title">Il menu</div><div class="group">${styleHTML()}</div>
+    <div class="sec-title">Cose già pronte: le compri?</div><div class="group">${prontiHTML()}</div>
+    <p class="muted small">Se dici «No», non ti propongo le ricette che le usano (niente gnocchi pronti, per esempio).</p>
     <div class="foot">${dots}<button class="btn btn-primary btn-block" data-a="onb" data-d="1">Avanti</button><button class="btn btn-ghost" data-a="onb" data-d="-1">Indietro</button></div></div>`;
   return `<div class="onb"><h1>Da quando parte il menu?</h1><p class="lead">Fai la spesa il giorno prima: quella sera prepari anche la prima schiscetta.</p>
     <input type="date" id="onb-date" value="${S.week.start}">
@@ -2995,6 +3136,17 @@ const A = {
   mealSheet(d) { openSheet('meal', { k: d.k }); },
   mealSkip(d) { const s2 = S.week.slots[d.k]; if (s2 && s2.skip) delete S.week.slots[d.k]; else S.week.slots[d.k] = { skip: true }; save(); ui.sheets = []; render(); },
   menuMore() { openSheet('menuMore'); },
+  poolSheet(d) { openSheet('poolSheet', { k: d.k }); },
+  poolPick(d) { openSheet('poolPick', { k: d.k }); },
+  poolUse(d) {
+    const w = S.week, rb = slotDish(w, d.to), p = (slotDish(w, d.k) || {}).dish;
+    if (!p) return;
+    w.slots = slotsSwapped(w, d.k, d.to);
+    if (!rb || !rb.dish) delete w.slots[d.k];       // il pasto di oggi era vuoto o saltato: il piatto si sposta e basta
+    for (const k in w.slots) if (w.slots[k] === undefined) delete w.slots[k];
+    save(); ui.sheets = []; render();
+    toast(`👍 ${esc(slotLabel(d.to))}: ${esc(p.n)}`);
+  },
   menuView() { S.menuList = !S.menuList; save(); render(); },
   spTab(d) { ui.spTab = d.v; window.scrollTo(0, 0); render(); },
   dpTab(d) { ui.dpTab = d.v; window.scrollTo(0, 0); render(); },
@@ -3005,10 +3157,16 @@ const A = {
     if (S.pantry[d.i] === v) delete S.pantry[d.i]; else S.pantry[d.i] = v;
     save(); render();
   },
-  spesaAddSheet() { openSheet('spesaAdd'); },
-  spesaAdd() {
+  spesaAddSheet(d) { openSheet('spesaAdd', { id: d && d.id }); },
+  spesaAdd(d) {
     const v = n => ($(`[data-sa=${n}]`) || {}).value || '', spent = parseFloat(v('eur').replace(',', '.'));
     if (!(spent > 0)) { toast('Scrivi quanto hai speso'); return; }
+    const x = d && d.id && (S.spese || []).find(y => y.id === d.id);
+    if (x) {
+      Object.assign(x, { date: v('date') || x.date, spent: Math.round(spent * 100) / 100, store: v('store').trim() || x.store, recovered: false });
+      S.spese.sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id));
+      save(); ui.sheets = []; render(); toast(`🧾 Spesa aggiornata: ${eur(spent)}`); return;
+    }
     addSpesa({ date: v('date') || TODAY, spent: Math.round(spent * 100) / 100, store: v('store').trim() || SM[S.market].n, fonte: 'spesa' });
     save(); ui.sheets = []; render(); toast(`🧾 Spesa aggiunta: ${eur(spent)}`);
   },
@@ -3239,12 +3397,15 @@ const A = {
   },
   checkUpd() { checkUpdate(true); },
   spesaInfo(d) { openSheet('spesaInfo', { id: d.id }); },
-  noPronti() {
-    const on = PRONTI.filter(i => ING[i]).every(i => (S.noIng || {})[i]);
-    S.noIng = S.noIng || {};
-    for (const i of PRONTI) if (ING[i]) { if (on) delete S.noIng[i]; else S.noIng[i] = true; }
-    save(); render(); toast(on ? 'Cose pronte di nuovo ammesse' : `🥄 Niente cose pronte: ${ALL.filter(blocked).length} ricette escluse`);
+  prontiSet(d, el, ev) {
+    if (ev) ev.stopPropagation();
+    S.pronti = S.pronti || {};
+    if (d.v === 'no') S.pronti[d.k] = false; else delete S.pronti[d.k];
+    save(); render();
+    if (S.setup) toast(d.v === 'no' ? `${PRONTI_CAT[d.k][0]} Niente ${PRONTI_CAT[d.k][1].toLowerCase()}: ${ALL.filter(blocked).length} ricette escluse` : `${PRONTI_CAT[d.k][0]} ${PRONTI_CAT[d.k][1]} di nuovo nel menu`);
   },
+  prontiSheet() { openSheet('pronti'); },
+  menuStyle(d) { S.menuStyle = d.v; S.menuList = false; save(); if (S.setup) { ui.sheets = []; ui.tab = 'menu'; } render(); },
   usesSheet(d, el, ev) { ev.stopPropagation(); openSheet('uses', { i: d.i }); },
   pcheck(d, el, ev) {
     ev.stopPropagation();
@@ -3459,9 +3620,9 @@ const A = {
   extraCheck(d, el, ev) { if (ev.target.closest('[data-a="extraDel"]')) return; const e = S.week.extras.find(x => x.id === +d.id); if (e) { e.done = !e.done; save(); render(); } },
   extraDel(d) { S.week.extras = S.week.extras.filter(x => x.id !== +d.id); save(); render(); },
   onb(d) {
-    if (ui.onb === 4) { const v = readDate('onb-date'); if (v) S.week.start = v; }
+    if (ui.onb === 5) { const v = readDate('onb-date'); if (v) S.week.start = v; }
     if (ui.onb === 3 && d.d > 0 && !S.profile) S.profile = prof();     // il profilo scelto (o quello di partenza) resta salvato
-    ui.onb = Math.max(0, Math.min(4, ui.onb + +d.d)); render(); window.scrollTo(0, 0);
+    ui.onb = Math.max(0, Math.min(5, ui.onb + +d.d)); render(); window.scrollTo(0, 0);
   },
   onbDone(d) {
     const v = readDate('onb-date'); if (v) S.week.start = v;
@@ -3632,7 +3793,7 @@ window.__back = () => {
 };
 window.__openTab = t => { if (VIEWS[t]) A.tab({ t }); };
 window.__S = () => S;
-window.__test = { swapImpact, slotsSwapped, shopNeededDay, scanFake: () => { scan = { seen: {} }; }, onScan, eanLocal, guessIng, receiptAll, today: () => TODAY, receiptHome, receiptQty, phoneMatchDbg, loadNutrition, parseNutTable, catItem, usesOf, iperalItems, phoneSearch, eveningPlan, eaters: k => eaters(k).map(x => x.id), tags: id => [...dishTags(PI[id])], fits: (id, c) => fitsCat(PI[id], c), slotN: (k, id) => slotN(k, PI[id]), shopping: (w, o) => shopping(w || S.week, o), carryOver: (start) => carryOver(S.week, start), checkUpdate, novita: NOVITA.ver, receiptTotal, walletCheck, chosenOpt, readPhoneChain, price, save, refreshRecipes, allCount: () => ALL.length, isLight, prot: id => dishNut(PI[id]).p, light: id => isLight(PI[id]), dish: id => PI[id] };   // per tools/test_app.py
+window.__test = { blockedIds: () => ALL.filter(blocked).map(p => p.id), recoverSpese, syncSpese, canMake: (id, n) => canMake(PI[id], n), poolGroups: () => poolGroups().map(x => [x.dish.id, x.keys, x.miss]), todayRows: () => todayRows(), swapImpact, slotsSwapped, shopNeededDay, scanFake: () => { scan = { seen: {} }; }, onScan, eanLocal, guessIng, receiptAll, today: () => TODAY, receiptHome, receiptQty, phoneMatchDbg, loadNutrition, parseNutTable, catItem, usesOf, iperalItems, phoneSearch, eveningPlan, eaters: k => eaters(k).map(x => x.id), tags: id => [...dishTags(PI[id])], fits: (id, c) => fitsCat(PI[id], c), slotN: (k, id) => slotN(k, PI[id]), shopping: (w, o) => shopping(w || S.week, o), carryOver: (start) => carryOver(S.week, start), checkUpdate, novita: NOVITA.ver, receiptTotal, walletCheck, chosenOpt, readPhoneChain, price, save, refreshRecipes, allCount: () => ALL.length, isLight, prot: id => dishNut(PI[id]).p, light: id => isLight(PI[id]), dish: id => PI[id] };   // per tools/test_app.py
 
 ensurePeople();
 render();
@@ -3642,6 +3803,7 @@ if (!S.spese) {
     spent: h.spent, stima: h.cassa || null, store: '', fonte: 'spesa', items: [], extras: [] }));
   syncSpese();
 }
+recoverSpese();
 refreshAll();
 /* quando si torna nell'app (dal multitasking o dallo sblocco) i prezzi si riscaricano */
 window.__onResume = () => refreshAll();

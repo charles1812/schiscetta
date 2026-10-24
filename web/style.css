@@ -446,3 +446,10 @@ div.slot { cursor: pointer; }
 .hero.mini { padding: 14px 16px; margin-bottom: 12px; }
 .hero.mini .acts { margin-top: 10px; }
 .hero.mini .acts .btn { padding: 10px 14px; }
+/* menu a lista */
+.pool-i { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px; background: none; border: 0; border-bottom: 1px solid var(--line); text-align: left; font: inherit; color: var(--ink); }
+.pool-i:last-child { border-bottom: 0; }
+.pool-i img, .pool-i .cal-e { width: 52px; height: 52px; border-radius: 12px; object-fit: cover; flex: none; display: grid; place-items: center; font-size: 28px; background: var(--surface-2); }
+.pool-i .nm { font-weight: 700; }
+.pool-i .left { font-size: 13px; color: var(--ink-2); }
+.pool-i.empty .nm { color: var(--tomato); }

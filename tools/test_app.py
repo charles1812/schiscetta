@@ -89,6 +89,11 @@ with sync_playwright() as p:
     page.click("[data-a=profSet][data-f=goal][data-v=gain]")
     page.click("[data-a=profSet][data-f=sex][data-v=m]")
     page.click("text=Avanti")
+    t = page.locator("#app").inner_text()
+    check("cose già pronte" in t.lower() and page.locator("[data-a=prontiSet][data-v=no]").count() == 4 and page.locator("[data-a=menuStyle]").count() == 2,
+          "benvenuto: domande su menu (per giorno o lista) e cose pronte")
+    shot(page, "03c-abitudini")
+    page.click("text=Avanti")
     page.click("text=Componi tu il menu")
     S = page.evaluate("window.__S()")
     check(S["setup"] and S["pc"] == 2 and S["pp"] == 1, "onboarding salva persone e setup")
@@ -930,9 +935,15 @@ with sync_playwright() as p:
     pw.wait_for_timeout(300)
     check(not pw.evaluate("window.__test.usesOf('yogurt').filter(x => x.comp).length") and not pw.evaluate("window.__test.usesOf('mandorle').filter(x => x.comp).length"),
           "menu economico: complementi solo pane, banane e mele")
-    pw.click("[data-a=settings]"); pw.click("[data-a=allergySheet]"); pw.click("[data-a=noPronti]")
-    noi = pw.evaluate("window.__S().noIng")
-    check(noi.get("ragu") and noi.get("pure") and not pw.evaluate("window.__test.fits('pure_pollo', 'carne') === undefined"), "niente cose pronte: ragù pronto, purè in fiocchi… esclusi")
+    pw.click("[data-a=settings]"); pw.click("[data-a=prontiSheet]")
+    b0 = pw.evaluate("window.__test.blockedIds()")
+    pw.click("[data-a=prontiSet][data-k=pasta][data-v=no]")
+    b1 = pw.evaluate("window.__test.blockedIds()")
+    check(pw.evaluate("window.__S().pronti.pasta") is False and "gnocchi_pesto" in b1 and "pasta_pesto" not in b1 and len(b1) > len(b0),
+          f"cose pronte per categoria: niente gnocchi pronti, il pesto resta ({len(b0)} -> {len(b1)} escluse)")
+    shot(pw, "34b-cose-pronte")
+    pw.click("[data-a=prontiSet][data-k=pasta][data-v=si]")
+    check(len(pw.evaluate("window.__test.blockedIds()")) == len(b0), "cose pronte: «Li compro» le rimette")
     pw.evaluate("window.__back()"); pw.evaluate("window.__back()")
     # spesa per 4 giorni, scontrino con le quantità vere, menu nuovo dal giorno dopo (anche a metà settimana)
     pw.evaluate("""() => { localStorage.setItem('schiscetta.v1', JSON.stringify({setup: true, market: 'esselunga',
@@ -1156,6 +1167,42 @@ with sync_playwright() as p:
     pw.click(".tab[data-t=spesa]")
     pw.click("[data-a=spTab][data-v=spese]")
     check("52,30" in pw.locator("main").inner_text(), "spese fatte: resta anche dopo «Rifai il menu da qui»")
+    # un menu nuovo nello stesso giorno non cancella le spese del menu di prima
+    r = pw.evaluate("""() => { const S = window.__S(), T = window.__test, w = S.week;
+      w.trips = Object.assign(w.trips || {}, {prova: {date: T.today(), spent: 41.2, stima: 40, items: [], extras: []}}); T.syncSpese();
+      const n0 = S.spese.filter(x => x.spent === 41.2).length;
+      const keep = S.week; S.week = Object.assign({}, w, {uid: 'wprova', trips: {}}); T.syncSpese(); const n1 = S.spese.filter(x => x.spent === 41.2).length;
+      S.week = keep; delete keep.trips.prova; S.spese = S.spese.filter(x => x.spent !== 41.2); return [n0, n1]; }""")
+    check(r == [1, 1], f"spese: un menu nuovo nello stesso giorno non cancella quelle di prima ({r})")
+    # spese perse con le versioni vecchie: ritrovate (una volta sola) e modificabili
+    r = pw.evaluate("() => { const S = window.__S(); S.history.push({start: '2026-10-05', cassa: 30, spent: 33.5, meals: 10}); return [window.__test.recoverSpese(), window.__test.recoverSpese(), S.spese.filter(x => x.spent === 33.5).length]; }")
+    check(r == [1, 0, 1], f"spese: ritrovata dalle settimane archiviate, una volta sola ({r})")
+    pw.click(".tab[data-t=menu]"); pw.click(".tab[data-t=spesa]"); pw.click("[data-a=spTab][data-v=spese]")
+    pw.locator(".item[data-a=spesaInfo]", has_text="33,50").first.click()
+    pw.click("[data-a=spesaAddSheet][data-id]")
+    pw.fill("[data-sa=eur]", "35,10")
+    pw.click("[data-a=spesaAdd]")
+    check("35,10" in pw.locator("main").inner_text() and not pw.evaluate("window.__S().spese.some(x => x.spent === 33.5)"), "spese: una spesa passata si corregge")
+    shot(pw, "56-spese-fatte")
+    # menu a lista: i piatti della settimana senza giorni; oggi scegli cosa cucinare
+    pw.click(".tab[data-t=menu]")
+    pw.click("[data-a=menuMore]"); pw.click("[data-a=menuStyle][data-v=lista]")
+    n = pw.locator(".pool-i[data-a=poolSheet]").count()
+    check(n >= 3 and "da cucinare nei prossimi giorni" in pw.locator("main").inner_text().lower() and pw.locator(".cal").count() == 0, f"menu a lista: piatti senza giorni ({n})")
+    shot(pw, "57-menu-lista")
+    g = pw.evaluate("window.__test.poolGroups()")
+    ok = [x for x in g if not x[2]]
+    check(len(ok) >= 1, f"menu a lista: almeno un piatto si fa con quello che hai ({len(ok)} su {len(g)})")
+    pw.locator(".pool-i[data-a=poolSheet]").first.click()
+    shot(pw, "58-piatto-lista")
+    u = pw.locator("[data-a=poolUse]")
+    check(u.count() >= 1, "menu a lista: il piatto si può cucinare oggi")
+    k, to = u.first.get_attribute("data-k"), u.first.get_attribute("data-to")
+    dish = pw.evaluate(f"window.__S().week.slots['{k}'].d")
+    u.first.click()
+    check(pw.evaluate(f"window.__S().week.slots['{to}'].d") == dish, f"menu a lista: «Lo cucino» lo mette nel pasto di oggi ({k} -> {to})")
+    pw.click("[data-a=menuMore]"); pw.click("[data-a=menuStyle][data-v=giorni]")
+    check(pw.locator(".cal").count() == 1, "si torna al calendario")
     pw.close()
     check(not GZ, f"nessuna chiamata a spese.php durante tutte le prove ({GZ})")
     b.close()

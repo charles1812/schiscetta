@@ -423,6 +423,9 @@ public class MainActivity extends Activity {
         public String walletList() { return WalletStore.pending(MainActivity.this); }
 
         @JavascriptInterface
+        public String walletAll() { return WalletStore.all(MainActivity.this); }
+
+        @JavascriptInterface
         public void walletDone(String pay) { WalletStore.setState(MainActivity.this, pay, "fatto"); }
 
         @JavascriptInterface

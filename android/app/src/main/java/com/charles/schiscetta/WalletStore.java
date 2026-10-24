@@ -70,6 +70,9 @@ final class WalletStore {
         c.getSystemService(NotificationManager.class).cancel(pay.hashCode());
     }
 
+    /** tutti i pagamenti ricordati, anche quelli già registrati («fatto»): servono a ritrovare le spese perse */
+    static synchronized String all(Context c) { return load(c).toString(); }
+
     /** quelli ancora da registrare nell'app: in attesa o confermati dalla notifica */
     static synchronized String pending(Context c) {
         JSONArray a = load(c), out = new JSONArray();
